@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <body>
+    <div>
+        <ul>
+            {% for c in category_list %}
+                <li>
+                    <a href="{% url 'single category' c.id %}">{{ c.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </body>
+{% endblock %}

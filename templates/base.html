@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Project</title>
+</head>
+
+<nav>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'categories' %}">Categories</a>
+    {#    <a href="{% url 'products' %}">Products</a>#}
+    <a href="{% url 'login user' %}">Login</a>
+
+</nav>
+<body>
+{% block page_content %}
+{% endblock %}
+</body>
+</html>
