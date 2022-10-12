@@ -8,15 +8,9 @@ class HomeView(views.TemplateView):
     template_name = 'web/index.html'
 
 
-# class ProductsView(views.ListView):
-#     model = Product
-#     template_name = 'web/products.html'
-
-
 # class ProductDetailsView(views.DetailView):
 #     model = Product
 #     template_name = 'web/product_details.html'
-#     context_object_name = 'product'
 
 
 class CategoriesView(views.ListView):
@@ -25,6 +19,12 @@ class CategoriesView(views.ListView):
 
 
 class SingleCategoryView(views.ListView):
-    model = Category
+    model = Product
     template_name = 'web/single_category.html'
-    context_object_name = 'category'
+
+    def get_queryset(self):
+        # print(dir(self))
+        # print(self.args)
+        # print(self.kwargs)
+        # print(self.request)
+        return Product.objects.filter(id=self.kwargs['pk'])

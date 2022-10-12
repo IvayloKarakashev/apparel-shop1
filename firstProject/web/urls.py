@@ -1,5 +1,7 @@
 from django.urls import path
 
+
+
 from firstProject.web.views import HomeView, CategoriesView, SingleCategoryView
 
 urlpatterns = (
