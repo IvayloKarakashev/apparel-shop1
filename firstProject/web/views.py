@@ -8,9 +8,9 @@ class HomeView(views.TemplateView):
     template_name = 'web/index.html'
 
 
-# class ProductDetailsView(views.DetailView):
-#     model = Product
-#     template_name = 'web/product_details.html'
+class ProductDetailsView(views.DetailView):
+    model = Product
+    template_name = 'web/product_details.html'
 
 
 class CategoriesView(views.ListView):
@@ -27,4 +27,4 @@ class SingleCategoryView(views.ListView):
         # print(self.args)
         # print(self.kwargs)
         # print(self.request)
-        return Product.objects.filter(id=self.kwargs['pk'])
+        return Product.objects.filter(category=self.kwargs['pk'])

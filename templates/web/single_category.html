@@ -2,7 +2,15 @@
 {% block page_content %}
     <body>
     {% for product in product_list %}
-        {{ product.id }} - {{ product.title }}
+        <a href="{% url 'product details' product.id %}">
+            <img src="{{ product.image }}"
+                 alt="Image"
+                 width="150"
+                 height="150"></a>
+        {{ product.title }}
+        Price: {{ product.price }}
+
+        <hr>
 
     {% endfor %}
     </body>

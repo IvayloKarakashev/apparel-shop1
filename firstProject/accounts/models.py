@@ -24,3 +24,22 @@ class FirstProjectUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixi
     USERNAME_FIELD = 'username'
 
     objects = FirstProjectUserManager()
+
+
+class Profile(models.Model):
+    FIRST_NAME_MAX_LENGTH = 30
+    LAST_NAME_MAX_LENGTH = 30
+
+    first_name = models.CharField(
+        max_length=FIRST_NAME_MAX_LENGTH,
+    )
+
+    last_name = models.CharField(
+        max_length=LAST_NAME_MAX_LENGTH,
+    )
+
+    user = models.OneToOneField(
+        FirstProjectUser,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )

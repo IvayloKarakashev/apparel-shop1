@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 
 
@@ -29,6 +30,12 @@ class Product(models.Model):
         max_length=COLOR_MAX_LENGTH,
     )
 
+    price = models.FloatField(
+        validators=[
+            MinValueValidator(0.1)
+        ]
+    )
+
     image = models.URLField()
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
