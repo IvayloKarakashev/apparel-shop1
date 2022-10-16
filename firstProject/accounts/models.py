@@ -38,6 +38,8 @@ class Profile(models.Model):
         max_length=LAST_NAME_MAX_LENGTH,
     )
 
+    image = models.URLField()
+
     user = models.OneToOneField(
         FirstProjectUser,
         on_delete=models.CASCADE,

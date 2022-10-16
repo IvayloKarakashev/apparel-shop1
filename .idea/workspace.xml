@@ -4,25 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Fixed SingleCategoryView">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/web/single_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/web/single_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +53,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="apparel-shop1" type="Python.DjangoServer" factoryName="Django server">
@@ -82,8 +90,22 @@
       <option name="presentableId" value="Default" />
       <updated>1665508631479</updated>
       <workItem from="1665508633314" duration="5716000" />
-      <workItem from="1665592806901" duration="4553000" />
+      <workItem from="1665592806901" duration="9014000" />
+      <workItem from="1665676358841" duration="8432000" />
+      <workItem from="1665687445525" duration="5144000" />
+      <workItem from="1665752015934" duration="2228000" />
+      <workItem from="1665765284591" duration="12400000" />
+      <workItem from="1665916734497" duration="3087000" />
+      <workItem from="1665921185635" duration="7147000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed SingleCategoryView">
+      <created>1665598398581</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665598398581</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,20 +122,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed SingleCategoryView" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed SingleCategoryView" />
   </component>
 </project>

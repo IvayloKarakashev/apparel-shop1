@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
 {% block page_content %}
-    {{ profile.first_name }}
+    <h1>Profile Details:</h1>
+    <img src="{{ profile.image }}"
+         alt="Image"
+         width="150"
+         height="150">
+    First name: {{ profile.first_name }}
+    Last name: {{ profile.last_name }}
+    <a href="{% url 'edit user profile' %}">Edit profile</a>
 {% endblock %}
