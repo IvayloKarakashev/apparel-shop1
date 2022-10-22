@@ -5,17 +5,20 @@ from firstProject.web.models import Product, Category
 
 
 class HomeView(views.TemplateView):
-    template_name = 'web/index.html'
+    template_name = 'web/home-page.html'
 
 
 class ProductDetailsView(views.DetailView):
     model = Product
-    template_name = 'web/product_details.html'
+    template_name = 'web/product-page.html'
 
 
 class CategoriesView(views.ListView):
     model = Category
     template_name = 'web/categories.html'
+
+    # def get_queryset(self):
+    #     return Category.objects.all()
 
 
 class SingleCategoryView(views.ListView):

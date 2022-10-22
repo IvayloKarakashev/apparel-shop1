@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Fixed SingleCategoryView">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Added Edit profile and Logout functionality">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstProject/accounts/migrations/0006_profile_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/profile_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/apparel-shop1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/apparel-shop1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/web/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/web/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/web/single_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/web/single_category.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +102,11 @@
       <workItem from="1665765284591" duration="12400000" />
       <workItem from="1665916734497" duration="3087000" />
       <workItem from="1665921185635" duration="7147000" />
+      <workItem from="1665946764971" duration="1579000" />
+      <workItem from="1666256182407" duration="5024000" />
+      <workItem from="1666281313059" duration="2170000" />
+      <workItem from="1666363019545" duration="2728000" />
+      <workItem from="1666429717659" duration="5231000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed SingleCategoryView">
       <created>1665598398581</created>
@@ -105,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665598398581</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Edit profile and Logout functionality">
+      <created>1665946844743</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665946844743</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +141,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed SingleCategoryView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed SingleCategoryView" />
+    <MESSAGE value="Added Edit profile and Logout functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Edit profile and Logout functionality" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

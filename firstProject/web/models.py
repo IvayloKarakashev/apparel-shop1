@@ -1,5 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
+
+user_model = get_user_model()
 
 
 class Category(models.Model):
@@ -39,3 +42,17 @@ class Product(models.Model):
     image = models.URLField()
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+
+
+class OrderItem(models.Model):
+    item = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+
+class Order(models.Model):
+    user = models.ForeignKey(user_model, on_delete=models.CASCADE)
+    items = models.ManyToManyField(OrderItem)
+    ordered_date = models.DateTimeField()
+    ordered = models.BooleanField(default=False)
