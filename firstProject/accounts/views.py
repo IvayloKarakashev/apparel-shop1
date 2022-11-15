@@ -1,6 +1,5 @@
 from django.contrib.auth import views as auth_views, get_user_model, login
-from django.contrib.auth import forms as auth_forms
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
 
@@ -12,7 +11,7 @@ user_model = get_user_model()
 
 class UserRegistrationView(generic_views.CreateView):
     form_class = UserRegistrationForm
-    template_name = 'accounts/register.html'
+    template_name = 'front-end/register.html'
     success_url = reverse_lazy('index')
 
     def form_valid(self, *args, **kwargs):
@@ -45,17 +44,33 @@ def user_profile(request):
     return render(request, 'accounts/profile.html', context)
 
 
-class UserProfileDetailsView(generic_views.DetailView):
-    model = Profile
-    template_name = 'accounts/profile.html'
+# class UserProfileDetailsView(generic_views.DetailView):
+#     model = Profile
+#     template_name = 'accounts/profile.html'
 
 
 class EditUserProfileView(generic_views.UpdateView):
     model = Profile
-    # form_class = ProfileEditForm
-    template_name = 'accounts/profile_edit.html'
-    fields = ('first_name', 'last_name', 'image')
-    success_url = reverse_lazy('user profile details')
+    template_name = 'front-end/user-profile-edit.html'
+    fields = ('first_name', 'last_name', 'gender')
 
-    def get_object(self, queryset=None):
-        return self.model.objects.get(pk=self.request.user.pk)
+    def get_success_url(self):
+        return reverse_lazy('user dashboard', kwargs={'pk': self.object.pk})
+
+    # def form_valid(self, form):
+    #     if form.is_valid():
+    #         obj = form.save(commit=False)
+    #         # obj.user = request.user
+    #         # obj.order = order
+    #
+    #         obj.save()
+
+    # def get_object(self, queryset=None):
+    #     return self.model.objects.get(pk=self.request.user.pk)
+
+
+class UserDashboardView(generic_views.DetailView):
+    model = Profile
+    template_name = 'front-end/user-dashboard.html'
+
+
