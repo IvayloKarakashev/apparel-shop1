@@ -4,177 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Added HTML templates">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Added HTML templates, views, models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0002_alter_firstprojectuser_last_login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0003_rename_firstprojectuser_appuser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0004_rename_appuser_firstprojectuser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0005_profile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0006_profile_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0002_product_delete_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0003_category.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0004_product_category.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0005_product_price.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/datatables-select.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/datatables-select.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/datatables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/datatables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/directives.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/directives.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/flag.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/flag.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/rating.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/rating.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/zmd.hierarchical-display.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/addons/zmd.hierarchical-display.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/mdb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/mdb.lite.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/mdb.lite.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/mdb.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/modules/animations-extended.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/modules/animations-extended.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Light.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Light.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Light.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Medium.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Medium.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Medium.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Thin.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Thin.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/font/roboto/Roboto-Thin.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/flags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/lightbox/default-skin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/lightbox/default-skin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/lightbox/preloader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/overlays/09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/sample.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/svg/arrow_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/svg/arrow_right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/svg/flags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/datatables-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/datatables-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/datatables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/datatables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/imagesloaded.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/jquery.zmd.hierarchical-display.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/jquery.zmd.hierarchical-display.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/masonry.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/progressBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/progressBar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/rating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/addons/rating.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/mdb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/mdb.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/bs-custom-file-input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/default-file-input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/enhanced-modals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/forms-free.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/jquery.easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/scrolling-navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/velocity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/velocity.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/waves.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modules/wow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/_custom-skin.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/_custom-styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/_custom-variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/addons/_datatables-select.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/addons/_datatables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/addons/_directives.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/addons/_flags.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/addons/_hierarchical-display.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/addons/_rating.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_colors.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_helpers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_masks.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_typography.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/_waves.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/bootstrap/_functions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/bootstrap/_rfs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/core/bootstrap/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_animations-basic.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_badges.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_cards.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_carousels.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_depreciated.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_dropdowns.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_footers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_input-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_loader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_modals.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_msc.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_navbars.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_steppers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_switch.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/_treeview.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/modules/animations-extended/_module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/free/modules/animations-extended/animations-extended.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/mdb.lite.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/mdb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/web/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/web/home-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/web/product-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/web/product-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +157,7 @@
       <workItem from="1668246756945" duration="38767000" />
       <workItem from="1668363685506" duration="4903000" />
       <workItem from="1668446813528" duration="5589000" />
-      <workItem from="1668455754315" duration="12977000" />
+      <workItem from="1668455754315" duration="15002000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed SingleCategoryView">
       <created>1665598398581</created>
@@ -349,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666444401809</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added HTML templates, views, models">
+      <created>1668546766143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668546766143</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +208,8 @@
     <MESSAGE value="Fixed SingleCategoryView" />
     <MESSAGE value="Added Edit profile and Logout functionality" />
     <MESSAGE value="Added HTML templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added HTML templates" />
+    <MESSAGE value="Added HTML templates, views, models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added HTML templates, views, models" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
