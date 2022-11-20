@@ -1154,13 +1154,13 @@
                                 <div class="qty-box">
                                     <div class="input-group">
                                         <button data-product="{{ item.product.id }}" data-action="add"
-                                                class="update-cart">▲
+                                                class="update-cart btn quantity-right-plus">▲
                                         </button>
                                         <h3>{{ item.quantity }}</h3>
-{#                                        <input type="number" name="quantity" class="form-control input-number"#}
-{#                                               value="{{ item.quantity }}">#}
+                                        {#                                        <input type="number" name="quantity" class="form-control input-number"#}
+                                        {#                                               value="{{ item.quantity }}">#}
                                         <button data-product="{{ item.product.id }}" data-action="remove"
-                                                class="update-cart">▼
+                                                class="update-cart btn quantity-left-minus">▼
                                         </button>
                                     </div>
                                 </div>
@@ -1501,7 +1501,10 @@
 <script src="{% static 'front-end/assets/js/theme-setting.js' %}"></script>
 <script src="{% static 'front-end/assets/js/script.js' %}"></script>
 
-<script type="text/javascript" src="{% static '../static/js/cart.js' %}"></script>
+{% block scripts %}
+    <script type="text/javascript" src="{% static '../static/js/cart.js' %}"></script>
+{% endblock %}
+
 </body>
 
 </html>

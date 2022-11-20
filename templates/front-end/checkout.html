@@ -1084,55 +1084,56 @@
 <!-- Cart Section Start -->
 <section class="section-b-space">
     <div class="container">
-
-        {% for address in addresses %}
-            <div class="save-details-box">
-                <div class="row g-3">
-                    <div class="col-xl-4 col-md-6">
-                        <div class="save-details" data-profile="{{ address.profile_id }}">
-                            <div class="save-name">
-                                <h5>{{ address.profile.get_full_name }}</h5>
-                                <div class="save-position">
-                                    <h6>{{ address.label }}</h6>
-                                </div>
-                            </div>
-
-                            <div class="save-address">
-                                <p class="font-light" id="saved-state-region">{{ address.state_region }}</p>
-                                <p class="font-light" id="saved-city">{{ address.city }}</p>
-                                <p class="font-light" id="saved-address">{{ address.address }}</p>
-                                <p class="font-light" id="saved-zip-code">{{ address.zip_code }}</p>
-                            </div>
-
-                            <div class="mobile">
-                                <p class="font-light mobile">Mobile No. +1-123-456-7890</p>
-                            </div>
-
-                            <div class="button use-address">
-                                <a class="btn btn-sm">Use this address</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        {% endfor %}
+{#        {% for address in addresses %}#}
+{#            <div class="save-details-box">#}
+{#                <div class="row g-3">#}
+{#                    <div class="col-xl-4 col-md-6">#}
+{#                        <div class="save-details"#}
+{#                             data-profile="{{ address.profile_id }}"#}
+{#                             data-address="{{ address.id }}">#}
+{#                            <div class="save-name">#}
+{#                                <h5>{{ address.profile.get_full_name }}</h5>#}
+{#                                <div class="save-position">#}
+{#                                    <h6>{{ address.label }}</h6>#}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="save-address">#}
+{#                                <p class="font-light" id="saved-state-region">{{ address.state_region }}</p>#}
+{#                                <p class="font-light" id="saved-city">{{ address.city }}</p>#}
+{#                                <p class="font-light" id="saved-address">{{ address.address }}</p>#}
+{#                                <p class="font-light" id="saved-zip-code">{{ address.zip_code }}</p>#}
+{#                            </div>#}
+{##}
+{#                            <div class="mobile">#}
+{#                                <p class="font-light mobile">Mobile No. +1-123-456-7890</p>#}
+{#                            </div>#}
+{##}
+{#                            <div class="button use-address">#}
+{#                                <a class="btn btn-sm">Use this address</a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#        {% endfor %}#}
 
 
         <div class="row g-4">
             <div class="col-lg-8">
                 <h3 class="mb-3">Billing address</h3>
                 <form class="needs-validation" method="post">
-                    <div class="row g-4">
+                    <div id="form" class="row g-4">
                         {% csrf_token %}
                         {{ form }}
-                    </div>
-                    <div class="form-check ps-0 mt-3 custome-form-check">
-                        <input class="checkbox_animated check-it" type="checkbox" id="flexCheckDefault11">
-                        <label class="form-check-label checkout-label" for="flexCheckDefault11">Save this
-                            information for next time</label>
-                    </div>
 
+{#                        <div class="form-check ps-0 mt-3 custome-form-check">#}
+{#                            <input class="checkbox_animated check-it" type="checkbox" id="flexCheckDefault11">#}
+{#                            <label class="form-check-label checkout-label" for="flexCheckDefault11">Save this#}
+{#                                information for next time</label>#}
+{#                        </div>#}
+                    </div>
                     {#                    <hr class="my-lg-5 my-4">#}
 
                     {#                    <h3 class="mb-3">Payment</h3>#}

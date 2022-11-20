@@ -7,11 +7,17 @@ from django.views import generic as views, generic as generic_views
 
 from firstProject.accounts.models import Profile
 from firstProject.web.forms import ShippingAddressForm
-from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress
+from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress, WishList
 
 
-class HomeView(views.TemplateView):
-    template_name = 'index.html'
+def home_view(request):
+    categories = Category.objects.all()
+
+    context = {
+        'categories': categories
+    }
+
+    return render(request, 'index.html', context)
 
 
 class ProductDetailsView(views.DetailView):
@@ -22,9 +28,6 @@ class ProductDetailsView(views.DetailView):
 class CategoriesView(views.ListView):
     model = Category
     template_name = 'front-end/categories.html'
-
-    # def get_queryset(self):
-    #     return Category.objects.all()
 
 
 class ProductsView(views.ListView):
@@ -39,21 +42,10 @@ class ProductsView(views.ListView):
         return Product.objects.filter(category=self.kwargs['pk'])
 
 
-# def add_to_cart(request, product_id):
-#     item = get_object_or_404(Product, id=product_id)
-#     order_item = OrderItem.objects.create(item=item)
-#     order_qs = Order.objects.filter(user=request.user, ordered=False)
-#     if order_qs.exists():
-#         order = order_qs[0]
-#         if order.items.filter(item_id=item.id).exists():
-#             order_item.quantity += 1
-#             order_item.save()
-#         else:
-#             pass
-#     else:
-#         order = Order.objects.create(user=request.user)
-#         order.items.add(order_item)
-#     return redirect('home', pk=product_id)
+class WishListView(views.ListView):
+    model = WishList
+    template_name = 'front-end/wishlist.html'
+
 
 def cart(request):
     if request.user.is_authenticated:
@@ -87,12 +79,15 @@ def checkout(request):
 
         if request.method == 'POST':
             form = ShippingAddressForm(request.POST)
+            print(request.POST.get('state_region'))
 
             if form.is_valid():
                 obj = form.save(commit=False)
                 obj.customer = customer  # Do I need it here ?
                 obj.profile = profile
                 obj.order = order
+                order.complete = True
+                order.save()
 
                 obj.save()
 
@@ -115,12 +110,8 @@ def checkout(request):
 
 def update_item(request):
     data = json.loads(request.body)
-    print(data)
     productId = data['productId']
     action = data['action']
-
-    print('Action:', action)
-    print('ProductId', productId)
 
     customer = request.user
     product = Product.objects.get(id=productId)
@@ -141,9 +132,21 @@ def update_item(request):
     return JsonResponse('Item was added.', safe=False)
 
 
+def update_wishlist(request):
+    data = json.loads(request.body)
+    productId = data['productId']
+    user = request.user
+    product = Product.objects.get(id=productId)
+    item, created = WishList.objects.get_or_create(user=user, product=product)
+    item.save()
+
+    return JsonResponse('Wishlist was updated.', safe=False)
+
+
 class ShippingAddressView(views.CreateView):
     form_class = ShippingAddressForm
     template_name = 'front-end/checkout.html'
+
 
 # def form_valid(self, form):
 #     shipping_address = form.save(commit=False)
@@ -195,3 +198,7 @@ class DeleteUserShippingAddressView(generic_views.DeleteView):
 
     def get_success_url(self):
         return reverse_lazy('user shipping addresses', kwargs={'pk': self.object.profile_id})
+
+
+class TestView(generic_views.TemplateView):
+    template_name = 'front-end/shop-filter-hide.html'
