@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Added HTML tepmlates, models, views">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/checkout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-end/wishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/wishlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +166,8 @@
       <workItem from="1668705947503" duration="12012000" />
       <workItem from="1668855437365" duration="21797000" />
       <workItem from="1668932646178" duration="4555000" />
-      <workItem from="1668951414204" duration="14916000" />
+      <workItem from="1668951414204" duration="16171000" />
+      <workItem from="1669022041992" duration="8640000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed SingleCategoryView">
       <created>1665598398581</created>
@@ -243,6 +236,22 @@
     <MESSAGE value="git reset --hard HEAD" />
     <MESSAGE value="Added HTML tepmlates, models, views" />
     <option name="LAST_COMMIT_MESSAGE" value="Added HTML tepmlates, models, views" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
+          <line>135</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
+          <line>121</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/apparel_shop1$blq.coverage" NAME="blq Coverage Results" MODIFIED="1666630454914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/firstProject/accounts" />

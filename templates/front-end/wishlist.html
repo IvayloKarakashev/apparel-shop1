@@ -3,8 +3,6 @@
 {% load static %}
 
 {% block body %}
-    <body class="theme-color2 light ltr">
-
     <!-- Cart Section Start -->
     <section class="wish-list-section section-b-space">
         <div class="container">
@@ -40,7 +38,10 @@
                                     <p>{{ item.product.size }} / {{ item.product.color }}</p>
                                 </td>
                                 <td>
-                                    <a href="javascript:void(0)" class="icon">
+                                    <a href="javascript:void(0)"
+                                       class="icon update-wishlist"
+                                       data-product="{{ item.product.id }}"
+                                       data-action="remove">
                                         <i class="fas fa-times"></i>
                                     </a>
                                     <a href="javascript:void(0)"
@@ -64,5 +65,4 @@
         <script type="text/javascript" src="{% static '../static/js/cart.js' %}"></script>
     {% endblock %}
 
-    </body>
 {% endblock %}

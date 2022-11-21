@@ -121,12 +121,12 @@ def update_item(request):
 
     if action == 'add':
         order_item.quantity += 1
-    elif action == 'remove':
+    elif action == 'subtract':
         order_item.quantity -= 1
 
     order_item.save()
 
-    if order_item.quantity <= 0:
+    if action == 'remove' or order_item.quantity <= 0:
         order_item.delete()
 
     return JsonResponse('Item was added.', safe=False)
@@ -135,10 +135,12 @@ def update_item(request):
 def update_wishlist(request):
     data = json.loads(request.body)
     productId = data['productId']
+    action = data['action']
     user = request.user
     product = Product.objects.get(id=productId)
     item, created = WishList.objects.get_or_create(user=user, product=product)
-    item.save()
+    if action == 'remove':
+        item.delete()
 
     return JsonResponse('Wishlist was updated.', safe=False)
 

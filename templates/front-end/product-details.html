@@ -173,9 +173,9 @@
 
                                     <div class="product-buttons">
                                         <a href="javascript:void(0)"
-                                           class="btn btn-solid"
-                                           id="add-to-wishlist"
-                                           data-product="{{ object.id }}">
+                                           class="btn btn-solid update-wishlist"
+                                           data-product="{{ object.id }}"
+                                           data-action="add">
                                             <i class="fa fa-heart"></i>
                                             <span>Wishlist</span>
                                         </a>
@@ -196,6 +196,11 @@
         </div>
     </section>
     <!-- Shop Section end -->
+
+    {% block scripts %}
+        <script type="text/javascript" src="{% static '../static/js/cart.js' %}"></script>
+    {% endblock %}
+
 {% endblock %}
 
 
