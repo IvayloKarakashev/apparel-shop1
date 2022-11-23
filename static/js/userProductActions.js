@@ -1,8 +1,8 @@
-let updateButtons = document.getElementsByClassName('update-cart')
+let updateCartButtons = document.getElementsByClassName('update-cart')
 let updateWishListButtons = document.getElementsByClassName('update-wishlist')
 
-for (let i = 0; i < updateButtons.length; i++) {
-    updateButtons[i].addEventListener('click', function () {
+for (let i = 0; i < updateCartButtons.length; i++) {
+    updateCartButtons[i].addEventListener('click', function () {
         let productId = this.dataset.product
         let action = this.dataset.action
 
