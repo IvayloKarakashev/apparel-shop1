@@ -535,7 +535,7 @@
                                             <a href="javascript:void(0)" class="nav-link menu-title">
                                                 <div class="gradient-title">Voxo plus</div>
                                             </a>
-                                            <div class="mega-menu-container poster-bg-image menu-content">
+                                            <div class="mega-menu-container menu-content">
                                                 <div class="container-fluid">
                                                     <div class="row row-cols-5">
                                                         <div class="col mega-box">
@@ -666,14 +666,21 @@
                                         <i data-feather="user"></i>
                                     </div>
                                     <div class="onhover-div profile-dropdown">
-                                        <ul>
+                                        {% if request.user == 'AnonymousUser' %}
+                                            <ul>
+                                                <li>
+                                                    <a href="{% url 'login user' %}" class="d-block">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{% url 'register user' %}" class="d-block">Register</a>
+                                                </li>
+                                            </ul>
+                                        {% else %}
+                                            <ul>
                                             <li>
-                                                <a href="log-in.html" class="d-block">Login</a>
+                                                <a href="{% url 'login user' %}" class="d-block">Login</a>
                                             </li>
-                                            <li>
-                                                <a href="register.html" class="d-block">Register</a>
-                                            </li>
-                                        </ul>
+                                        {% endif %}
                                     </div>
                                 </li>
                                 <li>

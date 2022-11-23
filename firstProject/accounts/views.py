@@ -5,6 +5,7 @@ from django.views import generic as generic_views
 
 from firstProject.accounts.forms import UserRegistrationForm
 from firstProject.accounts.models import Profile
+from firstProject.web.models import Order, WishList
 
 user_model = get_user_model()
 
@@ -32,6 +33,10 @@ class UserLoginView(auth_views.LoginView):
 
 class UserLogoutView(auth_views.LogoutView):
     next_page = reverse_lazy('index')
+
+
+class UserPasswordChangeView(auth_views.PasswordChangeView):
+    pass
 
 
 def user_profile(request):
@@ -73,4 +78,8 @@ class UserDashboardView(generic_views.DetailView):
     model = Profile
     template_name = 'front-end/user-dashboard.html'
 
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['orders'] = Order.objects.filter(customer_id=self.object.user_id)
+        context['wishlist'] = WishList.objects.filter(user_id=self.object.user_id)
+        return context

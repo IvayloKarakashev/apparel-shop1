@@ -8415,6 +8415,14 @@ hr {
   font-size: 12px !important;
   color: #2b2b2b !important; }
 
+.in-progress-button {
+  background-color: #7c8000;
+  margin: 0 !important;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px !important;
+  color: #fff !important; }
+
 .danger-button {
   background-color: var(--theme-color);
   margin: 0 !important;

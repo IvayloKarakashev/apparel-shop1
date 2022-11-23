@@ -1,7 +1,7 @@
 from django.urls import path
 
 from firstProject.web.views import CategoriesView, ProductsView, ProductDetailsView, cart, update_item, \
-    checkout, OrderSuccessView, TestView, home_view, WishListView, update_wishlist
+    checkout, OrderSuccessView, TestView, home_view, WishListView, update_wishlist, OrderTrackingView
 
 urlpatterns = (
     path('', home_view, name='index'),
@@ -14,5 +14,6 @@ urlpatterns = (
     path('update-item/', update_item, name='update item'),
     path('update-wishlist/', update_wishlist, name='update wishlist'),
     path('order-success/<int:pk>', OrderSuccessView.as_view(), name='order success'),
+    path('order-tracking/<int:pk>', OrderTrackingView.as_view(), name='order tracking'),
     path('test/', TestView.as_view(), name='test view')
 )

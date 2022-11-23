@@ -8923,6 +8923,14 @@ hr {
   font-size: 12px !important;
   color: #2b2b2b !important; }
 
+.in-progress-button {
+  background-color: #7c8000;
+  margin: 0 !important;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px !important;
+  color: #fff !important; }
+
 .danger-button {
   background-color: var(--theme-color);
   margin: 0 !important;
@@ -14405,7 +14413,7 @@ footer .footer-newsletter .input-group input.color-4 {
 
 .cart-table tbody tr td {
   border-bottom-color: #383838 !important; }
-  .cart-table tbody tr td p.success-button, .cart-table tbody tr td p.danger-button {
+  .cart-table tbody tr td p.success-button, .cart-table tbody tr td p.in-progress-button, .cart-table tbody tr td p.danger-button {
     color: #fff !important; }
 
 .payment-card-detail .card-details .card-number h4 {

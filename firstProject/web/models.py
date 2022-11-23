@@ -89,6 +89,48 @@ class WishList(models.Model):
     )
 
 
+class ShippingAddress(models.Model):
+    ADDRESS_MAX_LENGTH = 200
+    CITY_MAX_LENGTH = 100
+    STATE_REGION_MAX_LENGTH = 100
+    LABEL_MAX_LENGTH = 20
+
+    profile = models.ForeignKey(
+        Profile,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
+
+    state_region = models.CharField(
+        max_length=STATE_REGION_MAX_LENGTH,
+        null=True
+    )
+
+    city = models.CharField(
+        max_length=CITY_MAX_LENGTH,
+        null=True
+    )
+
+    address = models.CharField(
+        max_length=ADDRESS_MAX_LENGTH,
+        null=True)
+
+    zip_code = models.IntegerField(
+        null=True,
+        validators=[
+            MinValueValidator(0)
+        ]
+    )
+
+    date_added = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.address
+
+
 class Order(models.Model):
     customer = models.ForeignKey(
         user_model,
@@ -97,7 +139,13 @@ class Order(models.Model):
         blank=True
     )
 
-    # date_ordered = models.DateTimeField(auto_now_add=True)
+    # date_created = models.DateTimeField(
+    #     auto_now_add=True
+    # )
+    #
+    # date_ordered = models.DateTimeField(
+    #     auto_now=True
+    # )
 
     complete = models.BooleanField(
         default=False
@@ -109,6 +157,13 @@ class Order(models.Model):
         unique=True,
         db_index=True,
         editable=False
+    )
+
+    shipping_address = models.ForeignKey(
+        ShippingAddress,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE
     )
 
     def __str__(self):
@@ -156,52 +211,3 @@ class OrderItem(models.Model):
     def get_total(self):
         total = self.product.price * self.quantity
         return total
-
-
-class ShippingAddress(models.Model):
-    ADDRESS_MAX_LENGTH = 200
-    CITY_MAX_LENGTH = 100
-    STATE_REGION_MAX_LENGTH = 100
-    LABEL_MAX_LENGTH = 20
-
-    profile = models.ForeignKey(
-        Profile,
-        on_delete=models.CASCADE,
-        blank=True,
-        null=True
-    )
-
-    order = models.ForeignKey(
-        Order,
-        on_delete=models.CASCADE,
-        blank=True,
-        null=True
-    )
-
-    state_region = models.CharField(
-        max_length=STATE_REGION_MAX_LENGTH,
-        null=True
-    )
-
-    city = models.CharField(
-        max_length=CITY_MAX_LENGTH,
-        null=True
-    )
-
-    address = models.CharField(
-        max_length=ADDRESS_MAX_LENGTH,
-        null=True)
-
-    zip_code = models.IntegerField(
-        null=True,
-        validators=[
-            MinValueValidator(0)
-        ]
-    )
-
-    date_added = models.DateTimeField(
-        auto_now_add=True
-    )
-
-    def __str__(self):
-        return self.address

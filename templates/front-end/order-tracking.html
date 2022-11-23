@@ -1,0 +1,88 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+    <!-- Order Track Section Start -->
+    <section class="section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 overflow-hidden">
+                    <div class="order-left-image ratio_asos">
+                        <div class="tracking-product-image">
+                            <img src="assets/images/fashion/banner/3.jpg" class="img-fluid bg-img blur-up lazyload"
+                                 alt="">
+                        </div>
+
+                        <div class="order-image-contain">
+                            <h4>Order #{{ order.id }}</h4>
+
+                            <div class="tracker-number">
+                                <p class="font-light">Transaction ID : <span>{{ order.transaction_id }}</span></p>
+                                <p class="font-light">Delivery Address: <span>{{ order.shipping_address }}</span></p>
+                                <p class="font-light mb-0">Order Placed : <span>June 25, 2021</span></p>
+                            </div>
+                            <ol class="progtrckr">
+                                <li class="progtrckr-done">
+                                    <h5>Order Processing</h5>
+                                    <h6># TODO: Add DateTime</h6>
+                                </li>
+                                <li class="progtrckr-todo">
+                                    <h5>In Preparation</h5>
+                                    <h6>Pending</h6>
+                                </li>
+                                <li class="progtrckr-todo">
+                                    <h5>Shipped</h5>
+                                    <h6>Pending</h6>
+                                </li>
+                                <li class="progtrckr-todo">
+                                    <h5>On the way</h5>
+                                    <h6>Pending</h6>
+                                </li>
+                                <li class="progtrckr-todo">
+                                    <h5>Delivered</h5>
+                                    <h6>Pending</h6>
+                                </li>
+                            </ol>
+
+                            <h5 class="font-light">Your items is on the way. Tracking information will be available
+                                within 24 hours.</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 overflow-visible">
+                    <div class="tracker-table">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr class="table-head">
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Discription</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <p># TODO: ADD DATE</p>
+                                    </td>
+                                    <td>
+                                        <p># TODO: ADD TIME</p>
+                                    </td>
+                                    <td>
+                                        <p class="fw-bold">Order information received</p>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order Track Section End -->
+
+{% endblock %}

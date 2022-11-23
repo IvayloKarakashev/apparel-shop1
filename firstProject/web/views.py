@@ -20,7 +20,15 @@ def home_view(request):
     return render(request, 'index.html', context)
 
 
-class ProductDetailsView(views.DetailView):
+class MyDetailView(views.DetailView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+
+        return context
+
+
+class ProductDetailsView(MyDetailView):
     model = Product
     template_name = 'front-end/product-details.html'
 
@@ -159,6 +167,14 @@ class ShippingAddressView(views.CreateView):
 class OrderSuccessView(views.DetailView):
     model = Order
     template_name = 'front-end/order-success.html'
+
+    def get_queryset(self):
+        return Order.objects.filter(pk=self.kwargs['pk'])
+
+
+class OrderTrackingView(views.DetailView):
+    model = Order
+    template_name = 'front-end/order-tracking.html'
 
     def get_queryset(self):
         return Order.objects.filter(pk=self.kwargs['pk'])
