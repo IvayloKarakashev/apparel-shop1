@@ -27,24 +27,10 @@
                                     class="fas fa-angle-right"></i>Wishlist
                             </button>
                         </li>
-
-                        <li class="nav-item mb-2">
-                            <button class="nav-link font-light" id="4-tab" data-bs-toggle="tab" data-bs-target="#pay"
-                                    type="button"><i class="fas fa-angle-right"></i>Payment
-                            </button>
-                        </li>
-
                         <li class="nav-item mb-2">
                             <button class="nav-link font-light" id="5-tab" data-bs-toggle="tab"
                                     data-bs-target="#profile" type="button"><i
                                     class="fas fa-angle-right"></i>Profile
-                            </button>
-                        </li>
-
-                        <li class="nav-item">
-                            <button class="nav-link font-light" id="6-tab" data-bs-toggle="tab"
-                                    data-bs-target="#security" type="button"><i
-                                    class="fas fa-angle-right"></i>Security
                             </button>
                         </li>
                     </ul>
@@ -133,7 +119,7 @@
                                                 <div class="box">
                                                     <div class="box-title">
                                                         <h4>Contact Information</h4><a
-                                                            href="{% url 'edit user profile' object.user_id %}">Edit</a>
+                                                            href="{% url 'edit user profile' profile.user_id %}">Edit</a>
                                                     </div>
                                                     <div class="box-content">
                                                         <h6 class="font-light">{{ object.get_full_name }}</h6>
@@ -186,353 +172,162 @@
 
                         <div class="tab-pane fade table-dashboard dashboard wish-list-section" id="order">
                             <div class="box-head mb-3">
-                                <h3>My Order</h3>
+                                <h3>My Orders</h3>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table cart-table">
-                                    <thead>
-                                    <tr class="table-head">
-                                        {#                                    <th scope="col">image</th>#}
-                                        <th scope="col">Order Id</th>
-                                        <th scope="col">Date Ordered</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Items Count</th>
-                                        <th scope="col">Total Price</th>
-                                        <th scope="col">View</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {% for order in orders %}
-                                        <tr>
-                                            {#                                    <td>#}
-                                            {#                                        <a href="products.html">#}
-                                            {#                                            <img src="{% static 'front-end/assets/images/fashion/product/front/1.jpg' %}"#}
-                                            {#                                                 class="blur-up lazyload" alt="">#}
-                                            {#                                        </a>#}
-                                            {#                                    </td>#}
-                                            <td>
-                                                <p class="mt-0">#{{ order.id }}</p>
-                                            </td>
-                                            <td>
-                                                <p class="fs-6 m-0"> #TODO </p>
-                                            </td>
-                                            <td>
-                                                {% if order.complete %}
-                                                    <p class="success-button btn btn-sm">Completed</p>
-                                                {% else %}
-                                                    <p class="danger-button btn btn-sm">Opened</p>
-                                                {% endif %}
-                                            </td>
-                                            <td>
-                                                <p class="mt-0">{{ order.get_cart_items }}</p>
-                                            </td>
-                                            <td>
-                                                <p class="theme-color fs-6">{{ order.get_cart_total|floatformat:2 }}
-                                                    BGN</p>
-                                            </td>
-                                            <td>
-                                                <a {% if order.complete %}
-                                                    href="{% url 'order tracking' order.id %}"
-                                                {% else %}
-                                                    href="{% url 'cart' %}"
-                                                {% endif %}>
-                                                    <i class="far fa-eye"></i>
-                                                </a>
-                                            </td>
+                            {% if orders %}
+                                <div class="table-responsive">
+                                    <table class="table cart-table">
+                                        <thead>
+                                        <tr class="table-head">
+                                            {#                                    <th scope="col">image</th>#}
+                                            <th scope="col">Order Id</th>
+                                            <th scope="col">Date Ordered</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Items Count</th>
+                                            <th scope="col">Total Price</th>
+                                            <th scope="col">View</th>
                                         </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
+                                        </thead>
+                                        <tbody>
+                                        {% for order in orders %}
+                                            <tr>
+                                                {#                                    <td>#}
+                                                {#                                        <a href="products.html">#}
+                                                {#                                            <img src="{% static 'front-end/assets/images/fashion/product/front/1.jpg' %}"#}
+                                                {#                                                 class="blur-up lazyload" alt="">#}
+                                                {#                                        </a>#}
+                                                {#                                    </td>#}
+                                                <td>
+                                                    <p class="mt-0">#{{ order.id }}</p>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-6 m-0"> #TODO </p>
+                                                </td>
+                                                <td>
+                                                    {% if order.complete %}
+                                                        <p class="success-button btn btn-sm">Completed</p>
+                                                    {% else %}
+                                                        <p class="danger-button btn btn-sm">Opened</p>
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    <p class="mt-0">{{ order.get_cart_items }}</p>
+                                                </td>
+                                                <td>
+                                                    <p class="theme-color fs-6">{{ order.get_cart_total|floatformat:2 }}
+                                                        BGN</p>
+                                                </td>
+                                                <td>
+                                                    <a {% if order.complete %}
+                                                        href="{% url 'order tracking' order.id %}"
+                                                    {% else %}
+                                                        href="{% url 'cart' %}"
+                                                    {% endif %}>
+                                                        <i class="far fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                Seems that you have no orders yet. Create your first order by choosing a product from
+                                our <a href="{% url 'categories' %}">Categories</a> !
+                            {% endif %}
                         </div>
 
                         <div class="tab-pane fade table-dashboard dashboard wish-list-section" id="wishlist">
                             <div class="box-head mb-3">
                                 <h3>My Wishlish</h3>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table cart-table">
-                                    <thead>
-                                    <tr class="table-head">
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Product Name</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Size / Color</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {% for item in wishlist %}
-                                        <tr>
-                                            <td>
-                                                <a href="products.html">
-                                                    <img src="{{ item.product.image.url }}"
-                                                         class="blur-up lazyload" alt="">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <p class="m-0">{{ item.product.title }}</p>
-                                            </td>
-                                            <td>
-                                                <p class="theme-color fs-6">{{ item.product.price|floatformat:2 }}
-                                                    BGN</p>
-                                            </td>
-                                            <td>
-                                                <p class="fs-6 m-0">{{ item.product.size }}
-                                                    / {{ item.product.color }}</p>
-                                            </td>
-                                            <td>
-                                                <a href="javascript:void(0)"
-                                                   class="btn btn-solid-default btn-sm fw-bold update-cart"
-                                                   data-product="{{ item.product.id }}"
-                                                   data-action="add"
-                                                >Move to Cart</a>
-                                                <a href="javascript:void(0)"
-                                                   class="btn btn-solid-default btn-sm fw-bold update-wishlist"
-                                                   data-product="{{ item.product.id }}"
-                                                   data-action="remove"
-                                                >Remove</a>
-                                            </td>
+                            {% if wishlist %}
+                                <div class="table-responsive">
+                                    <table class="table cart-table">
+                                        <thead>
+                                        <tr class="table-head">
+                                            <th scope="col">Image</th>
+                                            <th scope="col">Product Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Size / Color</th>
+                                            <th scope="col">Action</th>
                                         </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade dashboard" id="pay">
-                            <div class="box-head">
-                                <h3>Card & Payment</h3>
-                                <button class="btn btn-solid-default btn-sm fw-bold ms-auto" data-bs-toggle="modal"
-                                        data-bs-target="#addPayment"><i class="fas fa-plus"></i>
-                                    Add New Card
-                                </button>
-                            </div>
-
-                            <div class="card-details-section">
-                                <div class="row g-4">
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="payment-card-detail">
-                                            <div class="card-details">
-                                                <div class="card-number">
-                                                    <h4>XXXX - XXXX - XXXX - 2548</h4>
-                                                </div>
-
-                                                <div class="valid-detail">
-                                                    <div class="title">
-                                                        <span>valid</span>
-                                                        <span>thru</span>
-                                                    </div>
-                                                    <div class="date">
-                                                        <h3>12/23</h3>
-                                                    </div>
-                                                    <div class="primary">
-                                                        <span class="badge bg-pill badge-light">primary</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="name-detail">
-                                                    <div class="name">
-                                                        <h5>mark jecno</h5>
-                                                    </div>
-                                                    <div class="card-img">
-                                                        <img src="{% static 'front-end/assets/images/payment-icon/1.jpg' %}"
-                                                             class="img-fluid blur-up lazyloaded" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="edit-card">
-                                                <a data-bs-toggle="modal" data-bs-target="#addPayment"
-                                                   href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                                <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
-                                                    delete</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="edit-card-mobile">
-                                            <a data-bs-toggle="modal" data-bs-target="#addPayment"
-                                               href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                            <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
-                                                delete</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="payment-card-detail">
-                                            <div class="card-details card-visa">
-                                                <div class="card-number">
-                                                    <h4>XXXX - XXXX - XXXX - 2548</h4>
-                                                </div>
-
-                                                <div class="valid-detail">
-                                                    <div class="title">
-                                                        <span>valid</span>
-                                                        <span>thru</span>
-                                                    </div>
-                                                    <div class="date">
-                                                        <h3>12/23</h3>
-                                                    </div>
-                                                    <div class="primary">
-                                                        <span class="badge bg-pill badge-light">primary</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="name-detail">
-                                                    <div class="name">
-                                                        <h5>mark jecno</h5>
-                                                    </div>
-                                                    <div class="card-img">
-                                                        <img src="{% static 'front-end/assets/images/payment-icon/2.jpg' %}"
-                                                             class="img-fluid blur-up lazyloaded" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="edit-card">
-                                                <a data-bs-toggle="modal" data-bs-target="#addPayment"
-                                                   href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                                <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
-                                                    delete</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="edit-card-mobile">
-                                            <a data-bs-toggle="modal" data-bs-target="#addPayment"
-                                               href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                            <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
-                                                delete</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="payment-card-detail">
-                                            <div class="card-details dabit-card">
-                                                <div class="card-number">
-                                                    <h4>XXXX - XXXX - XXXX - 2548</h4>
-                                                </div>
-
-                                                <div class="valid-detail">
-                                                    <div class="title">
-                                                        <span>valid</span>
-                                                        <span>thru</span>
-                                                    </div>
-                                                    <div class="date">
-                                                        <h3>12/23</h3>
-                                                    </div>
-                                                    <div class="primary">
-                                                        <span class="badge bg-pill badge-light">primary</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="name-detail">
-                                                    <div class="name">
-                                                        <h5>mark jecno</h5>
-                                                    </div>
-                                                    <div class="card-img">
-                                                        <img src="{% static 'front-end/assets/images/payment-icon/3.jpg' %}"
-                                                             class="img-fluid blur-up lazyloaded" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="edit-card">
-                                                <a data-bs-toggle="modal" data-bs-target="#addPayment"
-                                                   href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                                <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
-                                                    delete</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="edit-card-mobile">
-                                            <a data-bs-toggle="modal" data-bs-target="#addPayment"
-                                               href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                            <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
-                                                delete</a>
-                                        </div>
-                                    </div>
+                                        </thead>
+                                        <tbody>
+                                        {% for item in wishlist %}
+                                            <tr>
+                                                <td>
+                                                    <a href="products.html">
+                                                        <img src="{{ item.product.image.url }}"
+                                                             class="blur-up lazyload" alt="">
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <p class="m-0">{{ item.product.title }}</p>
+                                                </td>
+                                                <td>
+                                                    <p class="theme-color fs-6">{{ item.product.price|floatformat:2 }}
+                                                        BGN</p>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-6 m-0">{{ item.product.size }}
+                                                        / {{ item.product.color }}</p>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)"
+                                                       class="btn btn-solid-default btn-sm fw-bold update-cart"
+                                                       data-product="{{ item.product.id }}"
+                                                       data-action="add"
+                                                    >Move to Cart</a>
+                                                    <a href="javascript:void(0)"
+                                                       class="btn btn-solid-default btn-sm fw-bold update-wishlist"
+                                                       data-product="{{ item.product.id }}"
+                                                       data-action="remove"
+                                                    >Remove</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div>
+                            {% else %}
+                                Your Wishlist is empty. Fill it with your favourite products by clicking the
+                                <i data-feather="heart"></i> button in the product page.
+                            {% endif %}
                         </div>
-
                         <div class="tab-pane fade dashboard-profile dashboard" id="profile">
                             <div class="box-head">
                                 <h3>Profile</h3>
-                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                   data-bs-target="#resetEmail">Edit</a>
+                                <a href="{% url 'edit user profile' profile.user_id %}">Edit</a>
                             </div>
                             <ul class="dash-profile">
                                 <li>
                                     <div class="left">
-                                        <h6 class="font-light">Company Name</h6>
+                                        <h6 class="font-light">First name</h6>
                                     </div>
                                     <div class="right">
-                                        <h6>Voxo Fashion</h6>
+                                        <h6>{{ profile.first_name }}</h6>
                                     </div>
                                 </li>
 
                                 <li>
                                     <div class="left">
-                                        <h6 class="font-light">Country / Region</h6>
+                                        <h6 class="font-light">Last name</h6>
                                     </div>
                                     <div class="right">
-                                        <h6>Downers Grove, IL</h6>
+                                        <h6>{{ profile.last_name }}</h6>
                                     </div>
                                 </li>
 
                                 <li>
                                     <div class="left">
-                                        <h6 class="font-light">Year Established</h6>
+                                        <h6 class="font-light">Gender</h6>
                                     </div>
                                     <div class="right">
-                                        <h6>2018</h6>
+                                        <h6>{{ profile.gender }}</h6>
                                     </div>
                                 </li>
 
-                                <li>
-                                    <div class="left">
-                                        <h6 class="font-light">Total Employees</h6>
-                                    </div>
-                                    <div class="right">
-                                        <h6>101 - 200 People</h6>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="left">
-                                        <h6 class="font-light">Category</h6>
-                                    </div>
-                                    <div class="right">
-                                        <h6>Clothing</h6>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="left">
-                                        <h6 class="font-light">Street Address</h6>
-                                    </div>
-                                    <div class="right">
-                                        <h6>549 Sulphur Springs Road</h6>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="left">
-                                        <h6 class="font-light">City/State</h6>
-                                    </div>
-                                    <div class="right">
-                                        <h6>Downers Grove, IL</h6>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="left">
-                                        <h6 class="font-light">Zip</h6>
-                                    </div>
-                                    <div class="right">
-                                        <h6>60515</h6>
-                                    </div>
-                                </li>
                             </ul>
 
                             <div class="box-head mt-lg-5 mt-3">
@@ -576,160 +371,12 @@
                                 </li>
                             </ul>
                         </div>
-
-                        <div class="tab-pane fade dashboard-security dashboard" id="security">
-                            <div class="box-head">
-                                <h3>Delete Your Account</h3>
-                            </div>
-                            <div class="security-details">
-                                <h5 class="font-light mt-3">Hi <span> Mark Enderess,</span>
-                                </h5>
-                                <p class="font-light mt-1">We Are Sorry To Here You Would Like To Delete Your Account.
-                                </p>
-                            </div>
-
-                            <div class="security-details-1 mb-0">
-                                <div class="page-title">
-                                    <h4 class="fw-bold">Note</h4>
-                                </div>
-                                <p class="font-light">Deleting your account will permanently remove your profile,
-                                    personal settings, and all other associated information. Once your account is
-                                    deleted, You will be logged out and will be unable to log back in.</p>
-
-                                <p class="font-light mb-4">If you understand and agree to the above statement, and would
-                                    still like to delete your account, than click below</p>
-
-                                <button class="btn btn-solid-default btn-sm fw-bold rounded" data-bs-toggle="modal"
-                                        data-bs-target="#deleteModal">Delete Your
-                                    Account
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- user dashboard section end -->
-
-
-    <!-- Reset Password Modal Start -->
-    <div class="modal fade reset-email-modal" id="resetEmail">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Comfirm Email</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body pt-3">
-                    <form>
-                        <div class="mb-3">
-                            <label for="email" class="form-label font-light">Email address</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="comfirmEmail" class="form-label font-light">Comfirm Email address</label>
-                            <input type="email" class="form-control" id="comfirmEmail">
-                        </div>
-                        <div>
-                            <label for="exampleInputPassword1" class="form-label font-light">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer pt-0">
-                    <button class="btn bg-secondary rounded-1 modal-close-button" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-solid-default rounded-1" data-bs-dismiss="modal">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Reset Password Modal End -->
-
-    <!-- Add Payment Modal Start -->
-    <div class="modal fade payment-modal" id="addPayment">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <label for="name" class="form-label">Card Type</label>
-                        <select class="form-select form-select-lg mb-4">
-                            <option selected disabled>Choose Your Card</option>
-                            <option value="1">Creadit Card</option>
-                            <option value="2">Debit Card</option>
-                            <option value="3">Debit Card and ATM</option>
-                        </select>
-
-                        <div class="mb-4">
-                            <label for="card" class="form-label">Name On Card</label>
-                            <input type="text" class="form-control" id="card" placeholder="Name card">
-                        </div>
-                        <div class="mb-4">
-                            <label for="cAddress" class="form-label">Card Number</label>
-                            <input type="number" class="form-control" id="cAddress" placeholder="XXXX-XXXX-XXXX-XXXX">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 mb-4">
-                                <label for="expiry" class="form-label">Expiry Date</label>
-                                <input type="date" class="form-control font-light" id="expiry">
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <label for="cvv" class="form-label">CVV</label>
-                                <input type="number" class="form-control" id="cvv" placeholder="XX9">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer pt-0 text-end d-block">
-                    <button type="button" class="btn bg-secondary text-white rounded-1 modal-close-button"
-                            data-bs-dismiss="modal">Close
-                    </button>
-                    <button class="btn btn-solid-default rounded-1" data-bs-dismiss="modal">Save Card Details</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Add Payment Modal End -->
-
-    <!-- Comfirm Delete Modal Start -->
-    <div class="modal delete-account-modal fade" id="deleteModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body pb-3 text-center mt-4">
-                    <h4>Are you sure you want to delete your account?</h4>
-                </div>
-                <div class="modal-footer d-block text-center mb-4">
-                    <button class="btn btn-solid-default btn-sm fw-bold rounded" data-bs-target="#doneModal"
-                            data-bs-toggle="modal" data-bs-dismiss="modal">Yes Delete account
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal delete-account-modal fade" id="doneModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body pb-3 text-center mt-4">
-                    <h4>Done!!! Delete Your Account</h4>
-                </div>
-                <div class="modal-footer d-block text-center mb-4">
-                    <button class="btn btn-solid-default btn-sm fw-bold rounded" data-bs-target="#exampleModalToggle"
-                            data-bs-toggle="modal" data-bs-dismiss="modal">Okay
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Comfirm Delete Modal End -->
 
 {% endblock %}
 

@@ -10,11 +10,14 @@ from firstProject.web.forms import ShippingAddressForm
 from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress, WishList
 
 
-def home_view(request):
+def home_view(request, profile=None):
     categories = Category.objects.all()
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user_id=request.user.id)
 
     context = {
-        'categories': categories
+        'categories': categories,
+        'pofile': profile
     }
 
     return render(request, 'index.html', context)

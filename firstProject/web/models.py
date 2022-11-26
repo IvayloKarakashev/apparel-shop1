@@ -1,5 +1,6 @@
 import uuid
 
+from django.contrib.admin import ModelAdmin, TabularInline
 from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -24,28 +25,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     TITLE_MAX_LENGTH = 25
-    SIZE_MAX_LENGTH = 5
     COLOR_MAX_LENGTH = 25
-
-    XS = 'XS'
-    S = 'S'
-    M = 'M'
-    L = 'L'
-    XL = 'XL'
-    XXL = 'XXL'
-    XXXL = 'XXXL'
-    XXXXL = 'XXXXL'
-
-    SIZE_CHOICES = [
-        (XS, 'XS'),
-        (S, 'S'),
-        (M, 'M'),
-        (L, 'L'),
-        (XL, 'XL'),
-        (XXL, 'XXL'),
-        (XXXL, 'XXXL'),
-        (XXXXL, 'XXXXL')
-    ]
 
     title = models.CharField(
         max_length=TITLE_MAX_LENGTH,
@@ -61,17 +41,35 @@ class Product(models.Model):
         ]
     )
 
-    size = models.CharField(
-        max_length=SIZE_MAX_LENGTH,
-        choices=SIZE_CHOICES
-    )
-
     image = models.ImageField()
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
+
+
+class ProductSize(models.Model):
+    SIZE_NAME_MAX_LENGTH = 5
+
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE
+    )
+
+    name = models.CharField(
+        max_length=SIZE_NAME_MAX_LENGTH
+    )
+
+
+class SizeInLine(TabularInline):
+    model = ProductSize
+
+
+class ProductAdmin(ModelAdmin):
+    inlines = [
+        SizeInLine,
+    ]
 
 
 class WishList(models.Model):

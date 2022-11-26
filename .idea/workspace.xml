@@ -8,56 +8,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7056a71-558a-4cfe-b761-d4a561e6d2ee/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0002_product_size_productsize_size.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0003_remove_product_size_delete_productsize.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0004_product_size.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0005_productsize_remove_product_size_product_size.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0006_remove_product_size_delete_productsize_product_size.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0007_remove_shippingaddress_label.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0008_wishlist.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/migrations/0009_rename_item_wishlist_product.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/userProductActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo1.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo1_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo1_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo2.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo2_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo2_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo3.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo3_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo3_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo4.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo4_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo4_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo5.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo5.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo5_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo5_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo6.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo6.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/demo6_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/demo6_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/element-banner.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/element-banner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/element-category.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/element-category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/element-deal-banner.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/element-deal-banner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/css/element-header.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/css/element-header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/scss/pages/_inner_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/scss/pages/_inner_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/scss/themes/_dark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/assets/scss/themes/_dark.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/order-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/order-success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/shop-filter-hide.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/shop-filter-hide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/user-addresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-addresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/user-dashboard-backup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-dashboard-backup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-end/log-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/log-in.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/user-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/user-profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-profile-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/user-shipping-address-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-shipping-address-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/user-shipping-address-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-shipping-address-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/wishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/wishlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/web/product-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/web/product-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +175,11 @@
       <workItem from="1668951414204" duration="16171000" />
       <workItem from="1669022041992" duration="20733000" />
       <workItem from="1669104083986" duration="15283000" />
-      <workItem from="1669120347791" duration="8400000" />
+      <workItem from="1669120347791" duration="9069000" />
+      <workItem from="1669308281993" duration="10463000" />
+      <workItem from="1669394869271" duration="15137000" />
+      <workItem from="1669478334318" duration="14223000" />
+      <workItem from="1669495565628" duration="3755000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed SingleCategoryView">
       <created>1665598398581</created>
@@ -291,23 +254,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
-          <line>143</line>
+          <line>146</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
-          <line>129</line>
+          <line>132</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
-          <line>119</line>
+          <line>122</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/web/views.py</url>
-          <line>24</line>
+          <line>27</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/auth/views.py</url>
+          <line>108</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

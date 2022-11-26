@@ -1,4 +1,6 @@
-from django.contrib.auth import views as auth_views, get_user_model, login
+from django import forms
+from django.contrib.auth import views as auth_views, forms as auth_forms, get_user_model, login
+from django.forms import EmailField
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
@@ -12,7 +14,7 @@ user_model = get_user_model()
 
 class UserRegistrationView(generic_views.CreateView):
     form_class = UserRegistrationForm
-    template_name = 'front-end/register.html'
+    template_name = 'front-end/sign-up.html'
     success_url = reverse_lazy('index')
 
     def form_valid(self, *args, **kwargs):
@@ -22,7 +24,7 @@ class UserRegistrationView(generic_views.CreateView):
 
 
 class UserLoginView(auth_views.LoginView):
-    template_name = 'accounts/login.html'
+    template_name = 'front-end/log-in.html'
     success_url = reverse_lazy('index')
 
     def get_success_url(self):
