@@ -10,7 +10,7 @@
                     <h2>Register</h2>
                 </div>
                 <form method="post" action="{% url 'register user' %}">
-                {% csrf_token %}
+                    {% csrf_token %}
                     {% for field in form %}
                         {% if field.name == 'email' %}
                             <div class="input">
@@ -18,33 +18,34 @@
                                 {{ field }}
                             </div>
                         {% elif field.name == 'password1' %}
+
                             <div class="input">
                                 Password:
                                 {{ field }}
                             </div>
+
                         {% elif field.name == 'password2' %}
                             <div class="input">
-                                Confirm Password:
+                                Confirm password:
                                 {{ field }}
                             </div>
                         {% endif %}
+
                     {% endfor %}
 
-            <div class="button login">
-                <button type="submit">
-                    <span>Sign Up</span>
-                    <i class="fa fa-check"></i>
-                </button>
+                    <p><a href="user-login.html" class="theme-color">Already have an account?</a></p>
+
+
+                    <div class="button login">
+                        <button type="submit">
+                            <span>Sign Up</span>
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </div>
+                </form>
+
             </div>
-            </form>
-
-            <p class="sign-category">
-                <span>Or sign up with</span>
-            </p>
-
-            <p><a href="log-in.html" class="theme-color">Already have an account?</a></p>
         </div>
-    </div>
     </div>
     <!-- Sign Up Section End -->
 
