@@ -7,10 +7,6 @@ user_model = get_user_model()
 
 
 class UserRegistrationForm(auth_forms.UserCreationForm):
-    password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={"class": "login-section"})
-    )
-
     class Meta:
         model = user_model
         fields = ('email',)
