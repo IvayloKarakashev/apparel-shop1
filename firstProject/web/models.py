@@ -12,9 +12,25 @@ user_model = get_user_model()
 
 class Category(models.Model):
     TITLE_MAX_LENGTH = 25
+    TYPE_MAX_LENGTH = 1
+
+    MEN = 'M'
+    WOMEN = 'F'
+    CHILDREN = 'C'
+
+    TYPE_CHOICES = [
+        (MEN, 'Men'),
+        (WOMEN, 'Women'),
+        (CHILDREN, 'Children')
+    ]
 
     title = models.CharField(
         max_length=TITLE_MAX_LENGTH,
+    )
+
+    type = models.CharField(
+        max_length=TYPE_MAX_LENGTH,
+        choices=TYPE_CHOICES
     )
 
     image = models.ImageField()
@@ -209,3 +225,15 @@ class OrderItem(models.Model):
     def get_total(self):
         total = self.product.price * self.quantity
         return total
+
+
+class FAQ(models.Model):
+    question = models.TextField()
+
+    answer = models.TextField()
+
+    def __str__(self):
+        return self.question
+
+    class Meta:
+        ordering = ['id']

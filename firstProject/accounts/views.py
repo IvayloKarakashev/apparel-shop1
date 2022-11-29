@@ -14,7 +14,7 @@ user_model = get_user_model()
 
 class UserRegistrationView(generic_views.CreateView):
     form_class = UserRegistrationForm
-    template_name = 'front-end/sign-up.html'
+    template_name = 'front-end/user-register.html'
     success_url = reverse_lazy('index')
 
     def form_valid(self, *args, **kwargs):
@@ -24,7 +24,7 @@ class UserRegistrationView(generic_views.CreateView):
 
 
 class UserLoginView(auth_views.LoginView):
-    template_name = 'front-end/log-in.html'
+    template_name = 'front-end/user-login.html'
     success_url = reverse_lazy('index')
 
     def get_success_url(self):

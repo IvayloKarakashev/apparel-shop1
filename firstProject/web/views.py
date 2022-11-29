@@ -7,10 +7,12 @@ from django.views import generic as views, generic as generic_views
 
 from firstProject.accounts.models import Profile
 from firstProject.web.forms import ShippingAddressForm
-from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress, WishList
+from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress, WishList, FAQ
 
 
 def home_view(request, profile=None):
+    print(request.user)
+
     categories = Category.objects.all()
     if request.user.is_authenticated:
         profile = Profile.objects.get(user_id=request.user.id)
@@ -19,7 +21,6 @@ def home_view(request, profile=None):
         'categories': categories,
         'pofile': profile
     }
-
     return render(request, 'index.html', context)
 
 
@@ -219,6 +220,19 @@ class DeleteUserShippingAddressView(generic_views.DeleteView):
 
     def get_success_url(self):
         return reverse_lazy('user shipping addresses', kwargs={'pk': self.object.profile_id})
+
+
+class FAQView(generic_views.ListView):
+    model = FAQ
+    template_name = 'front-end/faq.html'
+
+
+class TermsAndConditionsView(generic_views.TemplateView):
+    template_name = 'front-end/terms.html'
+
+
+class AboutView(generic_views.TemplateView):
+    template_name = 'front-end/about-us.html'
 
 
 class TestView(generic_views.TemplateView):
