@@ -7,14 +7,14 @@ from django.views import generic as views, generic as generic_views
 
 from firstProject.accounts.models import Profile
 from firstProject.web.forms import ShippingAddressForm
-from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress, WishList, FAQ
+from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress, WishList, FAQ, ProductSize
 
 
 def home_view(request, profile=None):
     print(request.user)
 
     categories = Category.objects.all()
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and not request.user.is_superuser:
         profile = Profile.objects.get(user_id=request.user.id)
 
     context = {
@@ -24,7 +24,7 @@ def home_view(request, profile=None):
     return render(request, 'index.html', context)
 
 
-class MyDetailView(views.DetailView):
+class CustomDetailView(views.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
@@ -32,7 +32,7 @@ class MyDetailView(views.DetailView):
         return context
 
 
-class ProductDetailsView(MyDetailView):
+class ProductDetailsView(CustomDetailView):
     model = Product
     template_name = 'front-end/product-details.html'
 
@@ -64,6 +64,7 @@ def cart(request):
         customer = request.user
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
         items = order.orderitem_set.all()
+        categories = Category.objects.all()
     else:
         items = []
         order = {'get_cart_total': 0, 'get_cart_items': 0}
@@ -71,6 +72,7 @@ def cart(request):
     context = {
         'items': items,
         'order': order,
+        'categories': categories
     }
 
     return render(request, 'front-end/cart.html', context)
@@ -124,12 +126,14 @@ def update_item(request):
     data = json.loads(request.body)
     productId = data['productId']
     action = data['action']
+    productSize = data['size']
 
     customer = request.user
     product = Product.objects.get(id=productId)
+    size = ProductSize.objects.get(product=product, name=productSize)
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
 
-    order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
+    order_item, created = OrderItem.objects.get_or_create(order=order, product=product, size=size)
 
     if action == 'add':
         order_item.quantity += 1
@@ -237,3 +241,7 @@ class AboutView(generic_views.TemplateView):
 
 class TestView(generic_views.TemplateView):
     template_name = 'front-end/shop-filter-hide.html'
+
+
+class TestView2(generic_views.TemplateView):
+    pass

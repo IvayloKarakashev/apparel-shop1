@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from firstProject.accounts.models import FirstProjectUser
+
+admin.site.register(FirstProjectUser)

@@ -1,6 +1,5 @@
 import uuid
 
-from django.contrib.admin import ModelAdmin, TabularInline
 from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -61,6 +60,8 @@ class Product(models.Model):
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+    uploaded_by = models.ForeignKey(user_model, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.title
 
@@ -77,15 +78,8 @@ class ProductSize(models.Model):
         max_length=SIZE_NAME_MAX_LENGTH
     )
 
-
-class SizeInLine(TabularInline):
-    model = ProductSize
-
-
-class ProductAdmin(ModelAdmin):
-    inlines = [
-        SizeInLine,
-    ]
+    def __str__(self):
+        return f"{self.name} - {self.product}"
 
 
 class WishList(models.Model):
@@ -109,7 +103,7 @@ class ShippingAddress(models.Model):
     STATE_REGION_MAX_LENGTH = 100
     LABEL_MAX_LENGTH = 20
 
-    profile = models.ForeignKey(
+    profile = models.ForeignKey(  # Should be user ?
         Profile,
         on_delete=models.CASCADE,
         blank=True,
@@ -213,6 +207,13 @@ class OrderItem(models.Model):
 
     quantity = models.IntegerField(
         default=0,
+        blank=True,
+        null=True
+    )
+
+    size = models.ForeignKey(
+        ProductSize,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True
     )

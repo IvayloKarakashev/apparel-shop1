@@ -1,10 +1,18 @@
 let updateCartButtons = document.getElementsByClassName('update-cart')
 let updateWishListButtons = document.getElementsByClassName('update-wishlist')
 
+// for (let i = 0; i < selectedSize.length; i++) {
+//     selectedSize[i].addEventListener('click', function () {
+//         let size = this.dataset.size
+//         console.log(size)
+//     })
+// }
+
 for (let i = 0; i < updateCartButtons.length; i++) {
     updateCartButtons[i].addEventListener('click', function () {
         let productId = this.dataset.product
         let action = this.dataset.action
+
 
         if (user === 'AnonymousUser') {
             console.log('anon')
@@ -29,6 +37,8 @@ for (let i = 0; i < updateWishListButtons.length; i++) {
 
 function updateUserOrder(productId, action) {
     let url = '/update-item/'
+    let selectedSize = document.querySelector("div.size-box li[class='active'] a")
+    let size = selectedSize.dataset.size
 
     fetch(url, {
         method: 'POST',
@@ -38,7 +48,8 @@ function updateUserOrder(productId, action) {
         },
         body: JSON.stringify({
             'productId': productId,
-            'action': action
+            'action': action,
+            'size': size
         })
     })
         .then((response) => {

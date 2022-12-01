@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+
 {% block body %}
     <!-- Shop Section start -->
     <section>
@@ -10,12 +11,12 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="degree-section">
-                                    <div class="details-image ratio_asos">
+                                    <div class="details-image">
                                         <div>
                                             <div class="product-image-tag">
                                                 <img src="{{ object.image.url }}"
                                                         {#                                                 data-zoom-image=""#}
-                                                     class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="">
+                                                     class="w-75 image_zoom_cls-0" alt="">
 
                                                 <div class="label-tag">
                                                     <h6><i class="fas fa-star"></i> 4.8 <span
@@ -23,68 +24,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div class="product-image-tag">
-                                                <img src="{% static 'front-end/assets/images/fashion/2.jpg' %}"
-                                                     id="zoom_02"
-                                                        {#                                                 data-zoom-image=""#}
-                                                     class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload" alt="">
 
-                                                <div class="label-tag">
-                                                    <h6><i class="fas fa-star"></i> 4.8 <span
-                                                            class="font-light">120</span></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="product-image-tag">
-                                                <img src="{% static 'front-end/assets/images/fashion/3.jpg' %}"
-                                                     id="zoom_03"
-                                                        {#                                                 data-zoom-image=""#}
-                                                     class="img-fluid w-100 image_zoom_cls-2 blur-up lazyload" alt="">
-
-                                                <div class="label-tag">
-                                                    <h6><i class="fas fa-star"></i> 4.8 <span
-                                                            class="font-light">120</span></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="product-image-tag">
-                                                <img src="{% static 'front-end/assets/images/fashion/4.jpg' %}"
-                                                     id="zoom_04"
-                                                        {#                                                 data-zoom-image=""#}
-                                                     class="img-fluid w-100 image_zoom_cls-3 blur-up lazyload" alt="">
-
-                                                <div class="label-tag">
-                                                    <h6><i class="fas fa-star"></i> 4.8 <span
-                                                            class="font-light">120</span></h6>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
 
-                                    <div class="details-image-option black-slide mt-4 rounded">
-                                        <div>
-                                            <img src="{% static 'front-end/assets/images/fashion/1.jpg' %}"
-                                                 class="img-fluid blur-up lazyload"
-                                                 alt="">
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'front-end/assets/images/fashion/2.jpg' %}"
-                                                 class="img-fluid blur-up lazyload"
-                                                 alt="">
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'front-end/assets/images/fashion/3.jpg' %}"
-                                                 class="img-fluid blur-up lazyload"
-                                                 alt="">
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'front-end/assets/images/fashion/4.jpg' %}"
-                                                 class="img-fluid blur-up lazyload"
-                                                 alt="">
-                                        </div>
+                                    <div class="mt-4 rounded">
+
                                     </div>
                                 </div>
                             </div>
@@ -132,21 +76,16 @@
                                         </h6>
 
                                         <div class="size-box">
-                                            {{ object.size }}
-                                            {#                                                                            <ul>#}
-                                            {#                                                                                <li>#}
-                                            {#                                                                                    <a href="javascript:void(0)">s</a>#}
-                                            {#                                                                                </li>#}
-                                            {#                                                                                <li>#}
-                                            {#                                                                                    <a href="javascript:void(0)">m</a>#}
-                                            {#                                                                                </li>#}
-                                            {#                                                                                <li>#}
-                                            {#                                                                                    <a href="javascript:void(0)">l</a>#}
-                                            {#                                                                                </li>#}
-                                            {#                                                                                <li>#}
-                                            {#                                                                                    <a href="javascript:void(0)">xl</a>#}
-                                            {#                                                                                </li>#}
-                                            {#                                                                            </ul>#}
+                                            <ul>
+                                                {% for size in object.productsize_set.all %}
+                                                    <li>
+                                                        <a href="javascript:void(0)"
+                                                           data-size="{{ size.name }}">
+                                                            {{ size.name }}
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
                                         </div>
 
                                         <h6 class="product-title product-title-2 d-block">quantity</h6>
@@ -173,20 +112,35 @@
 
                                     <div class="product-buttons">
                                         <a href="javascript:void(0)"
+                                                {% if request.user.is_authenticated %}
                                            class="btn btn-solid update-wishlist"
+                                                {% else %}
+                                           class="btn btn-solid update-wishlist disabled"
+                                                {% endif %}
                                            data-product="{{ object.id }}"
                                            data-action="add">
                                             <i class="fa fa-heart"></i>
                                             <span>Wishlist</span>
                                         </a>
                                         <a href="javascript:void(0)" id="cartEffect"
+                                                {% if request.user.is_authenticated %}
                                            class="btn btn-solid hover-solid btn-animation update-cart"
+                                                {% else %}
+                                           class="btn btn-solid hover-solid btn-animation update-cart disabled"
+                                                {% endif %}
                                            data-product="{{ object.id }}"
                                            data-action="add">
                                             <i class="fa fa-shopping-cart"></i>
                                             <span>Add To Cart</span>
                                         </a>
-                                    </div>
+                                        {% if not request.user.is_authenticated %}
+                                            </div>
+                                            <ul class="product-count">To be able to use the "Add to card" and "Wishlist"
+                                                functionalities you have to <a href="{% url 'register user' %}">create
+                                                    an account</a>. If you already have one,
+                                                please <a href="{% url 'login user' %}">login</a>.
+                                            </ul>
+                                        {% endif %}
                                 </div>
                             </div>
                         </div>
