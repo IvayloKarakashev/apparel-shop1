@@ -103,9 +103,7 @@
 
                 <div class="col-lg-4">
                     <div class="your-cart-box">
-                        <h3 class="mb-3 d-flex text-capitalize">Your cart<span
-                                class="badge bg-theme new-badge rounded-pill ms-auto bg-dark">3</span>
-                        </h3>
+                        <h3 class="mb-3 d-flex text-capitalize">Your cart</h3>
                         <ul class="list-group mb-3">
 
                             {% for item in items %}
@@ -115,11 +113,14 @@
                                             <img width="50" height="50" src="{{ item.product.image.url }}">
                                         </a>
                                         <h6 class="my-0">{{ item.product.title }}</h6>
-                                        <small>{{ item.product.color }}</small>
-                                        <small>{{ item.size.name }}</small>
+                                        <small>Color: {{ item.product.color }}</small>
+                                        <br>
+                                        <small>Size: {{ item.size.name }}</small>
+                                        <br>
+                                        <small>Quantity: {{ item.quantity }}</small>
 
                                     </div>
-                                    <span>{{ item.product.price|floatformat:2 }} BGN</span>
+                                    <span>{{ item.get_total|floatformat:2 }} BGN</span>
                                 </li>
                             {% endfor %}
                             <li class="list-group-item d-flex lh-condensed justify-content-between">

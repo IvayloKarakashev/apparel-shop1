@@ -249,7 +249,7 @@
                                             <th scope="col">Image</th>
                                             <th scope="col">Product Name</th>
                                             <th scope="col">Price</th>
-                                            <th scope="col">Size / Color</th>
+                                            <th scope="col">Color</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                         </thead>
@@ -270,15 +270,12 @@
                                                         BGN</p>
                                                 </td>
                                                 <td>
-                                                    <p class="fs-6 m-0">{{ item.product.size }}
-                                                        / {{ item.product.color }}</p>
+                                                    <p class="fs-6 m-0">{{ item.product.color }}</p>
                                                 </td>
                                                 <td>
-                                                    <a href="javascript:void(0)"
-                                                       class="btn btn-solid-default btn-sm fw-bold update-cart"
-                                                       data-product="{{ item.product.id }}"
-                                                       data-action="add"
-                                                    >Move to Cart</a>
+                                                    <a href="{% url 'product details' item.product.id %}"
+                                                       class="btn btn-solid-default btn-sm fw-bold"
+                                                    >Go to Product Page</a>
                                                     <a href="javascript:void(0)"
                                                        class="btn btn-solid-default btn-sm fw-bold update-wishlist"
                                                        data-product="{{ item.product.id }}"
@@ -381,5 +378,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static '../static/js/userProductActions.js' %}"></script>
+    <script type="text/javascript" src="{% static '../static/js/wishListActions.js' %}"></script>
 {% endblock %}

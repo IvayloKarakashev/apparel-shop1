@@ -14,7 +14,7 @@
                             <th scope="col">image</th>
                             <th scope="col">product name</th>
                             <th scope="col">price</th>
-                            <th scope="col">size / color</th>
+                            <th scope="col">color</th>
                             <th scope="col">action</th>
                         </tr>
                         </thead>
@@ -35,7 +35,7 @@
                                     <p class="fw-bold">{{ item.product.price|floatformat:2 }} BGN</p>
                                 </td>
                                 <td>
-                                    <p>{{ item.product.size }} / {{ item.product.color }}</p>
+                                    <p>{{ item.product.color }}</p>
                                 </td>
                                 <td>
                                     <a href="javascript:void(0)"
@@ -44,11 +44,9 @@
                                        data-action="remove">
                                         <i class="fas fa-times"></i>
                                     </a>
-                                    <a href="javascript:void(0)"
-                                       class="icon update-cart"
-                                       data-product="{{ item.product.id }}"
-                                       data-action="add">
-                                        <i class="fas fa-shopping-cart"></i>
+                                    <a href="{% url 'product details' item.product.id %}"
+                                       class="icon">
+                                        <i class="fas fa-eye"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -62,7 +60,7 @@
     <!-- Cart Section End -->
 
     {% block scripts %}
-        <script type="text/javascript" src="{% static '../static/js/userProductActions.js' %}"></script>
+        <script type="text/javascript" src="{% static '../static/js/wishListActions.js' %}"></script>
     {% endblock %}
 
 {% endblock %}

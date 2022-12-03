@@ -45,6 +45,7 @@
                                             <button
                                                     data-product="{{ item.product.id }}"
                                                     data-action="add"
+                                                    data-size="{{ item.size.name }}"
                                                     class="update-cart btn quantity-right-plus">▲
                                             </button>
                                             <h3>{{ item.quantity }}</h3>
@@ -53,6 +54,8 @@
                                             <button
                                                     data-product="{{ item.product.id }}"
                                                     data-action="subtract"
+                                                    data-size="{{ item.size.name }}"
+
                                                     class="update-cart btn quantity-left-minus">▼
                                             </button>
                                         </div>
@@ -62,7 +65,8 @@
                                     <a href="javascript:void(0)"
                                        class="update-cart"
                                        data-product="{{ item.product.id }}"
-                                       data-action="remove">
+                                       data-action="remove"
+                                       data-size= {{ item.size }}>
                                         <i class="fas fa-times"></i>
                                     </a>
                                 </td>
@@ -125,5 +129,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static '../static/js/userProductActions.js' %}"></script>
+    <script type="text/javascript" src="{% static '../static/js/editOrderItemQuantity.js' %}"></script>
 {% endblock %}

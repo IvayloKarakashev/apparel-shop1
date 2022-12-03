@@ -7,6 +7,9 @@ from firstProject.web.models import Category, Order, OrderItem, Product, Product
 
 class SizeInLine(TabularInline):
     model = ProductSize
+    min_num = 1
+
+
 
 
 class ProductAdmin(admin.ModelAdmin):
