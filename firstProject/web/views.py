@@ -93,17 +93,17 @@ def checkout(request):
 
         if request.method == 'POST':
             form = ShippingAddressForm(request.POST)
-            print(request.POST.get('state_region'))
 
             if form.is_valid():
                 obj = form.save(commit=False)
                 obj.customer = customer  # Do I need it here ?
                 obj.profile = profile
                 obj.order = order
-                order.complete = True
-                order.save()
-
                 obj.save()
+
+                order.complete = True
+                order.shipping_address = obj
+                order.save()
 
                 return redirect(reverse_lazy('order success', kwargs={'pk': order}))
 
@@ -122,15 +122,32 @@ def checkout(request):
     return render(request, 'front-end/checkout.html', context)
 
 
-def update_item(request):
+def add_to_cart(request):
     data = json.loads(request.body)
-    productId = data['productId']
-    action = data['action']
-    productSize = data['size']
+    product_id = data['productId']
+    product_size = data['size']
+    quantity = data['quantity']
 
     customer = request.user
-    product = Product.objects.get(id=productId)
-    size = ProductSize.objects.get(product=product, name=productSize)
+    product = Product.objects.get(id=product_id)
+    size = ProductSize.objects.get(product=product, name=product_size)
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+
+    order_item, created = OrderItem.objects.get_or_create(order=order, product=product, size=size)
+    print(quantity)
+    order_item.quantity += int(quantity)
+    order_item.save()
+
+
+def update_item_quantity(request):
+    data = json.loads(request.body)
+    product_id = data['productId']
+    action = data['action']
+    product_size = data['size']
+
+    customer = request.user
+    product = Product.objects.get(id=product_id)
+    size = ProductSize.objects.get(product=product, name=product_size)
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
 
     order_item, created = OrderItem.objects.get_or_create(order=order, product=product, size=size)
@@ -150,10 +167,10 @@ def update_item(request):
 
 def update_wishlist(request):
     data = json.loads(request.body)
-    productId = data['productId']
+    product_id = data['productId']
     action = data['action']
     user = request.user
-    product = Product.objects.get(id=productId)
+    product = Product.objects.get(id=product_id)
     item, created = WishList.objects.get_or_create(user=user, product=product)
     if action == 'remove':
         item.delete()

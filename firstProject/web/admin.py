@@ -10,8 +10,6 @@ class SizeInLine(TabularInline):
     min_num = 1
 
 
-
-
 class ProductAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         qs = super().get_queryset(request)

@@ -11,14 +11,14 @@ for (let i = 0; i < updateCartButtons.length; i++) {
         if (user === 'AnonymousUser') {
             console.log('anon')
         } else {
-            updateUserOrder(productId, action, size)
+            updateUserQuantity(productId, action, size)
         }
     })
 }
 
 
-function updateUserOrder(productId, action, size) {
-    let url = '/update-item/'
+function updateUserQuantity(productId, action, size) {
+    let url = '/update-item-quantity/'
 
     fetch(url, {
         method: 'POST',

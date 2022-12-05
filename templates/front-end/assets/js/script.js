@@ -555,7 +555,7 @@
 
     $("#cartEffect").on("click", function (e) {
         if ($("#selectSize .size-box ul").hasClass("selected")) {
-            $("#cartEffect").text("Added to bag ");
+            $("#cartEffect").text("Added to cart");
             $(".added-notification").addClass("show");
             setTimeout(function () {
                 $(".added-notification").removeClass("show");

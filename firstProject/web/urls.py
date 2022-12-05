@@ -1,8 +1,8 @@
 from django.urls import path
 
-from firstProject.web.views import CategoriesView, ProductsView, ProductDetailsView, cart, update_item, \
+from firstProject.web.views import CategoriesView, ProductsView, ProductDetailsView, cart, update_item_quantity, \
     checkout, OrderSuccessView, home_view, WishListView, update_wishlist, OrderTrackingView, FAQView, \
-    TermsAndConditionsView, AboutView
+    TermsAndConditionsView, AboutView, add_to_cart
 
 urlpatterns = (
     path('', home_view, name='index'),
@@ -12,7 +12,8 @@ urlpatterns = (
     path('wishlist/', WishListView.as_view(), name='wishlist'),
     path('cart/', cart, name='cart'),
     path('checkout/', checkout, name='checkout'),
-    path('update-item/', update_item, name='update item'),
+    path('update-item-quantity/', update_item_quantity, name='update item quantity'),
+    path('add-to-cart/', add_to_cart, name='add to cart'),
     path('update-wishlist/', update_wishlist, name='update wishlist'),
     path('order-success/<int:pk>', OrderSuccessView.as_view(), name='order success'),
     path('order-tracking/<int:pk>', OrderTrackingView.as_view(), name='order tracking'),

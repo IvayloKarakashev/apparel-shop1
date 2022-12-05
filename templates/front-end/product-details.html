@@ -151,6 +151,14 @@
     </section>
     <!-- Shop Section end -->
 
+    <!-- Add To Cart Notification -->
+    <div class="added-notification">
+        <img src="{{ object.image.url }}" class="img-fluid blur-up lazyload"
+             alt="">
+        <h3>added to cart</h3>
+    </div>
+    <!-- Add To Cart Notification -->
+
     {% block scripts %}
         <script type="text/javascript" src="{% static '../static/js/addProductToCart.js' %}"></script>
         <script type="text/javascript" src="{% static '../static/js/wishListActions.js' %}"></script>

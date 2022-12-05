@@ -9,6 +9,7 @@ class ShippingAddressForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs = {'class': 'form-control'}
+
     class Meta:
         model = ShippingAddress
         exclude = ('customer', 'order', 'profile')
