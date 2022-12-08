@@ -78,9 +78,7 @@ def cart(request):
     return render(request, 'front-end/cart.html', context)
 
 
-def checkout(request):
-    form = ShippingAddressForm()
-
+def select_address(request):
     if request.user.is_authenticated:
         customer = request.user
         profile = Profile.objects.get(user_id=customer.id)
@@ -88,24 +86,73 @@ def checkout(request):
         items = order.orderitem_set.all()
         shipping_addresses = ShippingAddress.objects.filter(profile_id=profile.pk)
 
+    context = {
+        'items': items,
+        'order': order,
+        'profile': profile,
+        'addresses': shipping_addresses
+    }
+
+    if request.method == 'GET':
+        return render(request, 'front-end/select-address.html', context)
+
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        selected_address_id = data['addressId']
+        order.shipping_address = ShippingAddress.objects.get(id=selected_address_id)
+        order.save()
+
+        return redirect(reverse_lazy('checkout'))
+
+
+def enter_new_address(request):
+    form = ShippingAddressForm()
+
+    if request.user.is_authenticated:
+        customer = request.user
+        profile = Profile.objects.get(user_id=customer.id)
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+
         if request.method == 'GET':
             form = ShippingAddressForm()
 
         if request.method == 'POST':
+
             form = ShippingAddressForm(request.POST)
 
             if form.is_valid():
-                obj = form.save(commit=False)
-                obj.customer = customer  # Do I need it here ?
-                obj.profile = profile
-                obj.order = order
-                obj.save()
+                address = form.save(commit=False)
+                address.profile = profile
+                address.save()
 
-                order.complete = True
-                order.shipping_address = obj
+                order.shipping_address = address
                 order.save()
 
-                return redirect(reverse_lazy('order success', kwargs={'pk': order}))
+            return redirect(reverse_lazy('order success', kwargs={'pk': order}))
+
+    context = {
+        'customer': customer,
+        'profile': profile,
+        'order': order,
+        'items': items,
+        'form': form
+    }
+
+    return render(request, 'front-end/enter-new-address.html', context)
+
+
+def checkout(request):
+
+    if request.user.is_authenticated:
+        customer = request.user
+        profile = Profile.objects.get(user_id=customer.id)
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        shipping_address = ShippingAddress.objects.get(id=order.shipping_address.id)
+
+
+        return redirect(reverse_lazy('order success', kwargs={'pk': order}))
 
     else:
         items = []
@@ -114,9 +161,8 @@ def checkout(request):
     context = {
         'items': items,
         'order': order,
-        'form': form,
         'profile': profile,
-        'addresses': shipping_addresses
+        'address': shipping_address
     }
 
     return render(request, 'front-end/checkout.html', context)

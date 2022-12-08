@@ -1,0 +1,98 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body %}
+
+    <!-- Cart Section Start -->
+    <section class="section-b-space">
+        <div class="container">
+            <h3 class="mb-3">Choose from your saved addresses:</h3>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade dashboard active show">
+                            <div class="save-details-box">
+                                <div class="row g-3">
+                                    {% for address in addresses %}
+                                        <div class="col-xl-4 col-md-6">
+                                            <div class="save-details">
+                                                <div class="save-name">
+                                                    <div class="save-position">
+                                                        {{ address.label }}
+                                                    </div>
+                                                </div>
+                                                <div class="save-address">
+                                                    <p class="font-light">{{ address.state_region }}</p>
+                                                    <p class="font-light">{{ address.city }}</p>
+                                                    <p class="font-light">{{ address.address }}</p>
+                                                    <p class="font-light">{{ address.zip_code }}</p>
+
+                                                </div>
+                                                <div class="button">
+                                                    <a class="btn btn-sm select-address-btn"
+                                                       data-addressid="{{ address.id }}"
+                                                       data-saveaddressselected="true">
+                                                        Use this address</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <h3 class="mb-3">
+                        <a href="{% url 'enter new address' %}">
+                            <button class="btn btn-solid-default mt-4">
+                                Or enter a new address
+                            </button>
+                        </a>
+                    </h3>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="your-cart-box">
+                        <h3 class="mb-3 d-flex text-capitalize">Your cart</h3>
+                        <ul class="list-group mb-3">
+
+                            {% for item in items %}
+                                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                    <div>
+                                        <a>
+                                            <img width="50" height="50" src="{{ item.product.image.url }}">
+                                        </a>
+                                        <h6 class="my-0">{{ item.product.title }}</h6>
+                                        <small>Color: {{ item.product.color }}</small>
+                                        <br>
+                                        <small>Size: {{ item.size.name }}</small>
+                                        <br>
+                                        <small>Quantity: {{ item.quantity }}</small>
+
+                                    </div>
+                                    <span>{{ item.get_total|floatformat:2 }} BGN</span>
+                                </li>
+                            {% endfor %}
+                            <li class="list-group-item d-flex lh-condensed justify-content-between">
+                                <span class="fw-bold">Total</span>
+                                <strong>{{ order.get_cart_total|floatformat:2 }} BGN</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cart Section End -->
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static '../static/js/useSavedAddress.js' %}"></script>
+{% endblock %}
