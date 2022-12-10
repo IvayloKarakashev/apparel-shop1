@@ -201,7 +201,7 @@
                                                     <p class="mt-0">#{{ order.id }}</p>
                                                 </td>
                                                 <td>
-                                                    <p class="fs-6 m-0"> #TODO </p>
+                                                    <p class="fs-6 m-0">{{ order.date_ordered.date }}</p>
                                                 </td>
                                                 <td>
                                                     {% if order.complete %}
@@ -214,7 +214,7 @@
                                                     <p class="mt-0">{{ order.get_cart_items }}</p>
                                                 </td>
                                                 <td>
-                                                    <p class="theme-color fs-6">{{ order.get_cart_total|floatformat:2 }}
+                                                    <p class="theme-color fs-6">{{ order.get_cart_subtotal|floatformat:2 }}
                                                         BGN</p>
                                                 </td>
                                                 <td>

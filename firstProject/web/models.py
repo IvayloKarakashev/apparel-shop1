@@ -1,3 +1,4 @@
+import datetime
 import uuid
 
 from django.contrib.auth import get_user_model
@@ -31,8 +32,6 @@ class Category(models.Model):
         max_length=TYPE_MAX_LENGTH,
         choices=TYPE_CHOICES
     )
-
-    image = models.ImageField()
 
     def __str__(self):
         return self.title
@@ -153,9 +152,9 @@ class Order(models.Model):
         blank=True
     )
 
-    # date_created = models.DateTimeField(
-    #     auto_now_add=True
-    # )
+    date_ordered = models.DateTimeField(
+        auto_now_add=True
+    )
     #
     # date_ordered = models.DateTimeField(
     #     auto_now=True
@@ -180,20 +179,32 @@ class Order(models.Model):
         on_delete=models.CASCADE
     )
 
+    shipping_fee = models.FloatField(
+        default=4.00
+    )
+
     def __str__(self):
         return str(self.id)
 
     @property
-    def get_cart_total(self):
+    def get_cart_subtotal(self):
         orderitems = self.orderitem_set.all()
         total = sum([item.get_total for item in orderitems])
         return total
+
+    @property
+    def get_cart_total(self):
+        return self.get_cart_subtotal + self.shipping_fee
 
     @property
     def get_cart_items(self):
         orderitems = self.orderitem_set.all()
         total = sum([item.quantity for item in orderitems])
         return total
+
+    @property
+    def get_expected_delivery_date(self):
+        return self.date_ordered + datetime.timedelta(days=3)
 
 
 class OrderItem(models.Model):

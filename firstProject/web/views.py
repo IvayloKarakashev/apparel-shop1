@@ -143,7 +143,6 @@ def enter_new_address(request):
 
 
 def checkout(request):
-
     if request.user.is_authenticated:
         customer = request.user
         profile = Profile.objects.get(user_id=customer.id)
@@ -151,8 +150,7 @@ def checkout(request):
         items = order.orderitem_set.all()
         shipping_address = ShippingAddress.objects.get(id=order.shipping_address.id)
 
-
-        return redirect(reverse_lazy('order success', kwargs={'pk': order}))
+        # return redirect(reverse_lazy('order success', kwargs={'pk': order}))
 
     else:
         items = []
@@ -166,6 +164,17 @@ def checkout(request):
     }
 
     return render(request, 'front-end/checkout.html', context)
+
+
+def finalize_order(request):
+    if request.user.is_authenticated:
+        customer = request.user
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+
+        order.complete = True
+        order.save()
+
+        return redirect(reverse_lazy('order success', kwargs={'pk': order}))
 
 
 def add_to_cart(request):

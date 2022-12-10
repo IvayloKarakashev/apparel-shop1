@@ -81,7 +81,7 @@
                             {% endfor %}
                             <li class="list-group-item d-flex lh-condensed justify-content-between">
                                 <span class="fw-bold">Total</span>
-                                <strong>{{ order.get_cart_total|floatformat:2 }} BGN</strong>
+                                <strong>{{ order.get_cart_subtotal|floatformat:2 }} BGN</strong>
                             </li>
                         </ul>
                     </div>

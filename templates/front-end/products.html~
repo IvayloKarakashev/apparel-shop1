@@ -1,8 +1,7 @@
 {% extends 'index.html' %}
-{% load static %}
 
 {% block body %}
-
+    
     <!-- Shop Section start -->
     <section class="section-b-space">
         <div class="container">

@@ -19,12 +19,12 @@
                             <div class="tracker-number">
                                 <p class="font-light">Transaction ID : <span>{{ order.transaction_id }}</span></p>
                                 <p class="font-light">Delivery Address: <span>{{ order.shipping_address }}</span></p>
-                                <p class="font-light mb-0">Order Placed : <span>June 25, 2021</span></p>
+                                <p class="font-light mb-0">Order Placed : <span>{{ order.date_ordered.date }}</span></p>
                             </div>
                             <ol class="progtrckr">
                                 <li class="progtrckr-done">
                                     <h5>Order Processing</h5>
-                                    <h6># TODO: Add DateTime</h6>
+                                    <h6>{{ order.date_ordered }}</h6>
                                 </li>
                                 <li class="progtrckr-todo">
                                     <h5>In Preparation</h5>
@@ -65,10 +65,10 @@
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <p># TODO: ADD DATE</p>
+                                        <p>{{ order.date_ordered.date }}</p>
                                     </td>
                                     <td>
-                                        <p># TODO: ADD TIME</p>
+                                        <p>{{ order.date_ordered.time }}</p>
                                     </td>
                                     <td>
                                         <p class="fw-bold">Order information received</p>
