@@ -101,6 +101,9 @@ class ShippingAddress(models.Model):
     CITY_MAX_LENGTH = 100
     STATE_REGION_MAX_LENGTH = 100
     LABEL_MAX_LENGTH = 20
+    RECIPIENT_FIRST_NAME_MAX_LENGTH = 30
+    RECIPIENT_LAST_NAME_LENGTH = 30
+    RECIPIENT_PHONE_NUMBER_MAX_LENGTH = 14
 
     profile = models.ForeignKey(  # Should be user ?
         Profile,
@@ -109,9 +112,25 @@ class ShippingAddress(models.Model):
         null=True
     )
 
+    recipient_first_name = models.CharField(
+        max_length=RECIPIENT_FIRST_NAME_MAX_LENGTH,
+        verbose_name='First name'
+    )
+
+    recipient_last_name = models.CharField(
+        max_length=RECIPIENT_LAST_NAME_LENGTH,
+        verbose_name='Last name'
+    )
+
+    recipient_phone_number = models.CharField(
+        max_length=RECIPIENT_PHONE_NUMBER_MAX_LENGTH,
+        verbose_name='Phone number'
+    )
+
     state_region = models.CharField(
         max_length=STATE_REGION_MAX_LENGTH,
-        null=True
+        null=True,
+        verbose_name='State/Region'
     )
 
     city = models.CharField(

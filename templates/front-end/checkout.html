@@ -17,10 +17,15 @@
                                         <div class="save-details">
                                             <div class="save-name">
                                                 <div class="save-position">
-                                                    {{ address.label }}
+                                                    {% if address.label %}
+                                                        {{ address.label }}
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                             <div class="save-address">
+                                                <p class="font-light">{{ address.recipient_first_name }}</p>
+                                                <p class="font-light">{{ address.recipient_last_name }}</p>
+                                                <p class="font-light">{{ address.recipient_phone_number }}</p>
                                                 <p class="font-light">{{ address.state_region }}</p>
                                                 <p class="font-light">{{ address.city }}</p>
                                                 <p class="font-light">{{ address.address }}</p>
@@ -86,5 +91,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static '../static/js/useSavedAddress.js' %}"></script>
+    <script type="text/javascript" src="{% static '../static/js/selectUsedAddress.js' %}"></script>
 {% endblock %}

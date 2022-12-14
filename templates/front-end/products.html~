@@ -1,7 +1,8 @@
 {% extends 'index.html' %}
+{% load static %}
 
 {% block body %}
-    
+
     <!-- Shop Section start -->
     <section class="section-b-space">
         <div class="container">
@@ -12,65 +13,6 @@
 
                         <div class="col-12">
                             <div class="filter-options">
-                                <div class="select-options">
-                                    <div class="page-view-filter">
-                                        <div class="dropdown select-featured">
-                                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                24 Page per view
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li>
-                                                    <a class="dropdown-item" href="javascript:void(0)">Alphabetically
-                                                        A-Z</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="javascript:void(0)">Alphabetically
-                                                        Z-A</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="javascript:void(0)">Price, High To
-                                                        Low</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="javascript:void(0)">Price, Low To
-                                                        High</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="javascript:void(0)">Date, Old To
-                                                        New</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="javascript:void(0)">Date, New To
-                                                        Old</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown select-featured">
-                                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                            Select Featured
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">Jeans</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">T-Shirt</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">Shirt</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">Jacket</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">Hoodie</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <div class="grid-options d-sm-inline-block d-none">
                                     <ul class="d-flex">
                                         <li class="two-grid">

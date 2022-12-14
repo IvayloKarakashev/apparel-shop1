@@ -8,6 +8,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 table-responsive mt-4">
+                    <h2 class="font-light">Your cart is empty.</h2>
+                    <br>
                     <table class="table cart-table">
                         <thead>
                         <tr class="table-head">
@@ -83,7 +85,7 @@
                     <div class="row">
                         <div class="col-sm-7 col-5 order-1">
                             <div class="left-side-button text-end d-flex d-block justify-content-end">
-                                <a href="javascript:void(0)"
+                                <a href="{% url 'clear items' %}"
                                    class="text-decoration-underline theme-color d-block text-capitalize">clear
                                     all items</a>
                             </div>
@@ -109,13 +111,16 @@
                                 <div class="cart-box-details">
                                     <div class="total-details">
                                         <div class="top-details">
-                                            <h3>Cart Totals</h3>
-                                            <h6>Total MRP <span>{{ order.get_cart_subtotal|floatformat:2 }} BGN</span></h6>
+                                            <h3>Cart Total</h3>
+                                            <h6>Total MRP <span>{{ order.get_cart_subtotal|floatformat:2 }} BGN</span>
+                                            </h6>
 
                                         </div>
-                                        <div class="bottom-details">
-                                            <a href="{% url 'select address' %}">Process Checkout</a>
-                                        </div>
+                                        {% if items %}
+                                            <div class="bottom-details">
+                                                <a href="{% url 'select address' %}">Process Checkout</a>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

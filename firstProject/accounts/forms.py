@@ -24,7 +24,7 @@ class UserRegistrationForm(auth_forms.UserCreationForm):
         return user
 
 
-class ProfileCreateForm(forms.ModelForm):
+class ProfileCreationForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ('user',)

@@ -13,3 +13,7 @@ class ShippingAddressForm(forms.ModelForm):
     class Meta:
         model = ShippingAddress
         exclude = ('customer', 'order', 'profile')
+        help_texts = {
+            'label': 'Note: The Label field is optional. Labeling the address '
+                     'can help you choose address easily when making future orders. (E.g "Home", "Work")'
+        }

@@ -547,6 +547,59 @@
 {% endblock %}
 
 
+<section>
+    <div class="container-fluid">
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="header-image-contain">
+
+                    <div class="contain-image-box">
+                        <div class="home-section home-style-2 p-0">
+                            <div class="container-fluid p-0">
+                                <div class="slick-2 dot-dark">
+                                    <div>
+                                        <div class="home-slider">
+                                            <div class="home-wrap row p-0 m-0">
+                                                <div class="col-xxl-3 col-lg-4 p-0 d-lg-block d-none">
+                                                    <div class="home-left-wrapper">
+                                                        <div>
+
+                                                            <p>The international hoodies with excellent durable
+                                                                fabric, not to heavy but
+                                                                simply PERFECT for Indian summer.</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-9 col-lg-8 p-0 left-content">
+                                                    <img src="{% static 'front-end/assets/images/fashion/slider/1.jpg' %}"
+                                                         class="bg-img blur-up lazyload" alt="">
+                                                    <div class="home-content row">
+                                                        <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-5 col-6">
+                                                            <h1 data-animation-in="fadeInUp">New Trending Fashion
+                                                            </h1>
+                                                            <div class="discover-block" data-animation-in="fadeInUp"
+                                                                 data-delay-in="0.7">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
 <!-- Subscribe Section Start -->
 <section class="subscribe-section section-b-space">
     <div class="container">
@@ -589,29 +642,29 @@
                                      class="img-fluid blur-up lazyload" alt="logo">
                             </a>
                         </div>
-                        <ul class="contact-lists">
-                            <li>
-                                    <span>
-                                        <b>phone:</b>
-                                        <span class="font-light"> + 185659635</span>
-                                    </span>
-
-                            </li>
-                            <li>
-                                    <span>
-                                        <b>Address:</b>
-                                        <span class="font-light"> 1418 Riverwood Drive, Suite 3245
-                                            Cottonwood, CA 96052, United States</span>
-                                    </span>
-                            </li>
-                            <li>
-                                    <span>
-                                        <b>Email:</b>
-                                        <span class="font-light"> Voxo123@gmail.com</span>
-                                    </span>
-
-                            </li>
-                        </ul>
+                        {#                        <ul class="contact-lists">#}
+                        {#                            <li>#}
+                        {#                                    <span>#}
+                        {#                                        <b>phone:</b>#}
+                        {#                                        <span class="font-light"> + 185659635</span>#}
+                        {#                                    </span>#}
+                        {##}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                    <span>#}
+                        {#                                        <b>Address:</b>#}
+                        {#                                        <span class="font-light"> 1418 Riverwood Drive, Suite 3245#}
+                        {#                                            Cottonwood, CA 96052, United States</span>#}
+                        {#                                    </span>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                    <span>#}
+                        {#                                        <b>Email:</b>#}
+                        {#                                        <span class="font-light"> Voxo123@gmail.com</span>#}
+                        {#                                    </span>#}
+                        {##}
+                        {#                            </li>#}
+                        {#                        </ul>#}
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6">
@@ -622,20 +675,16 @@
                         <div class="footer-content">
                             <ul>
                                 <li>
-                                    <a href="index.html" class="font-dark">Home</a>
+                                    <a href="{% url 'index' %}" class="font-dark">About us</a>
                                 </li>
                                 <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">Shop</a>
+                                    <a href="{% url 'faq' %}" class="font-dark">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="about-us.html" class="font-dark">About Us</a>
+                                    <a href="{% url 'terms and conditions' %}" class="font-dark">Terms and
+                                        Conditions</a>
                                 </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">Contact</a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -648,19 +697,13 @@
                         <div class="footer-content">
                             <ul>
                                 <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">Latest Shoes</a>
+                                    <a href="{% url 'products' 1 %}" class="font-dark">Branded Jeans</a>
                                 </li>
                                 <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">Branded Jeans</a>
+                                    <a href="{% url 'products' 2 %}" class="font-dark">New Jackets</a>
                                 </li>
                                 <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">New Jackets</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">Colorfull Hoodies</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="font-dark">Shiner Goggles</a>
+                                    <a href="{% url 'products' 3 %}" class="font-dark">Colorfull Hoodies</a>
                                 </li>
                             </ul>
                         </div>
@@ -713,33 +756,6 @@
         <div class="container">
             <div class="row gy-3">
                 <div class="col-md-6">
-                    <ul>
-                        <li class="font-dark">We accept:</li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <img src="{% static 'front-end/assets/images/payment-icon/1.jpg' %}"
-                                     class="img-fluid blur-up lazyload"
-                                     alt="payment icon"></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <img src="{% static 'front-end/assets/images/payment-icon/2.jpg' %}"
-                                     class="img-fluid blur-up lazyload"
-                                     alt="payment icon"></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <img src="{% static 'front-end/assets/images/payment-icon/3.jpg' %}"
-                                     class="img-fluid blur-up lazyload"
-                                     alt="payment icon"></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <img src="{% static 'front-end/assets/images/payment-icon/4.jpg' %}"
-                                     class="img-fluid blur-up lazyload"
-                                     alt="payment icon"></a>
-                        </li>
-                    </ul>
                 </div>
                 <div class="col-md-6">
                     <p class="mb-0 font-dark">© 2022, Voxo Theme. Made with heart by Pixelstrap</p>
@@ -1124,12 +1140,6 @@
 
 <!-- Notify js-->
 <script src="{% static 'front-end/assets/js/bootstrap/bootstrap-notify.min.js' %}"></script>
-
-<!-- sticky cart bottom js-->
-<script src="{% static 'front-end/assets/js/sticky-cart-bottom.js' %}"></script>
-
-<!-- sticky cart bottom js-->
-<script src="{% static 'front-end/assets/js/check-box-select.js' %}"></script>
 
 <!-- Zoom Js -->
 <script src="{% static 'front-end/assets/js/jquery.elevatezoom.js' %}"></script>

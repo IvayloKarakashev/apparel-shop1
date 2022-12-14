@@ -38,7 +38,6 @@ function addProductToCart(productId, action, quantity) {
         },
         body: JSON.stringify({
             'productId': productId,
-            // 'action': action,
             'size': size,
             'quantity': quantity
         })
@@ -46,8 +45,5 @@ function addProductToCart(productId, action, quantity) {
         .then((response) => {
             return response.json()
         })
-        // .then(() => {
-        //     location.reload()
-        // })
 }
 

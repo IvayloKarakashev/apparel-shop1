@@ -11,8 +11,6 @@ from firstProject.web.models import Product, Category, OrderItem, Order, Shippin
 
 
 def home_view(request, profile=None):
-    print(request.user)
-
     categories = Category.objects.all()
     if request.user.is_authenticated and not request.user.is_superuser:
         profile = Profile.objects.get(user_id=request.user.id)
@@ -58,6 +56,9 @@ class WishListView(views.ListView):
     model = WishList
     template_name = 'front-end/wishlist.html'
 
+    def get_queryset(self):
+        return WishList.objects.filter(user=self.request.user)
+
 
 def cart(request):
     if request.user.is_authenticated:
@@ -78,6 +79,14 @@ def cart(request):
     return render(request, 'front-end/cart.html', context)
 
 
+def clear_items(request):
+    customer = request.user
+    order_items = Order.objects.get(customer=customer, complete=False).orderitem_set.all()
+    order_items.delete()
+
+    return redirect(reverse_lazy('cart'))
+
+
 def select_address(request):
     if request.user.is_authenticated:
         customer = request.user
@@ -94,7 +103,9 @@ def select_address(request):
     }
 
     if request.method == 'GET':
-        return render(request, 'front-end/select-address.html', context)
+        if shipping_addresses:
+            return render(request, 'front-end/select-address.html', context)
+        return redirect(reverse_lazy('enter new address'))
 
     if request.method == 'POST':
         data = json.loads(request.body)
@@ -129,7 +140,7 @@ def enter_new_address(request):
                 order.shipping_address = address
                 order.save()
 
-            return redirect(reverse_lazy('order success', kwargs={'pk': order}))
+            return redirect(reverse_lazy('checkout'))
 
     context = {
         'customer': customer,

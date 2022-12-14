@@ -7,45 +7,6 @@
     <section class="section-b-space">
         <div class="container">
             <h3 class="mb-3">Enter new address:</h3>
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="tab-content">
-                        <div class="tab-pane fade dashboard active show">
-                            <div class="save-details-box">
-                                <div class="row g-3">
-                                    {% for address in addresses %}
-                                        <div class="col-xl-4 col-md-6">
-                                            <div class="save-details">
-                                                <div class="save-name">
-                                                    <div class="save-position">
-                                                        {{ address.label }}
-                                                    </div>
-                                                </div>
-                                                <div class="save-address">
-                                                    <p class="font-light">{{ address.state_region }}</p>
-                                                    <p class="font-light">{{ address.city }}</p>
-                                                    <p class="font-light">{{ address.address }}</p>
-                                                    <p class="font-light">{{ address.zip_code }}</p>
-
-                                                </div>
-                                                <div class="button">
-                                                    <a class="btn btn-sm select-address-btn"
-                                                       data-addressid="{{ address.id }}"
-                                                       data-saveaddressselected="true">
-                                                        Use this address</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-
             <div class="row g-4">
                 <div class="col-lg-8">
                     <form class="needs-validation" method="post">
@@ -102,5 +63,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static '../static/js/useSavedAddress.js' %}"></script>
+    <script type="text/javascript" src="{% static '../static/js/selectUsedAddress.js' %}"></script>
 {% endblock %}

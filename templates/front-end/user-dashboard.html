@@ -60,23 +60,6 @@
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="order-box">
                                                     <div class="order-box-image">
-                                                        <img src="{% static 'front-end/assets/images/svg/box.png' %}"
-                                                             class="img-fluid blur-up lazyload" alt="">
-                                                    </div>
-                                                    <div class="order-box-contain">
-                                                        <img src="{% static 'front-end/assets/images/svg/box1.png' %}"
-                                                             class="img-fluid blur-up lazyload" alt="">
-                                                        <div>
-                                                            <h5 class="font-light">total order</h5>
-                                                            <h3>3648</h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-sm-6">
-                                                <div class="order-box">
-                                                    <div class="order-box-image">
                                                         <img src="{% static 'front-end/assets/images/svg/sent.png' %}"
                                                              class="img-fluid blur-up lazyload" alt="">
                                                     </div>
@@ -84,7 +67,7 @@
                                                         <img src="{% static 'front-end/assets/images/svg/sent1.png' %}"
                                                              class="img-fluid blur-up lazyload" alt="">
                                                         <div>
-                                                            <h5 class="font-light">pending orders</h5>
+                                                            <h5 class="font-light">total orders</h5>
                                                             <h3>215</h3>
                                                         </div>
                                                     </div>
@@ -102,7 +85,7 @@
                                                              class="img-fluid blur-up lazyload" alt="">
                                                         <div>
                                                             <h5 class="font-light">wishlist</h5>
-                                                            <h3>63874</h3>
+                                                            <h3>{{ wishlist.count }}</h3>
                                                         </div>
                                                     </div>
                                                 </div>

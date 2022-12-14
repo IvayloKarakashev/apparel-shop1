@@ -6,7 +6,7 @@
     <!-- Cart Section Start -->
     <section class="section-b-space">
         <div class="container">
-            <h3 class="mb-3">Choose from your saved addresses:</h3>
+            <h3 class="mb-3">Select an address you already used on previous orders:</h3>
             <div class="row">
                 <div class="col-lg-9">
                     <div class="tab-content">
@@ -18,10 +18,15 @@
                                             <div class="save-details">
                                                 <div class="save-name">
                                                     <div class="save-position">
-                                                        {{ address.label }}
+                                                        {% if address.label %}
+                                                            {{ address.label }}
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                                 <div class="save-address">
+                                                    <p class="font-light">{{ address.recipient_first_name }}</p>
+                                                    <p class="font-light">{{ address.recipient_last_name }}</p>
+                                                    <p class="font-light">{{ address.recipient_phone_number }}</p>
                                                     <p class="font-light">{{ address.state_region }}</p>
                                                     <p class="font-light">{{ address.city }}</p>
                                                     <p class="font-light">{{ address.address }}</p>
@@ -30,9 +35,8 @@
                                                 </div>
                                                 <div class="button">
                                                     <a class="btn btn-sm select-address-btn"
-                                                       data-addressid="{{ address.id }}"
-                                                       data-saveaddressselected="true">
-                                                        Use this address</a>
+                                                       data-addressid="{{ address.id }}">
+                                                        Select address</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,5 +98,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static '../static/js/useSavedAddress.js' %}"></script>
+    <script type="text/javascript" src="{% static '../static/js/selectUsedAddress.js' %}"></script>
 {% endblock %}
