@@ -1,36 +1,30 @@
 import json
 
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic as views, generic as generic_views
 
 from firstProject.accounts.models import Profile
+from firstProject.utilities.mixins import PageTitleMixin
 from firstProject.web.forms import ShippingAddressForm
 from firstProject.web.models import Product, Category, OrderItem, Order, ShippingAddress, WishList, FAQ, ProductSize
 
 
 def home_view(request, profile=None):
-    categories = Category.objects.all()
+    page_title = 'Apparel Shop'
     if request.user.is_authenticated and not request.user.is_superuser:
         profile = Profile.objects.get(user_id=request.user.id)
 
     context = {
-        'categories': categories,
-        'pofile': profile
+        'pofile': profile,
+        'page_title': page_title
     }
-    return render(request, 'index.html', context)
+    return render(request, 'front-end/index.html', context)
 
 
-class CustomDetailView(views.DetailView):
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-
-        return context
-
-
-class ProductDetailsView(CustomDetailView):
+class ProductDetailsView(generic_views.DetailView):
     model = Product
     template_name = 'front-end/product-details.html'
 
@@ -52,7 +46,8 @@ class ProductsView(views.ListView):
         return Product.objects.filter(category=self.kwargs['pk'])
 
 
-class WishListView(views.ListView):
+class WishListView(PageTitleMixin, views.ListView):
+    page_title = 'Wishlist'
     model = WishList
     template_name = 'front-end/wishlist.html'
 
@@ -60,7 +55,10 @@ class WishListView(views.ListView):
         return WishList.objects.filter(user=self.request.user)
 
 
+@login_required
 def cart(request):
+    page_title = 'Cart'
+
     if request.user.is_authenticated:
         customer = request.user
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -73,7 +71,8 @@ def cart(request):
     context = {
         'items': items,
         'order': order,
-        'categories': categories
+        'categories': categories,
+        'page_title': page_title
     }
 
     return render(request, 'front-end/cart.html', context)
@@ -88,6 +87,7 @@ def clear_items(request):
 
 
 def select_address(request):
+    page_title = 'Select Address'
     if request.user.is_authenticated:
         customer = request.user
         profile = Profile.objects.get(user_id=customer.id)
@@ -99,7 +99,8 @@ def select_address(request):
         'items': items,
         'order': order,
         'profile': profile,
-        'addresses': shipping_addresses
+        'addresses': shipping_addresses,
+        'page_title': page_title
     }
 
     if request.method == 'GET':
@@ -117,6 +118,7 @@ def select_address(request):
 
 
 def enter_new_address(request):
+    page_title = 'Enter address'
     form = ShippingAddressForm()
 
     if request.user.is_authenticated:
@@ -147,13 +149,16 @@ def enter_new_address(request):
         'profile': profile,
         'order': order,
         'items': items,
-        'form': form
+        'form': form,
+        'page_title': page_title
     }
 
     return render(request, 'front-end/enter-new-address.html', context)
 
 
 def checkout(request):
+    page_title = 'Checkout'
+
     if request.user.is_authenticated:
         customer = request.user
         profile = Profile.objects.get(user_id=customer.id)
@@ -171,7 +176,8 @@ def checkout(request):
         'items': items,
         'order': order,
         'profile': profile,
-        'address': shipping_address
+        'address': shipping_address,
+        'page_title': page_title
     }
 
     return render(request, 'front-end/checkout.html', context)
@@ -255,7 +261,8 @@ class ShippingAddressView(views.CreateView):
 #     shipping_address.profile_id =
 
 
-class OrderSuccessView(views.DetailView):
+class OrderSuccessView(PageTitleMixin, generic_views.DetailView):
+    page_title = 'Order completed'
     model = Order
     template_name = 'front-end/order-success.html'
 
@@ -263,7 +270,8 @@ class OrderSuccessView(views.DetailView):
         return Order.objects.filter(pk=self.kwargs['pk'])
 
 
-class OrderTrackingView(views.DetailView):
+class OrderTrackingView(PageTitleMixin, generic_views.DetailView):
+    page_title = 'Track order'
     model = Order
     template_name = 'front-end/order-tracking.html'
 
@@ -309,17 +317,20 @@ class DeleteUserShippingAddressView(generic_views.DeleteView):
         return reverse_lazy('user shipping addresses', kwargs={'pk': self.object.profile_id})
 
 
-class FAQView(generic_views.ListView):
+class FAQView(PageTitleMixin, generic_views.ListView):
+    page_title = 'FAQ'
     model = FAQ
     template_name = 'front-end/faq.html'
 
 
-class TermsAndConditionsView(generic_views.TemplateView):
+class TermsAndConditionsView(PageTitleMixin, generic_views.TemplateView):
+    page_title = 'Terms and Conditions'
     template_name = 'front-end/terms.html'
 
 
-class AboutView(generic_views.TemplateView):
+class AboutView(PageTitleMixin, generic_views.TemplateView):
     template_name = 'front-end/about-us.html'
+    page_title = 'About us'
 
 
 class TestView(generic_views.TemplateView):

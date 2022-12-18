@@ -1,6 +1,7 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 {% load static %}
-
+{% block title %}{{ object.title }}{% endblock %}
+{% block subtitle %}{{ object.category.title }}{% endblock %}
 {% block body %}
     <!-- Shop Section start -->
     <section>

@@ -1,23 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<form action="{% url 'register user' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button>Register</button>
+{% extends 'base.html' %}
+{% block body %}
 
-</form>
+    <form action="{% url 'register user' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Register</button>
 
-</body>
-</html>
+    </form>
 
+{% endblock %}
 
 {#{% load static %}#}
 {##}
@@ -95,7 +86,7 @@
 {#            </div>#}
 {##}
 {#            <div class="button login">#}
-{#                <button onclick="location.href = 'index.html';">#}
+{#                <button onclick="location.href = 'base.html';">#}
 {#                    <span>Sign Up</span>#}
 {#                    <i class="fa fa-check"></i>#}
 {#                </button>#}

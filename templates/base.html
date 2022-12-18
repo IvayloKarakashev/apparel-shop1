@@ -27,7 +27,7 @@
     <meta name="keywords" content="Voxo">
     <meta name="author" content="Voxo">
     <link rel="icon" href="{% static 'front-end/assets/images/favicon/2.png' %}" type="image/x-icon"/>
-    <title>Product No Sidebar</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -92,7 +92,7 @@
                     <div class="main-menu">
                         <div class="menu-left">
                             <div class="brand-logo">
-                                <a href="index.html">
+                                <a href="base.html">
                                     <svg class="svg-icon">
                                         <use class="fill-color"
                                              href="{% static 'front-end/assets/svg/icons.svg#logo' %}"></use>
@@ -414,11 +414,13 @@
                                         {% endif %}
                                     </div>
                                 </li>
-                                <li>
-                                    <a href="{% url 'wishlist' %}">
-                                        <i data-feather="heart"></i>
-                                    </a>
-                                </li>
+                                {% if request.user.is_authenticated %}
+                                    <li>
+                                        <a href="{% url 'wishlist' %}">
+                                            <i data-feather="heart"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
                                 <li>
                                     <a href="{% url 'cart' %}">
                                         <button type="button" class="btn btn-solid-default">
@@ -526,17 +528,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3>Product No Sidebar</h3>
-                <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">
-                                <i class="fas fa-home"></i>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Product No Sidebar</li>
-                    </ol>
-                </nav>
+                <h3>{% block subtitle %}{% endblock %}</h3>
             </div>
         </div>
     </div>
@@ -545,59 +537,6 @@
 
 {% block body %}
 {% endblock %}
-
-
-<section>
-    <div class="container-fluid">
-        <div class="row g-4">
-            <div class="col-12">
-                <div class="header-image-contain">
-
-                    <div class="contain-image-box">
-                        <div class="home-section home-style-2 p-0">
-                            <div class="container-fluid p-0">
-                                <div class="slick-2 dot-dark">
-                                    <div>
-                                        <div class="home-slider">
-                                            <div class="home-wrap row p-0 m-0">
-                                                <div class="col-xxl-3 col-lg-4 p-0 d-lg-block d-none">
-                                                    <div class="home-left-wrapper">
-                                                        <div>
-
-                                                            <p>The international hoodies with excellent durable
-                                                                fabric, not to heavy but
-                                                                simply PERFECT for Indian summer.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-9 col-lg-8 p-0 left-content">
-                                                    <img src="{% static 'front-end/assets/images/fashion/slider/1.jpg' %}"
-                                                         class="bg-img blur-up lazyload" alt="">
-                                                    <div class="home-content row">
-                                                        <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-5 col-6">
-                                                            <h1 data-animation-in="fadeInUp">New Trending Fashion
-                                                            </h1>
-                                                            <div class="discover-block" data-animation-in="fadeInUp"
-                                                                 data-delay-in="0.7">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
 
 
 <!-- Subscribe Section Start -->
@@ -633,7 +572,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="footer-contact">
                         <div class="brand-logo">
-                            <a href="index.html" class="footer-logo">
+                            <a href="base.html" class="footer-logo">
                                 <svg class="svg-icon">
                                     <use class="fill-color"
                                          href="{% static 'front-end/assets/svg/icons.svg#logo' %}"></use>
@@ -675,7 +614,7 @@
                         <div class="footer-content">
                             <ul>
                                 <li>
-                                    <a href="{% url 'index' %}" class="font-dark">About us</a>
+                                    <a href="{% url 'about us' %}" class="font-dark">About us</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'faq' %}" class="font-dark">FAQ</a>

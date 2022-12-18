@@ -7,12 +7,14 @@ from django.views import generic as generic_views
 
 from firstProject.accounts.forms import UserRegistrationForm, ProfileCreationForm
 from firstProject.accounts.models import Profile
+from firstProject.utilities.mixins import PageTitleMixin
 from firstProject.web.models import Order, WishList
 
 user_model = get_user_model()
 
 
-class UserRegistrationView(generic_views.CreateView):
+class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
+    page_title = 'Register'
     form_class = UserRegistrationForm
     template_name = 'front-end/user-register.html'
     success_url = reverse_lazy('index')
@@ -23,7 +25,8 @@ class UserRegistrationView(generic_views.CreateView):
         return result
 
 
-class UserLoginView(auth_views.LoginView):
+class UserLoginView(PageTitleMixin, auth_views.LoginView):
+    page_title = 'Login'
     template_name = 'front-end/user-login.html'
     success_url = reverse_lazy('index')
 
@@ -56,10 +59,15 @@ def user_profile(request):
 #     template_name = 'accounts/profile.html'
 
 
-class EditUserProfileView(generic_views.UpdateView):
+class EditUserProfileView(PageTitleMixin, generic_views.UpdateView):
+    page_title = 'Edit Profile'
     model = Profile
     template_name = 'front-end/user-profile-edit.html'
     fields = ('first_name', 'last_name', 'gender')
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.filter(user_id=self.request.user)
 
     def get_success_url(self):
         return reverse_lazy('user dashboard', kwargs={'pk': self.object.pk})
@@ -76,9 +84,14 @@ class EditUserProfileView(generic_views.UpdateView):
     #     return self.model.objects.get(pk=self.request.user.pk)
 
 
-class UserDashboardView(generic_views.DetailView):
+class UserDashboardView(PageTitleMixin, generic_views.DetailView):
+    page_title = 'Dashboard'
     model = Profile
     template_name = 'front-end/user-dashboard.html'
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.filter(user_id=self.request.user)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -1,6 +1,9 @@
-{% extends 'index.html' %}
-
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block subtitle %}{{ page_title }}{% endblock %}
 {% block body %}
+
 
     <!-- team leader section Start -->
     <section class="overflow-hidden">
@@ -9,16 +12,16 @@
                 <div class="col-xl-5 offset-xl-1">
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <img src="assets/images/inner-page/review-image/6.jpg"
+                            <img src="{% static 'front-end/assets/images/inner-page/review-image/6.jpg' %}"
                                  class="img-fluid rounded-3 about-image" alt="">
                         </div>
                         <div class="col-md-6">
-                            <img src="assets/images/inner-page/review-image/7.jpg"
+                            <img src="{% static 'front-end/assets/images/inner-page/review-image/7.jpg' %}"
                                  class="img-fluid rounded-3 about-image" alt="">
                         </div>
                         <div class="col-12 ratio_40">
                             <div>
-                                <img src="assets/images/inner-page/review-image/8.jpg"
+                                <img src="{% static 'front-end/assets/images/inner-page/review-image/8.jpg' %}"
                                      class="img-fluid rounded-3 team-image bg-img" alt="">
                             </div>
                         </div>
@@ -53,7 +56,7 @@
                     <div class="service-wrap">
                         <div class="service-icon">
                             <svg>
-                                <use href="assets/svg/icons.svg#customer"></use>
+                                <use href="{% static 'front-end/assets/svg/icons.svg#customer' %}"></use>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -67,7 +70,7 @@
                     <div class="service-wrap">
                         <div class="service-icon">
                             <svg>
-                                <use href="assets/svg/icons.svg#shop"></use>
+                                <use href="{% static 'front-end/assets/svg/icons.svg#shop' %}"></use>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -81,7 +84,7 @@
                     <div class="service-wrap">
                         <div class="service-icon">
                             <svg>
-                                <use href="assets/svg/icons.svg#secure-payment"></use>
+                                <use href="{% static 'front-end/assets/svg/icons.svg#secure-payment' %}"></use>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -95,7 +98,7 @@
                     <div class="service-wrap">
                         <div class="service-icon">
                             <svg>
-                                <use href="assets/svg/icons.svg#return"></use>
+                                <use href="{% static 'front-end/assets/svg/icons.svg#return' %}"></use>
                             </svg>
                         </div>
                         <div class="service-content">

@@ -562,7 +562,7 @@
         } else {
             $("#selectSize").addClass("cartMove");
         }
-    });z
+    });
 
     /*=====================
      16. Recently puchase modal

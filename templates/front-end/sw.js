@@ -1,7 +1,7 @@
 var cacheName = 'Voxo';
 var filesToCache = [
   './',
-  './index.html',
+  './base.html',
   './assets/css/vendors/font-awesome/brands.css',
   './assets/css/vendors/font-awesome/fontawesome.css',
   './assets/css/vendors/font-awesome/regular.css',
