@@ -9,6 +9,10 @@ from firstProject.utilities.mixins import PageTitleMixin
 user_model = get_user_model()
 
 
+class TestView(generic_views.CreateView):
+    pass
+
+
 class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
     page_title = 'Register'
     form_class = UserRegistrationForm
