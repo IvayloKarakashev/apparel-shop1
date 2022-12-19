@@ -9,7 +9,7 @@ from firstProject.utilities.mixins import PageTitleMixin
 user_model = get_user_model()
 
 
-class TestView(generic_views.CreateView):
+class TestView2(generic_views.CreateView):
     pass
 
 
