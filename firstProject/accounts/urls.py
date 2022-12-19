@@ -1,9 +1,9 @@
 from django.urls import path
 
-from firstProject.accounts.views import UserLoginView, EditUserProfileView, user_profile, \
-    UserLogoutView, UserDashboardView, UserPasswordChangeView, UserRegistrationView
-from firstProject.web.views import UserAddressesView, EditUserShippingAddressView, DeleteUserShippingAddressView, \
-    AddUserAddressView
+from firstProject.accounts.views.profile import UserDashboardView, EditUserProfileView
+from firstProject.accounts.views.user import UserRegistrationView, UserLoginView, UserLogoutView, UserPasswordChangeView
+from firstProject.accounts.views.user_address import UserAddressesView, EditUserShippingAddressView, \
+    DeleteUserShippingAddressView, AddUserAddressView
 
 urlpatterns = (
     path('register/', UserRegistrationView.as_view(), name='register user'),

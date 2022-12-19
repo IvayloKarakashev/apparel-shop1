@@ -1,8 +1,12 @@
 from django.urls import path
 
-from firstProject.web.views import CategoriesView, ProductsView, ProductDetailsView, cart, update_item_quantity, \
-    checkout, OrderSuccessView, home_view, WishListView, update_wishlist, OrderTrackingView, FAQView, \
-    TermsAndConditionsView, AboutView, add_to_cart, select_address, enter_new_address, finalize_order, clear_items
+from firstProject.accounts.views.user_address import select_address, enter_new_address
+from firstProject.web.views.generic import home_view
+from firstProject.web.views.order import cart, checkout, finalize_order, update_item_quantity, add_to_cart, clear_items, \
+    OrderSuccessView, OrderTrackingView
+from firstProject.web.views.products import CategoriesView, ProductsView, ProductDetailsView
+from firstProject.web.views.static import FAQView, TermsAndConditionsView, AboutView
+from firstProject.web.views.wishlist import WishListView, update_wishlist
 
 urlpatterns = (
     path('', home_view, name='index'),
@@ -18,12 +22,10 @@ urlpatterns = (
     path('update-item-quantity/', update_item_quantity, name='update item quantity'),
     path('add-to-cart/', add_to_cart, name='add to cart'),
     path('clear-items/', clear_items, name='clear items'),
-    # path('select-address/', select_address, name='select address'),
     path('update-wishlist/', update_wishlist, name='update wishlist'),
     path('order-success/<int:pk>', OrderSuccessView.as_view(), name='order success'),
     path('order-tracking/<int:pk>', OrderTrackingView.as_view(), name='order tracking'),
     path('faq', FAQView.as_view(), name='faq'),
     path('terms', TermsAndConditionsView.as_view(), name='terms and conditions'),
     path('about', AboutView.as_view(), name='about us'),
-    # path('test/', TestView.as_view(), name='test view')
 )

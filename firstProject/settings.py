@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import django
 from django.utils.encoding import smart_str
+
 django.utils.encoding.smart_text = smart_str
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,9 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'firstProject.web',
-    'firstProject.accounts',
-
-    'django_bootstrap_breadcrumbs',
+    'firstProject.accounts'
 ]
 
 MIDDLEWARE = [
