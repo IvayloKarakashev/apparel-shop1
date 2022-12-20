@@ -11,10 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 table-responsive mt-4">
-                    {% if not items %}
-                        <h2 class="font-light">Your cart is empty.</h2>
-                        <br>
-                    {% else %}
+                    {% if items %}
                         <table class="table cart-table">
                             <thead>
                             <tr class="table-head">
@@ -84,6 +81,8 @@
                                 </tbody>
                             {% endfor %}
                         </table>
+                    {% else %}
+                        <h2 class="font-light">Your cart is empty.</h2>
                     {% endif %}
                 </div>
 

@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth import forms as auth_forms, get_user_model, password_validation
+from django.contrib.auth.forms import UsernameField
 
 from firstProject.accounts.models import Profile
 
@@ -25,21 +26,28 @@ class UserRegistrationForm(auth_forms.UserCreationForm):
     )
 
     password1 = forms.CharField(
-        label="Password",
+        label='Password',
         strip=False,
-        widget=forms.PasswordInput(attrs={"autocomplete": "new-password", 'name': 'pass', 'id': 'pass'}),
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password', 'name': 'pass', 'id': 'pass'}),
         help_text=password_validation.password_validators_help_text_html(),
     )
     password2 = forms.CharField(
-        label="Password confirmation",
-        widget=forms.PasswordInput(attrs={"autocomplete": "new-password", 'name': 'pass', 'id': 'compass'}),
+        label='Password confirmation',
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password', 'name': 'pass', 'id': 'compass'}),
         strip=False,
-        help_text="Enter the same password as before, for verification.",
+        help_text='Enter the same password as before, for verification.',
     )
 
     class Meta:
         model = user_model
         fields = ('email',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self._meta.model.USERNAME_FIELD in self.fields:
+            self.fields[self._meta.model.USERNAME_FIELD].widget.attrs[
+                "autofocus"
+            ] = False
 
     def save(self, commit=True):
         user = super().save(commit=commit)
@@ -56,10 +64,15 @@ class UserRegistrationForm(auth_forms.UserCreationForm):
         return user
 
 
-class ProfileCreationForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        exclude = ('user',)
+class UserLoginForm(auth_forms.AuthenticationForm):
+    username = UsernameField(
+        widget=forms.TextInput(attrs={'name': 'name', 'id': 'name', 'autofocus': False})
+    )
+    password = forms.CharField(
+        label='Password',
+        strip=False,
+        widget=forms.PasswordInput(attrs={'name': 'pass', 'id': 'pass', 'autocomplete': 'current-password'}),
+    )
 
 
 class ProfileEditForm(forms.ModelForm):

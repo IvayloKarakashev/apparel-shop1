@@ -9,51 +9,55 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 table-responsive">
-                    <table class="table cart-table wishlist-table">
-                        <thead>
-                        <tr class="table-head">
-                            <th scope="col">image</th>
-                            <th scope="col">product name</th>
-                            <th scope="col">price</th>
-                            <th scope="col">color</th>
-                            <th scope="col">action</th>
-                        </tr>
-                        </thead>
-                        {% for item in object_list %}
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <a href="{{ item.product.image.url }}">
-                                        <img src="{{ item.product.image.url }}" class=" blur-up lazyload"
-                                             alt="">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{% url 'product details' item.product.id %}"
-                                       class="font-light">{{ item.product.title }}</a>
-                                </td>
-                                <td>
-                                    <p class="fw-bold">{{ item.product.price|floatformat:2 }} BGN</p>
-                                </td>
-                                <td>
-                                    <p>{{ item.product.color }}</p>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)"
-                                       class="icon update-wishlist"
-                                       data-product="{{ item.product.id }}"
-                                       data-action="remove">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                    <a href="{% url 'product details' item.product.id %}"
-                                       class="icon">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </td>
+                    {% if object_list %}
+                        <table class="table cart-table wishlist-table">
+                            <thead>
+                            <tr class="table-head">
+                                <th scope="col">image</th>
+                                <th scope="col">product name</th>
+                                <th scope="col">price</th>
+                                <th scope="col">color</th>
+                                <th scope="col">action</th>
                             </tr>
-                            </tbody>
-                        {% endfor %}
-                    </table>
+                            </thead>
+                            {% for item in object_list %}
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="{{ item.product.image.url }}">
+                                            <img src="{{ item.product.image.url }}" class=" blur-up lazyload"
+                                                 alt="">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'product details' item.product.id %}"
+                                           class="font-light">{{ item.product.title }}</a>
+                                    </td>
+                                    <td>
+                                        <p class="fw-bold">{{ item.product.price|floatformat:2 }} BGN</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ item.product.color }}</p>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)"
+                                           class="icon update-wishlist"
+                                           data-product="{{ item.product.id }}"
+                                           data-action="remove">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                        <a href="{% url 'product details' item.product.id %}"
+                                           class="icon">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
+                    {% else %}
+                        <h2 class="font-light">Your wishlist is empty.</h2>
+                    {% endif %}
                 </div>
             </div>
         </div>

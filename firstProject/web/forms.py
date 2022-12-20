@@ -1,5 +1,6 @@
 from django import forms
 
+from firstProject.accounts.models import Profile
 from firstProject.web.models import ShippingAddress
 
 

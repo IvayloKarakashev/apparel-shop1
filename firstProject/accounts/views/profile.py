@@ -13,7 +13,13 @@ class EditUserProfileView(LoginRequiredMixin, PageTitleMixin, generic_views.Upda
     page_title = 'Edit Profile'
     model = Profile
     template_name = 'front-end/user-profile-edit.html'
-    fields = ('first_name', 'last_name', 'gender')
+    fields = ('first_name', 'last_name', 'phone_number', 'gender')
+
+    # def __init__(self, *args, **kwargs):
+    #     super(Form, self).__init__(*args, **kwargs)
+    #     super().__init__()
+    #     for field_name, field in self.fields.items():
+    #         field.widget.attrs['class'] = 'form-control'
 
     def get_queryset(self):
         qs = super().get_queryset()

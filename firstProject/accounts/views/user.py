@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views, get_user_model, login
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
 
-from firstProject.accounts.forms import UserRegistrationForm
+from firstProject.accounts.forms import UserRegistrationForm, UserLoginForm
 from firstProject.utilities.mixins import PageTitleMixin
 
 user_model = get_user_model()
@@ -23,6 +23,7 @@ class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
 
 class UserLoginView(PageTitleMixin, auth_views.LoginView):
     page_title = 'Login'
+    form_class = UserLoginForm
     template_name = 'front-end/user-login.html'
 
 
@@ -30,5 +31,6 @@ class UserLogoutView(auth_views.LogoutView):
     next_page = reverse_lazy('index')
 
 
-class UserPasswordChangeView(auth_views.PasswordChangeView):
-    pass
+class UserPasswordChangeView(PageTitleMixin, auth_views.PasswordChangeView):
+    page_title = 'Change password'
+    template_name = 'front-end/user-password-change.html'

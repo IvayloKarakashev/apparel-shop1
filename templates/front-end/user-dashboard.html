@@ -70,7 +70,7 @@
                                                              class="img-fluid blur-up lazyload" alt="">
                                                         <div>
                                                             <h5 class="font-light">total orders</h5>
-                                                            <h3>215</h3>
+                                                            <h3>{{ orders.count }}</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -107,8 +107,8 @@
                                                             href="{% url 'edit user profile' profile.user_id %}">Edit</a>
                                                     </div>
                                                     <div class="box-content">
-                                                        <h6 class="font-light">{{ object.get_full_name }}</h6>
-                                                        <h6 class="font-light">{{ object.user.email }}</h6>
+                                                        <h6 class="font-light">Name: {{ object.get_full_name }}</h6>
+                                                        <h6 class="font-light">Email: {{ object.user.email }}</h6>
 
                                                         <a href="{% url 'change password' %}">Change Password</a>
                                                     </div>
@@ -260,7 +260,7 @@
                                                 <td>
                                                     <a href="{% url 'product details' item.product.id %}"
                                                        class="btn btn-solid-default btn-sm fw-bold"
-                                                    >Go to Product Page</a>
+                                                    >Product details</a>
                                                     <a href="javascript:void(0)"
                                                        class="btn btn-solid-default btn-sm fw-bold update-wishlist"
                                                        data-product="{{ item.product.id }}"
@@ -273,8 +273,8 @@
                                     </table>
                                 </div>
                             {% else %}
-                                Your Wishlist is empty. Fill it with your favourite products by clicking the
-                                <i data-feather="heart"></i> button in the product page.
+                                <h4>Your Wishlist is empty. Fill it with your favourite products by clicking the
+                                    <i data-feather="heart"></i> button in the product page.</h4>
                             {% endif %}
                         </div>
                         <div class="tab-pane fade dashboard-profile dashboard" id="profile">
@@ -306,7 +306,20 @@
                                         <h6 class="font-light">Gender</h6>
                                     </div>
                                     <div class="right">
-                                        <h6>{{ profile.gender }}</h6>
+                                        {% if profile.gender %}
+                                            <h6>{{ profile.gender }}</h6>
+                                        {% endif %}
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Phone number</h6>
+                                    </div>
+                                    <div class="right">
+                                        {% if profile.phone_number %}
+                                            <h6>{{ profile.phone_number }}</h6>
+                                        {% endif %}
                                     </div>
                                 </li>
 
@@ -314,8 +327,6 @@
 
                             <div class="box-head mt-lg-5 mt-3">
                                 <h3>Login Details</h3>
-                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                   data-bs-target="#resetEmail">Edit</a>
                             </div>
 
                             <ul class="dash-profile">
@@ -324,21 +335,8 @@
                                         <h6 class="font-light">Email Address</h6>
                                     </div>
                                     <div class="right">
-                                        <h6>mark.jugal@gmail.com</h6>
+                                        <h6>{{ profile.user.email }}</h6>
                                     </div>
-                                    <a href="javascript:void(0)" data-bs-toggle="modal"
-                                       data-bs-target="#resetEmail">Edit</a>
-                                </li>
-
-                                <li>
-                                    <div class="left">
-                                        <h6 class="font-light">Phone No.</h6>
-                                    </div>
-                                    <div class="right">
-                                        <h6>+1-202-555-0198</h6>
-                                    </div>
-                                    <a href="javascript:void(0)" data-bs-toggle="modal"
-                                       data-bs-target="#resetEmail">Edit</a>
                                 </li>
 
                                 <li class="mb-0">
@@ -349,7 +347,7 @@
                                         <h6>●●●●●●</h6>
                                     </div>
                                     <a href="javascript:void(0)" data-bs-toggle="modal"
-                                       data-bs-target="#resetEmail">Edit</a>
+                                       data-bs-target="#resetEmail">Change password</a>
                                 </li>
                             </ul>
                         </div>

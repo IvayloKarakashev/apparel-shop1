@@ -29,6 +29,7 @@ class Profile(models.Model):
     FIRST_NAME_MAX_LENGTH = 30
     LAST_NAME_MAX_LENGTH = 30
     CHOICES_MAX_LENGTH = 6
+    RECIPIENT_PHONE_NUMBER_MAX_LENGTH = 14
 
     MALE = 'MALE'
     FEMALE = 'FEMALE'
@@ -39,21 +40,24 @@ class Profile(models.Model):
     ]
 
     first_name = models.CharField(
-        max_length=FIRST_NAME_MAX_LENGTH,
-        # null=True,
-        # blank=True
+        max_length=FIRST_NAME_MAX_LENGTH
     )
 
     last_name = models.CharField(
-        max_length=LAST_NAME_MAX_LENGTH,
-        # null=True,
-        # blank=True
+        max_length=LAST_NAME_MAX_LENGTH
+    )
+
+    phone_number = models.CharField(
+        max_length=RECIPIENT_PHONE_NUMBER_MAX_LENGTH,
+        null=True,
+        blank=True
     )
 
     gender = models.CharField(
         max_length=CHOICES_MAX_LENGTH,
         choices=GENDER_CHOICES,
-        default='Male'
+        null=True,
+        blank=True
     )
 
     user = models.OneToOneField(

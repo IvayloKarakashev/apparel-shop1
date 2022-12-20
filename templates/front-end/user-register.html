@@ -12,28 +12,41 @@
                 </div>
                 <form method="post">
                     {% csrf_token %}
+
+                    <div class="input">
+                        <label for="emailname">Email Address</label>
+                        {{ form.email }}
+                        <span class="spin"></span>
+                        {% if form.errors.email %}
+                            <p>{{ form.errors.email }}</p>
+                        {% endif %}
+                    </div>
+
                     <div class="input">
                         <label for="name">First name</label>
                         {{ form.first_name }}
                         <span class="spin"></span>
+                        {% if form.errors.first_name %}
+                            <p>{{ form.errors.first_name }}</p>
+                        {% endif %}
                     </div>
 
                     <div class="input">
                         <label for="name2">Last name</label>
                         {{ form.last_name }}
                         <span class="spin"></span>
-                    </div>
-
-                    <div class="input">
-                        <label for="emailname">Email Address</label>
-                        {{ form.email }}
-                        <span class="spin"></span>
+                        {% if form.errors.last_name %}
+                            <p>{{ form.errors.last_name }}</p>
+                        {% endif %}
                     </div>
 
                     <div class="input">
                         <label for="pass">Password</label>
                         {{ form.password1 }}
                         <span class="spin"></span>
+                        {% if form.errors.password1 %}
+                            <p>{{ form.errors.password1 }}</p>
+                        {% endif %}
                     </div>
 
                     <div class="input">
@@ -48,36 +61,15 @@
                             <i class="fa fa-check"></i>
                         </button>
                     </div>
-                    {{ form.errors }}
+                    {% if form.errors.password2 %}
+                        <p>{{ form.errors.password2 }}</p>
+                    {% endif %}
                 </form>
 
-                <p class="sign-category">
-                    <span>Or sign up with</span>
-                </p>
-
-                <div class="row gx-md-3 gy-3">
-                    <div class="col-md-6">
-                        <a href="www.facebook.com">
-                            <div class="social-media fb-media">
-                                <img src="assets/images/inner-page/facebook.png" class="img-fluid blur-up lazyload"
-                                     alt="">
-                                <h6>Facebook</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="www.gmail.com">
-                            <div class="social-media google-media">
-                                <img src="assets/images/inner-page/google.png" class="img-fluid blur-up lazyload"
-                                     alt="">
-                                <h6>Google</h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <p><a href="log-in.html" class="theme-color">Already have an account?</a></p>
             </div>
+            <p><a href="log-in.html" class="theme-color">Already have an account?</a></p>
         </div>
+    </div>
     </div>
     <!-- Sign Up Section End -->
 
