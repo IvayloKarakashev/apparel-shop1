@@ -2,7 +2,7 @@ from django.urls import path
 
 from firstProject.accounts.views.profile import UserDashboardView, EditUserProfileView
 from firstProject.accounts.views.user import UserRegistrationView, UserLoginView, UserLogoutView, UserPasswordChangeView
-from firstProject.accounts.views.user_address import UserAddressesView, EditUserShippingAddressView, \
+from firstProject.accounts.views.shipping_address import UserAddressesView, EditUserShippingAddressView, \
     DeleteUserShippingAddressView, AddUserAddressView
 
 urlpatterns = (

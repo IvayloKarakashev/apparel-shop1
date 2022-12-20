@@ -9,10 +9,6 @@ from firstProject.utilities.mixins import PageTitleMixin
 user_model = get_user_model()
 
 
-class TestView2(generic_views.CreateView):
-    pass
-
-
 class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
     page_title = 'Register'
     form_class = UserRegistrationForm
@@ -28,12 +24,6 @@ class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
 class UserLoginView(PageTitleMixin, auth_views.LoginView):
     page_title = 'Login'
     template_name = 'front-end/user-login.html'
-    success_url = reverse_lazy('index')
-
-    def get_success_url(self):
-        if self.success_url:
-            return self.success_url
-        return super().get_success_url()
 
 
 class UserLogoutView(auth_views.LogoutView):

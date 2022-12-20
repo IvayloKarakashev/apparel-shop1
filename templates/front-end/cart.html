@@ -11,86 +11,91 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 table-responsive mt-4">
-                    <h2 class="font-light">Your cart is empty.</h2>
-                    <br>
-                    <table class="table cart-table">
-                        <thead>
-                        <tr class="table-head">
-                            <th scope="col">image</th>
-                            <th scope="col">product name</th>
-                            <th scope="col">size</th>
-                            <th scope="col">price</th>
-                            <th scope="col">quantity</th>
-                            <th scope="col">action</th>
-                            <th scope="col">total</th>
-                        </tr>
-                        </thead>
-                        {% for item in items %}
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <a href="{{ item.product.image.url }}">
-                                        <img src="{{ item.product.image.url }}"
-                                             class=" blur-up lazyload"
-                                             alt="">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{% url 'product details' item.product.id %}">{{ item.product.title }}</a>
-                                </td>
-                                <td>
-                                    <a href="{% url 'product details' item.product.id %}">{{ item.size.name }}</a>
-                                </td>
-                                <td>
-                                    <h2>{{ item.product.price|floatformat:2 }} BGN</h2>
-                                </td>
-                                <td>
-                                    <div class="qty-box">
-                                        <div class="input-group">
-                                            <button
-                                                    data-product="{{ item.product.id }}"
-                                                    data-action="add"
-                                                    data-size="{{ item.size.name }}"
-                                                    class="update-cart btn quantity-right-plus">▲
-                                            </button>
-                                            <h3>{{ item.quantity }}</h3>
-                                            {#                                        <input type="number" name="quantity" class="form-control input-number"#}
-                                            {#                                               value="{{ item.quantity }}">#}
-                                            <button
-                                                    data-product="{{ item.product.id }}"
-                                                    data-action="subtract"
-                                                    data-size="{{ item.size.name }}"
-
-                                                    class="update-cart btn quantity-left-minus">▼
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)"
-                                       class="update-cart"
-                                       data-product="{{ item.product.id }}"
-                                       data-action="remove"
-                                       data-size= {{ item.size }}>
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <h2 class="td-color">{{ item.get_total|floatformat:2 }} BGN</h2>
-                                </td>
+                    {% if not items %}
+                        <h2 class="font-light">Your cart is empty.</h2>
+                        <br>
+                    {% else %}
+                        <table class="table cart-table">
+                            <thead>
+                            <tr class="table-head">
+                                <th scope="col">image</th>
+                                <th scope="col">product name</th>
+                                <th scope="col">size</th>
+                                <th scope="col">price</th>
+                                <th scope="col">quantity</th>
+                                <th scope="col">action</th>
+                                <th scope="col">total</th>
                             </tr>
-                            </tbody>
-                        {% endfor %}
-                    </table>
+                            </thead>
+                            {% for item in items %}
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="{{ item.product.image.url }}">
+                                            <img src="{{ item.product.image.url }}"
+                                                 class=" blur-up lazyload"
+                                                 alt="">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'product details' item.product.id %}">{{ item.product.title }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'product details' item.product.id %}">{{ item.size.name }}</a>
+                                    </td>
+                                    <td>
+                                        <h2>{{ item.product.price|floatformat:2 }} BGN</h2>
+                                    </td>
+                                    <td>
+                                        <div class="qty-box">
+                                            <div class="input-group">
+                                                <button
+                                                        data-product="{{ item.product.id }}"
+                                                        data-action="add"
+                                                        data-size="{{ item.size.name }}"
+                                                        class="update-cart btn quantity-right-plus">▲
+                                                </button>
+                                                <h3>{{ item.quantity }}</h3>
+                                                {#                                        <input type="number" name="quantity" class="form-control input-number"#}
+                                                {#                                               value="{{ item.quantity }}">#}
+                                                <button
+                                                        data-product="{{ item.product.id }}"
+                                                        data-action="subtract"
+                                                        data-size="{{ item.size.name }}"
+
+                                                        class="update-cart btn quantity-left-minus">▼
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)"
+                                           class="update-cart"
+                                           data-product="{{ item.product.id }}"
+                                           data-action="remove"
+                                           data-size= {{ item.size }}>
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <h2 class="td-color">{{ item.get_total|floatformat:2 }} BGN</h2>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
+                    {% endif %}
                 </div>
 
                 <div class="col-12 mt-md-5 mt-4">
                     <div class="row">
                         <div class="col-sm-7 col-5 order-1">
                             <div class="left-side-button text-end d-flex d-block justify-content-end">
-                                <a href="{% url 'clear items' %}"
-                                   class="text-decoration-underline theme-color d-block text-capitalize">clear
-                                    all items</a>
+                                {% if items %}
+                                    <a href="{% url 'clear items' %}"
+                                       class="text-decoration-underline theme-color d-block text-capitalize">clear
+                                        all items</a>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-sm-5 col-7">

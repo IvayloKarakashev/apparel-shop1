@@ -142,3 +142,5 @@ AUTH_USER_MODEL = 'accounts.FirstProjectUser'
 MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+LOGIN_REDIRECT_URL = '/'

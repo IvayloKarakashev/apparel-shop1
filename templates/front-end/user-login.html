@@ -10,7 +10,7 @@
                 <div class="login-title">
                     <h2>Login</h2>
                 </div>
-                <form method="post" action="{% url 'login user' %}">
+                <form method="post">
                     {% csrf_token %}
                     {% for field in form %}
                         {% if field.name == 'username' %}

@@ -52,13 +52,9 @@ class Profile(models.Model):
 
     gender = models.CharField(
         max_length=CHOICES_MAX_LENGTH,
-        choices=GENDER_CHOICES
+        choices=GENDER_CHOICES,
+        default='Male'
     )
-
-    # image = models.URLField(
-    #     # null=True,
-    #     # blank=True
-    # )
 
     user = models.OneToOneField(
         FirstProjectUser,

@@ -17,8 +17,4 @@ class ProductsView(generic_views.ListView):
     template_name = 'front-end/products.html'
 
     def get_queryset(self):
-        # print(dir(self))
-        # print(self.args)
-        # print(self.kwargs)
-        # print(self.request)
         return Product.objects.filter(category=self.kwargs['pk'])

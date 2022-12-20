@@ -9,16 +9,6 @@ from firstProject.utilities.mixins import PageTitleMixin
 from firstProject.web.models import Order, WishList
 
 
-def user_profile(request):
-    profile = Profile.objects.get(user_id=request.user.id)
-
-    context = {
-        'profile': profile
-    }
-
-    return render(request, 'accounts/profile.html', context)
-
-
 class EditUserProfileView(LoginRequiredMixin, PageTitleMixin, generic_views.UpdateView):
     page_title = 'Edit Profile'
     model = Profile
