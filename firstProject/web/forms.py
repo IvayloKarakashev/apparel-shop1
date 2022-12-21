@@ -1,7 +1,6 @@
 from django import forms
 
-from firstProject.accounts.models import Profile
-from firstProject.web.models import ShippingAddress
+from firstProject.web.models import ShippingAddress, Product
 
 
 class ShippingAddressForm(forms.ModelForm):
@@ -18,3 +17,14 @@ class ShippingAddressForm(forms.ModelForm):
             'label': 'Note: The Label field is optional. Labeling the address '
                      'can help you choose address easily when making future orders. (E.g "Home", "Work")'
         }
+
+
+class ProductAddForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs = {'class': 'form-control'}
+
+    class Meta:
+        model = Product
+        exclude = ('uploaded_by',)

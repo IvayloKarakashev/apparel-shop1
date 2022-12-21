@@ -5,37 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Reformatted some more code and added Profile instance to User register">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firstProject/accounts/migrations/0002_alter_profile_gender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firstProject/web/functions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firstProject/web/functions/order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firstProject/web/functions/wishlist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9334e074-604f-48c7-9123-a67ef4978f5a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9334e074-604f-48c7-9123-a67ef4978f5a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9334e074-604f-48c7-9123-a67ef4978f5a/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9334e074-604f-48c7-9123-a67ef4978f5a/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/first_project.ihQJ5A/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6357009-d2ac-45bd-9993-3c6b347f7967/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/accounts/views/profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views/profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views/shipping_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views/shipping_address.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/accounts/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/views/wishlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/wishlist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/views/generic.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/generic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/views/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-end/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-end/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/user-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/user-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/user-profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-profile-edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/user-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/user-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/wishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/wishlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +54,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -145,7 +145,8 @@
       <option name="presentableId" value="Default" />
       <updated>1671476043076</updated>
       <workItem from="1671476046085" duration="85000" />
-      <workItem from="1671476133884" duration="47829000" />
+      <workItem from="1671476133884" duration="49180000" />
+      <workItem from="1671611709795" duration="35253000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -154,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671546316798</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reformatted some more code and added Profile instance to User register">
+      <created>1671568129015</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671568129015</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,9 +188,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firstProject/accounts/views/shipping_address.py</url>
+          <line>108</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/accounts/views/user.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="9" />
+          <line>20</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

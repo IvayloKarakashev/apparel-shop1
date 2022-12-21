@@ -1,7 +1,4 @@
-import json
-
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
@@ -33,23 +30,27 @@ def cart_view(request):
 
 @login_required()
 def checkout_view(request):
-    page_title = 'Checkout'
+    try:
+        page_title = 'Checkout'
 
-    customer = request.user
-    profile = Profile.objects.get(user_id=customer.id)
-    order, created = Order.objects.get_or_create(customer=customer, complete=False)
-    items = order.orderitem_set.all()
-    shipping_address = ShippingAddress.objects.get(id=order.shipping_address.id)
+        customer = request.user
+        profile = Profile.objects.get(user_id=customer.id)
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        shipping_address = ShippingAddress.objects.get(id=order.shipping_address.id)
 
-    context = {
-        'items': items,
-        'order': order,
-        'profile': profile,
-        'address': shipping_address,
-        'page_title': page_title
-    }
+        context = {
+            'items': items,
+            'order': order,
+            'profile': profile,
+            'address': shipping_address,
+            'page_title': page_title
+        }
 
-    return render(request, 'front-end/checkout.html', context)
+        return render(request, 'front-end/checkout.html', context)
+
+    except AttributeError:
+        return redirect(reverse_lazy('cart'))
 
 
 class OrderSuccessView(PageTitleMixin, generic_views.DetailView):

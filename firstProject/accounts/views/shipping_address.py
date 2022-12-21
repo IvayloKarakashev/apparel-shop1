@@ -52,6 +52,11 @@ class DeleteUserShippingAddressView(generic_views.DeleteView):
 
 
 def select_address(request):
+    items = ''
+    order = ''
+    profile = ''
+    shipping_addresses = ''
+
     page_title = 'Select Address'
     if request.user.is_authenticated:
         customer = request.user
@@ -83,6 +88,10 @@ def select_address(request):
 
 
 def enter_new_address(request):
+    customer = ''
+    profile = ''
+    order = ''
+    items = ''
     page_title = 'Enter address'
     form = ShippingAddressForm()
 

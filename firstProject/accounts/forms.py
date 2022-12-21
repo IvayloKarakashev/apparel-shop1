@@ -2,7 +2,8 @@ from django import forms
 from django.contrib.auth import forms as auth_forms, get_user_model, password_validation
 from django.contrib.auth.forms import UsernameField
 
-from firstProject.accounts.models import Profile
+from firstProject.accounts.models import Profile, Subscribers
+from firstProject.web.models import Product
 
 user_model = get_user_model()
 
@@ -10,6 +11,11 @@ user_model = get_user_model()
 class UserRegistrationForm(auth_forms.UserCreationForm):
     FIRST_NAME_MAX_LENGTH = 30
     LAST_NAME_MAX_LENGTH = 30
+
+    IS_SELLER_CHOICES = (
+        (True, 'Seller'),
+        (False, 'Customer')
+    )
 
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'name': 'name3', 'id': 'emailname'})
@@ -38,9 +44,17 @@ class UserRegistrationForm(auth_forms.UserCreationForm):
         help_text='Enter the same password as before, for verification.',
     )
 
+    is_seller = forms.ChoiceField(
+        initial=False,
+        choices=IS_SELLER_CHOICES,
+        widget=forms.Select(
+            attrs={'class': 'form-control'}
+        )
+    )
+
     class Meta:
         model = user_model
-        fields = ('email',)
+        fields = ('email', 'is_seller')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -75,7 +89,7 @@ class UserLoginForm(auth_forms.AuthenticationForm):
     )
 
 
-class ProfileEditForm(forms.ModelForm):
+class EditUserProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
@@ -84,3 +98,15 @@ class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ('user',)
+
+
+class SubscribeToNewsletterForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs = {'class': 'form-control', 'placeholder': 'Your Email Address'}
+
+    class Meta:
+        model = Subscribers
+        fields = ['email', ]

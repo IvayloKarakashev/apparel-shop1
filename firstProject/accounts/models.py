@@ -20,6 +20,8 @@ class FirstProjectUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixi
         default=False,
     )
 
+    is_seller = models.BooleanField()
+
     USERNAME_FIELD = 'email'
 
     objects = FirstProjectUserManager()
@@ -69,3 +71,13 @@ class Profile(models.Model):
     @property
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'
+
+
+class Subscribers(models.Model):
+
+    subscribed_user = models.OneToOneField(
+        Profile,
+        on_delete=models.CASCADE
+    )
+
+    email = models.EmailField()

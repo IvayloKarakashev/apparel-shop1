@@ -31,7 +31,6 @@ class ProductAdmin(admin.ModelAdmin):
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Profile)
 
-# admin.site.register(Product)
 admin.site.register(ProductSize)
 admin.site.register(Category)
 

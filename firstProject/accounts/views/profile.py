@@ -1,9 +1,8 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
 
+from firstProject.accounts.forms import EditUserProfileForm
 from firstProject.accounts.models import Profile
 from firstProject.utilities.mixins import PageTitleMixin
 from firstProject.web.models import Order, WishList
@@ -12,14 +11,8 @@ from firstProject.web.models import Order, WishList
 class EditUserProfileView(LoginRequiredMixin, PageTitleMixin, generic_views.UpdateView):
     page_title = 'Edit Profile'
     model = Profile
+    form_class = EditUserProfileForm
     template_name = 'front-end/user-profile-edit.html'
-    fields = ('first_name', 'last_name', 'phone_number', 'gender')
-
-    # def __init__(self, *args, **kwargs):
-    #     super(Form, self).__init__(*args, **kwargs)
-    #     super().__init__()
-    #     for field_name, field in self.fields.items():
-    #         field.widget.attrs['class'] = 'form-control'
 
     def get_queryset(self):
         qs = super().get_queryset()
@@ -27,17 +20,6 @@ class EditUserProfileView(LoginRequiredMixin, PageTitleMixin, generic_views.Upda
 
     def get_success_url(self):
         return reverse_lazy('user dashboard', kwargs={'pk': self.object.pk})
-
-    # def form_valid(self, form):
-    #     if form.is_valid():
-    #         obj = form.save(commit=False)
-    #         # obj.user = request.user
-    #         # obj.order = order
-    #
-    #         obj.save()
-
-    # def get_object(self, queryset=None):
-    #     return self.model.objects.get(pk=self.request.user.pk)
 
 
 class UserDashboardView(LoginRequiredMixin, PageTitleMixin, generic_views.DetailView):

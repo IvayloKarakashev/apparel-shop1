@@ -21,10 +21,8 @@
                                                     <div class="col-xxl-3 col-lg-4 p-0 d-lg-block d-none">
                                                         <div class="home-left-wrapper">
                                                             <div>
-
-                                                                <p>The international hoodies with excellent durable
-                                                                    fabric, not to heavy but
-                                                                    simply PERFECT for Indian summer.</p>
+                                                                <p>Check out our new fashion proposals and stay tuned to
+                                                                    the fashion tendencies!</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -54,4 +52,39 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block subscribtion %}
+    <!-- Subscribe Section Start -->
+    <section class="subscribe-section section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-6">
+                    <div class="subscribe-details">
+                        <h2 class="mb-3">Subscribe To Our Newsletter (Coming soon!)</h2>
+                        <h6 class="font-light">Subscribe to our newsletter in advance to stay in touch with our newest
+                            hot
+                            products and to keep track of the latest tendencies in the fashion world!</h6>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
+                    <div class="subsribe-input">
+                        <div class="input-group">
+                            {% if user_is_subscribed %}
+                                <button class="btn btn-solid-default disabled" type="submit">Subscribed</button>
+                            {% else %}
+                                <form method="post">
+                                    {% csrf_token %}
+                                    {{ subscription_form }}
+                                    <button class="btn btn-solid-default" type="submit">Subscribe</button>
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Subscribe Section End -->
 {% endblock %}

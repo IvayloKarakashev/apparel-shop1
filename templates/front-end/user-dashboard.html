@@ -52,9 +52,9 @@
                                     </div>
                                     <div class="welcome-msg">
                                         <h6 class="font-light">Hello, <span>{{ object.first_name }} !</span></h6>
-                                        <p class="font-light">From your My Account Dashboard you have the ability to
+                                        <p class="font-light">From your dashboard you have the ability to
                                             view a snapshot of your recent account activity and update your account
-                                            information. Select a link below to view or edit information.</p>
+                                            information.</p>
                                     </div>
 
                                     <div class="order-box-contain my-4">
@@ -114,41 +114,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <div class="box">
-                                                    <div class="box-title">
-                                                        <h4>Newsletters</h4><a href="javascript:void(0)">Edit</a>
-                                                    </div>
-                                                    <div class="box-content">
-                                                        <h6 class="font-light">You are currently not subscribed to any
-                                                            newsletter.</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="box address-box">
-                                                <div class="box-title">
-                                                    <h4>Address Book</h4><a href="javascript:void(0)">Manage
-                                                    Addresses</a>
-                                                </div>
-                                                <div class="box-content">
-                                                    <div class="row g-4">
-                                                        <div class="col-sm-6">
-                                                            <h6 class="font-light">Default Billing Address</h6>
-                                                            <h6 class="font-light">You have not set a default
-                                                                billing address.</h6>
-                                                            <a href="javascript:void(0)">Edit Address</a>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <h6 class="font-light">Default Shipping Address</h6>
-                                                            <h6 class="font-light">You have not set a default
-                                                                shipping address.</h6>
-                                                            <a href="javascript:void(0)">Edit Address</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,12 +141,6 @@
                                         <tbody>
                                         {% for order in orders %}
                                             <tr>
-                                                {#                                    <td>#}
-                                                {#                                        <a href="products.html">#}
-                                                {#                                            <img src="{% static 'front-end/assets/images/fashion/product/front/1.jpg' %}"#}
-                                                {#                                                 class="blur-up lazyload" alt="">#}
-                                                {#                                        </a>#}
-                                                {#                                    </td>#}
                                                 <td>
                                                     <p class="mt-0">#{{ order.id }}</p>
                                                 </td>
@@ -217,8 +176,8 @@
                                     </table>
                                 </div>
                             {% else %}
-                                Seems that you have no orders yet. Create your first order by choosing a product from
-                                our <a href="{% url 'categories' %}">Categories</a> !
+                                <h4>Seems that you have no orders yet. Add a product to your cart to create your first
+                                    order !</h4>
                             {% endif %}
                         </div>
 
@@ -346,8 +305,7 @@
                                     <div class="right">
                                         <h6>●●●●●●</h6>
                                     </div>
-                                    <a href="javascript:void(0)" data-bs-toggle="modal"
-                                       data-bs-target="#resetEmail">Change password</a>
+                                    <a href="{% url 'change password' %}">Change password</a>
                                 </li>
                             </ul>
                         </div>
