@@ -2,8 +2,6 @@ from django.urls import path
 
 from firstProject.accounts.views.profile import UserDashboardView, EditUserProfileView
 from firstProject.accounts.views.user import UserRegistrationView, UserLoginView, UserLogoutView, UserPasswordChangeView
-from firstProject.accounts.views.shipping_address import UserAddressesView, EditUserShippingAddressView, \
-    DeleteUserShippingAddressView, AddUserAddressView
 
 urlpatterns = (
     path('register/', UserRegistrationView.as_view(), name='register user'),
@@ -11,10 +9,5 @@ urlpatterns = (
     path('logout/', UserLogoutView.as_view(), name='logout user'),
     path('password-change/', UserPasswordChangeView.as_view(), name='change password'),
     path('dashboard/<int:pk>', UserDashboardView.as_view(), name='user dashboard'),
-    path('dashboard/profile/edit/<int:pk>', EditUserProfileView.as_view(), name='edit user profile'),
-    path('dashboard/addresses/<int:pk>', UserAddressesView.as_view(), name='user shipping addresses'),
-    path('dashboard/addresses/edit/<int:pk>', EditUserShippingAddressView.as_view(), name='edit user shipping address'),
-    path('dashboard/addresses/delete/<int:pk>', DeleteUserShippingAddressView.as_view(),
-         name='delete user shipping address'),
-    path('dashboard/addresses/add/', AddUserAddressView.as_view(), name='add user shipping address')
+    path('dashboard/profile/edit/<int:pk>', EditUserProfileView.as_view(), name='edit user profile')
 )

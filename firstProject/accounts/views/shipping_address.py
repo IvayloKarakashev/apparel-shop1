@@ -13,44 +13,6 @@ class ShippingAddressView(generic_views.CreateView):
     template_name = 'front-end/checkout.html'
 
 
-class UserAddressesView(generic_views.ListView):
-    model = ShippingAddress
-    template_name = 'front-end/user-addresses.html'
-
-    def get_queryset(self):
-        return ShippingAddress.objects.filter(profile=self.kwargs['pk'])
-
-
-class AddUserAddressView(generic_views.CreateView):
-    form_class = ShippingAddressForm
-    template_name = 'front-end/user-shipping-address-add.html'
-
-    def form_valid(self, form):
-        if form.is_valid():
-            obj = form.save(commit=False)
-            obj.profile = Profile.objects.get(user_id=self.request.user)
-            obj.save()
-
-            return redirect(reverse_lazy('user shipping addresses', kwargs={'pk': obj.profile.pk}))
-
-
-class EditUserShippingAddressView(generic_views.UpdateView):
-    model = ShippingAddress
-    form_class = ShippingAddressForm
-    template_name = 'front-end/user-shipping-address-edit.html'
-
-    def get_success_url(self):
-        return reverse_lazy('user shipping addresses', kwargs={'pk': self.object.profile_id})
-
-
-class DeleteUserShippingAddressView(generic_views.DeleteView):
-    model = ShippingAddress
-    template_name = 'front-end/user-shipping-address-confirm-delete.html'
-
-    def get_success_url(self):
-        return reverse_lazy('user shipping addresses', kwargs={'pk': self.object.profile_id})
-
-
 def select_address(request):
     items = ''
     order = ''
