@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Improved user add/edit product functionality in application">
+    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Removed unnecessary image files, uploaded by user">
+      <change afterPath="$PROJECT_DIR$/firstProject/web/migrations/0021_alter_product_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstProject/web/migrations/0022_alter_product_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/images/dsfdsf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/images/vvv.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/product-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/product-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-edit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +121,7 @@
       <workItem from="1671476046085" duration="85000" />
       <workItem from="1671476133884" duration="49180000" />
       <workItem from="1671611709795" duration="36144000" />
-      <workItem from="1671740032791" duration="7600000" />
+      <workItem from="1671740032791" duration="8708000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -164,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671746959395</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Removed unnecessary image files, uploaded by user">
+      <created>1671748419945</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671748419945</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +195,8 @@
     <MESSAGE value="Added 'Seller' Admin group and 'Add product' functionality for sellers. Refactored templates and views code." />
     <MESSAGE value="Updated .gitignore to include user uploaded images" />
     <MESSAGE value="Improved user add/edit product functionality in application" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved user add/edit product functionality in application" />
+    <MESSAGE value="Removed unnecessary image files, uploaded by user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary image files, uploaded by user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
