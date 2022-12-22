@@ -57,7 +57,7 @@
                     </div>
                     <!-- label and featured section -->
 
-                    <!-- Prodcut setion -->
+                    <!-- Product setion -->
                     <div
                             class="row g-sm-4 g-3 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 gx-sm-4 gx-3 mt-1 custom-gy-5 product-style-2 ratio_asos product-list-section">
 
@@ -70,6 +70,15 @@
                                                 <img src="{{ product.image.url }}"
                                                      class="bg-img blur-up lazyload" alt="">
                                             </a>
+                                        </div>
+                                        <div class="cart-wrap">
+                                            <ul>
+                                                <li>
+                                                    <a href="{% url 'edit product' product.id %}">
+                                                        <i data-feather="edit"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="product-details">

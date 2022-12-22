@@ -3,7 +3,8 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
 
-from firstProject.web.forms import ProductAddForm
+from firstProject.web.forms import ProductAddForm, ProductEditForm
+from firstProject.web.functions.products import is_seller
 from firstProject.web.models import Product, Category
 
 
@@ -25,8 +26,15 @@ class ProductsView(generic_views.ListView):
         return Product.objects.filter(category=self.kwargs['pk'])
 
 
-def is_seller(user):
-    return user.groups.filter(name='Sellers').exists()
+class SellerProductsView(UserPassesTestMixin, generic_views.ListView):
+    model = Product
+    template_name = 'front-end/products.html'
+
+    def test_func(self):
+        return is_seller(self.request.user)
+
+    def get_queryset(self):
+        return Product.objects.filter(uploaded_by=self.request.user.id)
 
 
 class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
@@ -45,3 +53,14 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
             obj.save()
 
             return redirect(reverse_lazy('index'))
+
+
+class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
+    model = Product
+    template_name = 'front-end/product-edit.html'
+    form_class = ProductEditForm
+
+    success_url = reverse_lazy('seller products')
+
+    def test_func(self):
+        return is_seller(self.request.user)

@@ -16,7 +16,6 @@
                                         <div>
                                             <div class="product-image-tag">
                                                 <img src="{{ object.image.url }}"
-                                                        {#                                                 data-zoom-image=""#}
                                                      class="w-75 image_zoom_cls-0" alt="">
 
                                                 <div class="label-tag">
@@ -43,33 +42,6 @@
 
 
                                     <h3 class="price-detail">{{ object.price|floatformat:2 }} BGN</h3>
-
-                                    {#                                <div class="color-image">#}
-                                    {#                                    <div class="image-select">#}
-                                    {#                                        <h5>Color :</h5>#}
-                                    {#                                        <ul class="image-section">#}
-                                    {#                                            <li>#}
-                                    {#                                                <a href="javascript:void(0)">#}
-                                    {#                                                    <img src="{% static 'front-end/assets/images/fashion/product/front/5.jpg' %}"#}
-                                    {#                                                         class="img-fluid blur-up lazyload" alt="">#}
-                                    {#                                                </a>#}
-                                    {#                                            </li>#}
-                                    {#                                            <li>#}
-                                    {#                                                <a href="javascript:void(0)">#}
-                                    {#                                                    <img src="{% static 'front-end/assets/images/fashion/product/front/6.jpg' %}"#}
-                                    {#                                                         class="img-fluid blur-up lazyload" alt="">#}
-                                    {#                                                </a>#}
-                                    {#                                            </li>#}
-                                    {#                                            <li>#}
-                                    {#                                                <a href="javascript:void(0)">#}
-                                    {#                                                    <img src="{% static 'front-end/assets/images/fashion/product/front/7.jpg' %}"#}
-                                    {#                                                         class="img-fluid blur-up lazyload" alt="">#}
-                                    {#                                                </a>#}
-                                    {#                                            </li>#}
-                                    {#                                        </ul>#}
-                                    {#                                    </div>#}
-                                    {#                                </div>#}
-
                                     <div id="selectSize" class="addeffect-section product-description border-product">
                                         <h6 class="product-title">select size
                                         </h6>
@@ -132,6 +104,14 @@
                                             <i class="fa fa-shopping-cart"></i>
                                             <span>Add To Cart</span>
                                         </a>
+                                        {% if request.user.is_seller %}
+                                            <a href="{% url 'edit product' object.id %}"
+                                               class="btn btn-solid">
+                                                <i class="fa fa-edit"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        {% endif %}
+
                                         {% if not request.user.is_authenticated %}
                                             </div>
                                             <ul class="product-count">To be able to use the "Add to card" and "Wishlist"

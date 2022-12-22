@@ -196,6 +196,12 @@
                                                     <a href="{% url 'user dashboard' user.id %}" class="d-block">My
                                                         Dashboard</a>
                                                 </li>
+                                                {% if request.user.is_seller %}
+                                                    <li>
+                                                        <a href="{% url 'seller products' %}" class="d-block">My
+                                                            Products</a>
+                                                    </li>
+                                                {% endif %}
                                                 <li>
                                                     <a href="{% url 'logout user' %}" class="d-block">Logout</a>
                                                 </li>

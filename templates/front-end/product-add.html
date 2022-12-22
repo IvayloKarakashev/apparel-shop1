@@ -6,7 +6,7 @@
         <div class="box-head">
             <h3>Account Information</h3>
         </div>
-        <form method="post" enctype="multipart/form-data" action="{% url 'add product' %}">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="modal-body pt-3">
                 <div class="mb-3">
