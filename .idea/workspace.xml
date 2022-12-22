@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Updated .gitignore to include user uploaded images">
+    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Improved user add/edit product functionality in application">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front-end/product-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-end/product-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-edit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -127,7 +120,7 @@
       <workItem from="1671476046085" duration="85000" />
       <workItem from="1671476133884" duration="49180000" />
       <workItem from="1671611709795" duration="36144000" />
-      <workItem from="1671740032791" duration="6139000" />
+      <workItem from="1671740032791" duration="7600000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -157,7 +150,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671746569594</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Improved user add/edit product functionality in application">
+      <created>1671746916917</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671746916917</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Improved user add/edit product functionality in application">
+      <created>1671746959395</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671746959395</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +186,8 @@
     <MESSAGE value="Reformatted some more code and added Profile instance to User register" />
     <MESSAGE value="Added 'Seller' Admin group and 'Add product' functionality for sellers. Refactored templates and views code." />
     <MESSAGE value="Updated .gitignore to include user uploaded images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated .gitignore to include user uploaded images" />
+    <MESSAGE value="Improved user add/edit product functionality in application" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved user add/edit product functionality in application" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
