@@ -40,12 +40,11 @@
                                         <h2>{{ object.title }}</h2>
                                     </div>
 
-
                                     <h3 class="price-detail">{{ object.price|floatformat:2 }} BGN</h3>
-                                    <div id="selectSize" class="addeffect-section product-description border-product">
-                                        <h6 class="product-title">select size
-                                        </h6>
 
+                                    <div id="selectSize" class="addeffect-section product-description border-product">
+
+                                        <h6 class="product-title">select size</h6>
                                         <div class="size-box">
                                             <ul>
                                                 {% for size in object.productsize_set.all %}

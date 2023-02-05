@@ -6,14 +6,13 @@ from firstProject.web.functions.wishlist import update_wishlist
 from firstProject.web.views.generic import home_view
 from firstProject.web.views.order import cart_view, checkout_view, OrderSuccessView, OrderTrackingView, finalize_order, \
     clear_items
-from firstProject.web.views.products import CategoriesView, ProductsView, ProductDetailsView, ProductAddView, \
+from firstProject.web.views.products import ProductsView, ProductDetailsView, ProductAddView, \
     ProductEditView, SellerProductsView
 from firstProject.web.views.static import FAQView, TermsAndConditionsView, AboutView
 from firstProject.web.views.wishlist import WishListView
 
 urlpatterns = (
     path('', home_view, name='index'),
-    path('categories/', CategoriesView.as_view(), name='categories'),
     path('categories/<int:pk>/', ProductsView.as_view(), name='products'),
     path('products/seller-products/', SellerProductsView.as_view(), name='seller products'),
     path('products/details/<int:pk>/', ProductDetailsView.as_view(), name='product details'),

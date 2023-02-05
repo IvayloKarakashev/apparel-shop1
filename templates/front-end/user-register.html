@@ -55,7 +55,7 @@
                         <span class="spin"></span>
                     </div>
                     &nbsp
-                <p>Choose an account option between Seller and Customer</p>
+                    <p>Choose an account option between Seller and Customer</p>
                     <div>
                         {{ form.is_seller }}
                     </div>
@@ -72,9 +72,8 @@
                 </form>
 
             </div>
-            <p><a href="log-in.html" class="theme-color">Already have an account?</a></p>
+            <p><a href="{% url 'login user' %}" class="theme-color">Already have an account?</a></p>
         </div>
-    </div>
     </div>
     <!-- Sign Up Section End -->
 
