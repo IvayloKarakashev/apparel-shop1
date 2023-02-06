@@ -1,0 +1,5 @@
+build:
+  script:
+    - python manage.py migrate
+    - echo "from django.core.management import runserver; runserver('0.0.0.0', $PORT)" > start.py
+    - python start.py
