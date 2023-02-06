@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
-      <change afterPath="$PROJECT_DIR$/firstProject/accounts/migrations/0014_remove_firstprojectuser_is_seller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firstProject/accounts/migrations/0015_firstprojectuser_is_seller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/front-end/assets/scss/vendors/slick.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example1_qxtaMbG.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example3_1YkvWCc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example4_OBGuf1e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example5_aSTZgB0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example6_fRTNmWt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/example7_30xtMH9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/product-images/toupload.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/assets/scss/vendors/slick.scss" beforeDir="false" />
-    </list>
+    <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +123,7 @@
       <workItem from="1674162098980" duration="2426000" />
       <workItem from="1675603068616" duration="488000" />
       <workItem from="1675603587413" duration="13550000" />
-      <workItem from="1675707777222" duration="630000" />
+      <workItem from="1675707777222" duration="1013000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
