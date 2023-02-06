@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-#18+pgjmowa66tvw(rm&_@h-d-p(9(e&q#=_aed$+g!g#w=!os
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0:' + os.environ.get('PORT', '8080')]
+ALLOWED_HOSTS = ['0.0.0.0:$PORT']
 
 # Application definition
 INSTALLED_APPS = [
@@ -89,9 +89,6 @@ DATABASES = {
     }
 }
 
-port = os.environ.get('PORT')
-print(port)
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -129,8 +126,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
     BASE_DIR / 'templates'
 ]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # STATICFILES_FINDERS = [
 #     'django.contrib.staticfiles.finders.FileSystemFinder',
