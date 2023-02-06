@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block subtitle %}Frequently Asked Questions{% endblock %}
+
+{% block body %}
+
+    <!-- FAQ details start -->
+    <section class="faq-details section-b-space">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="faq-link-box">
+                        <ul>
+                            {% for question in object_list %}
+                                <li>
+                                    <a href="#{{ question.id }}">
+                                        <h4>{{ question.id }}.</h4>
+                                        <h5>{{ question.question }}</h5>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                    {% for question in object_list %}
+                        <div class="faq-heading" id="{{ question.id }}">
+                            <i data-feather="help-circle" class="theme-color"></i>
+                            <div class="faq-option">
+                                <h3>{{ question.question }}</h3>
+                                <h6 class="font-light">{{ question.answer }}</h6>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ details end -->
+
+{% endblock %}

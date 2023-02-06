@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block subtitle %}{{ page_title }}{% endblock %}
+{% block body %}
+
+
+    <!-- Order Success Section Start -->
+    <section class="pt-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class="success-icon">
+                        <div class="main-container">
+                            <div class="check-container">
+                                <div class="check-background">
+                                    <svg viewBox="0 0 65 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 25L27.3077 44L58.5 7" stroke="white" stroke-width="13"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="check-shadow"></div>
+                            </div>
+                        </div>
+
+                        <div class="success-contain">
+                            <h4>Order Success</h4>
+                            <h5 class="font-light">Payment Is Successfully Processsed And Your Order Is On The Way</h5>
+                            <h6 class="font-light">Transaction ID: {{ object.transaction_id }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order Success Section End -->
+
+    <!-- Oder Details Section Start -->
+    <section class="section-b-space cart-section order-details-table">
+        <div class="container">
+            <div class="title title1 title-effect mb-1 title-left">
+                <h2 class="mb-3">Order Details</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="col-sm-12 table-responsive">
+                        <table class="table cart-table table-borderless">
+                            <tbody>
+                            {% for item in object.orderitem_set.all %}
+                                <tr class="table-order">
+                                    <td>
+                                        <a href="javascript:void(0)">
+                                            <img src="{{ item.product.image.url }}"
+                                                 class="img-fluid blur-up lazyload" alt="">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <p>Product Name</p>
+                                        <h5>{{ item.product.title }}</h5>
+                                    </td>
+                                    <td>
+                                        <p>Quantity</p>
+                                        <h5>{{ item.quantity }}</h5>
+                                    </td>
+                                    <td>
+                                        <p>Price</p>
+                                        <h5>{{ item.get_total }} BGN</h5>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                            <tr class="table-order">
+                                <td colspan="3">
+                                    <h5 class="font-light">Subtotal :</h5>
+                                </td>
+                                <td>
+                                    <h4>{{ order.get_cart_subtotal }} BGN</h4>
+                                </td>
+                            </tr>
+
+                            <tr class="table-order">
+                                <td colspan="3">
+                                    <h5 class="font-light">Shipping :</h5>
+                                </td>
+                                <td>
+                                    <h4>{{ order.shipping_fee|floatformat:2 }} BGN</h4>
+                                </td>
+                            </tr>
+
+                            <tr class="table-order">
+                                <td colspan="3">
+                                    <h4 class="theme-color fw-bold">Total Price :</h4>
+                                </td>
+                                <td>
+                                    <h4 class="theme-color fw-bold">{{ order.get_cart_total|floatformat:2 }} BGN</h4>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="order-success">
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <h4>summary</h4>
+                                <ul class="order-details">
+                                    <li>Order ID: {{ object.id }}</li>
+                                    <li>Order Date: {{ order.date_ordered.date }}</li>
+                                    <li>Order Total: {{ object.get_cart_subtotal }} BGN</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h4>shipping address</h4>
+                                <ul class="order-details">
+                                    <li>{{ order.shipping_address.recipient_first_name }}</li>
+                                    <li>{{ order.shipping_address.recipient_last_name }}</li>
+                                    <li>{{ order.shipping_address.recipient_phone_number }}</li>
+                                    <li>{{ order.shipping_address.state_region }}</li>
+                                    <li>{{ order.shipping_address.city }}</li>
+                                    <li>{{ order.shipping_address.address }}</li>
+                                    <li>{{ order.shipping_address.zip_code }}</li>
+
+                                </ul>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="payment-mode">
+                                    <h4>payment method</h4>
+                                    <p>Cash on Delivery</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="delivery-sec">
+                                    <h3>expected date of delivery:
+                                        <span>{{ order.get_expected_delivery_date.date }}</span></h3>
+                                    <a href="{% url 'order tracking' order.id %}">track order</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order Details Section End -->
+
+{% endblock %}

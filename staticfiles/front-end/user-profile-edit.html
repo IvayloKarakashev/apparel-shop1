@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block subtitle %}{{ page_title }}{% endblock %}
+{% block body %}
+
+    <!-- user dashboard section start -->
+    <section class="section-b-space">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-lg-9">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="dash">
+                            <div class="dashboard-right">
+                                <div class="dashboard">
+                                    <div class="page-title title title1 title-effect">
+                                        <h2>Edit Profile</h2>
+                                    </div>
+
+
+                                    <div class="box-account box-info">
+                                        <div class="box-head">
+                                            <h3>Account Information</h3>
+                                        </div>
+                                        <form method="post" action="{% url 'edit user profile' profile.user_id %}">
+                                            {% csrf_token %}
+                                            <div class="modal-body pt-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label font-light">First name</label>
+                                                    {{ form.first_name }}
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label font-light">Last name</label>
+                                                    {{ form.last_name }}
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label font-light">Phone number</label>
+                                                    {{ form.phone_number }}
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label font-light">Gender</label>
+                                                    {{ form.gender }}
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer pt-0">
+                                                <button class="btn bg-secondary rounded-1 modal-close-button"
+                                                        data-bs-dismiss="modal">Close
+                                                </button>
+                                                <button type="submit" class="btn btn-solid-default rounded-1">Save
+                                                    changes
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade dashboard-profile dashboard" id="profile">
+                            <div class="box-head">
+                                <h3>Profile</h3>
+                                <a href="javascript:void(0)" data-bs-toggle="modal"
+                                   data-bs-target="#resetEmail">Edit</a>
+                            </div>
+                            <ul class="dash-profile">
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Company Name</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>Voxo Fashion</h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Country / Region</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>Downers Grove, IL</h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Year Established</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>2018</h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Total Employees</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>101 - 200 People</h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Category</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>Clothing</h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Street Address</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>549 Sulphur Springs Road</h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">City/State</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>Downers Grove, IL</h6>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Zip</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>60515</h6>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="box-head mt-lg-5 mt-3">
+                                <h3>Login Details</h3>
+                                <a href="javascript:void(0)" data-bs-toggle="modal"
+                                   data-bs-target="#resetEmail">Edit</a>
+                            </div>
+
+                            <ul class="dash-profile">
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Email Address</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>mark.jugal@gmail.com</h6>
+                                    </div>
+                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                       data-bs-target="#resetEmail">Edit</a>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <h6 class="font-light">Phone No.</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>+1-202-555-0198</h6>
+                                    </div>
+                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                       data-bs-target="#resetEmail">Edit</a>
+                                </li>
+
+                                <li class="mb-0">
+                                    <div class="left">
+                                        <h6 class="font-light">Password</h6>
+                                    </div>
+                                    <div class="right">
+                                        <h6>●●●●●●</h6>
+                                    </div>
+                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                       data-bs-target="#resetEmail">Edit</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-pane fade dashboard-security dashboard" id="security">
+                            <div class="box-head">
+                                <h3>Delete Your Account</h3>
+                            </div>
+                            <div class="security-details">
+                                <h5 class="font-light mt-3">Hi <span> Mark Enderess,</span>
+                                </h5>
+                                <p class="font-light mt-1">We Are Sorry To Here You Would Like To Delete Your Account.
+                                </p>
+                            </div>
+
+                            <div class="security-details-1 mb-0">
+                                <div class="page-title">
+                                    <h4 class="fw-bold">Note</h4>
+                                </div>
+                                <p class="font-light">Deleting your account will permanently remove your profile,
+                                    personal settings, and all other associated information. Once your account is
+                                    deleted, You will be logged out and will be unable to log back in.</p>
+
+                                <p class="font-light mb-4">If you understand and agree to the above statement, and would
+                                    still like to delete your account, than click below</p>
+
+                                <button class="btn btn-solid-default btn-sm fw-bold rounded" data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal">Delete Your
+                                    Account
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- user dashboard section end -->
+
+{% endblock %}

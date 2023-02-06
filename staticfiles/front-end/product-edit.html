@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="box-account box-info">
+        <div class="box-head">
+            <h3>Product Information</h3>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="modal-body pt-3">
+                <div class="mb-3">
+                    <label class="form-label font-light">Title</label>
+                    {{ form.title }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label font-light">Color</label>
+                    {{ form.color }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label font-light">Price</label>
+                    {{ form.price }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label font-light">Image</label>
+                    {{ form.image }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label font-light">Category</label>
+                    {{ form.category }}
+                </div>
+            </div>
+            <div class="modal-footer pt-0">
+                <button class="btn bg-secondary rounded-1 modal-close-button"
+                        data-bs-dismiss="modal">Close
+                </button>
+                <button type="submit" class="btn btn-solid-default rounded-1">Edit product</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

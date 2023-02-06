@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block subtitle %}{{ page_title }}{% endblock %}
+
+{% block body %}
+
+    <!-- Cart Section Start -->
+    <section class="section-b-space">
+        <div class="container">
+            <h3 class="mb-3">Enter new address:</h3>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <form class="needs-validation" method="post">
+                        <div id="form" class="row g-4">
+                            {% csrf_token %}
+                            {{ form }}
+
+                            {#                        <div class="form-check ps-0 mt-3 custome-form-check">#}
+                            {#                            <input class="checkbox_animated check-it" type="checkbox" id="flexCheckDefault11">#}
+                            {#                            <label class="form-check-label checkout-label" for="flexCheckDefault11">Save this#}
+                            {#                                information for next time</label>#}
+                            {#                        </div>#}
+                        </div>
+                        <button class="btn btn-solid-default mt-4" type="submit">Continue
+                            to checkout
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="your-cart-box">
+                        <h3 class="mb-3 d-flex text-capitalize">Your cart</h3>
+                        <ul class="list-group mb-3">
+
+                            {% for item in items %}
+                                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                    <div>
+                                        <a>
+                                            <img width="50" height="50" src="{{ item.product.image.url }}">
+                                        </a>
+                                        <h6 class="my-0">{{ item.product.title }}</h6>
+                                        <small>Color: {{ item.product.color }}</small>
+                                        <br>
+                                        <small>Size: {{ item.size.name }}</small>
+                                        <br>
+                                        <small>Quantity: {{ item.quantity }}</small>
+
+                                    </div>
+                                    <span>{{ item.get_total|floatformat:2 }} BGN</span>
+                                </li>
+                            {% endfor %}
+                            <li class="list-group-item d-flex lh-condensed justify-content-between">
+                                <span class="fw-bold">Total</span>
+                                <strong>{{ order.get_cart_subtotal|floatformat:2 }} BGN</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cart Section End -->
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static '../static/js/selectUsedAddress.js' %}"></script>
+{% endblock %}

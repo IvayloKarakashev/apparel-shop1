@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <!-- Shop Section start -->
+    <section class="section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12 ratio_30">
+                    <div class="row g-4">
+                        <!-- label and featured section -->
+
+                        <div class="col-12">
+                            <div class="filter-options">
+                                <div class="grid-options d-sm-inline-block d-none">
+                                    <ul class="d-flex">
+                                        <li class="two-grid">
+                                            <a href="javascript:void(0)">
+                                                <img src="{% static 'front-end/assets/svg/grid-2.svg' %}"
+                                                     class="img-fluid blur-up lazyload"
+                                                     alt="">
+                                            </a>
+                                        </li>
+                                        <li class="three-grid d-md-inline-block d-none">
+                                            <a href="javascript:void(0)">
+                                                <img src="{% static 'front-end/assets/svg/grid-3.svg' %}"
+                                                     class="img-fluid blur-up lazyload"
+                                                     alt="">
+                                            </a>
+                                        </li>
+                                        <li class="grid-btn d-lg-inline-block d-none">
+                                            <a href="javascript:void(0)">
+                                                <img src="{% static 'front-end/assets/svg/grid.svg' %}"
+                                                     class="img-fluid blur-up lazyload"
+                                                     alt="">
+                                            </a>
+                                        </li>
+                                        <li class="five-grid active d-xl-inline-block d-none">
+                                            <a href="javascript:void(0)">
+                                                <img src="{% static 'front-end/assets/svg/grid-5.svg' %}"
+                                                     class="img-fluid blur-up lazyload"
+                                                     alt="">
+                                            </a>
+                                        </li>
+                                        <li class="list-btn">
+                                            <a href="javascript:void(0)">
+                                                <img src="{% static 'front-end/assets/svg/list.svg' %}"
+                                                     class="img-fluid blur-up lazyload"
+                                                     alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- label and featured section -->
+
+                    <!-- Product section -->
+                    <div class="row g-sm-4 g-3 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 gx-sm-4 gx-3 mt-1 custom-gy-5 product-style-2 ratio_asos product-list-section">
+
+                        {% for product in products %}
+                            <div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        <div class="front">
+                                            <a href="{% url 'product details' product.id %}">
+                                                <img src="{{ product.image.url }}"
+                                                     class="bg-img blur-up lazyload" alt="">
+                                            </a>
+                                        </div>
+                                        {% if request.user.is_seller %}
+                                            <div class="cart-wrap">
+                                                <ul>
+                                                    <li>
+                                                        <a href="{% url 'edit product' product.id %}">
+                                                            <i data-feather="edit"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="main-price">
+                                            <a href="{% url 'product details' product.id %}" class="font-default">
+                                                <h5 class="ms-0">{{ product.title }}</h5>
+                                            </a>
+                                            <h3 class="theme-color">{{ product.price|floatformat:2 }} BGN</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        <!-- Product section -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item {% if page_obj.has_previous %}enabled{% else %}disabled{% endif %}">
+                    <a class="page-link" href="?page=1">First</a>
+                </li>
+                <li class="page-item {% if page_obj.has_previous %}enabled{% else %}disabled{% endif %}">
+                    {% if page_obj.has_previous %}
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}"><<</a>
+                    {% endif %}
+                </li>
+                {% for page in paginator.page_range %}
+                    {% if page_obj.number|add:'-2' <= page and page <= page_obj.number|add:'2' %}
+                        <li class="page-item {% if page == page_obj.number %}active{% endif %}">
+                            <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li class="page-item {% if page_obj.has_next %}enabled{% else %}disabled{% endif %}">
+                    {% if page_obj.has_next %}
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">>></a>
+                    {% endif %}
+                </li>
+                <li class="page-item {% if page_obj.has_next %}enabled{% else %}disabled{% endif %}">
+                    <a class="page-link" href="?page={{ paginator.num_pages }}">Last</a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </div>
+
+    <!-- Shop Section end -->
+
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block subtitle %}{{ object.category.title }}{% endblock %}
+{% block body %}
+    <!-- Shop Section start -->
+    <section>
+        <div class="container">
+            <div class="row gx-4 gy-5">
+                <div class="col-12">
+                    <div class="details-items">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="degree-section">
+                                    <div class="details-image">
+                                        <div>
+                                            <div class="product-image-tag">
+                                                <img src="{{ object.image.url }}"
+                                                     class="w-75 image_zoom_cls-0" alt="">
+
+                                                <div class="label-tag">
+                                                    <h6><i class="fas fa-star"></i> 4.8 <span
+                                                            class="font-light">120</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-4 rounded">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="cloth-details-size">
+
+                                    <div class="details-image-concept">
+                                        <h2>{{ object.title }}</h2>
+                                    </div>
+
+                                    <h3 class="price-detail">{{ object.price|floatformat:2 }} BGN</h3>
+
+                                    <div id="selectSize" class="addeffect-section product-description border-product">
+
+                                        <h6 class="product-title">select size</h6>
+                                        <div class="size-box">
+                                            <ul>
+                                                {% for size in object.productsize_set.all %}
+                                                    <li>
+                                                        <a href="javascript:void(0)"
+                                                           data-size="{{ size.name }}">
+                                                            {{ size.name }}
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+
+                                        <h6 class="product-title product-title-2 d-block">quantity</h6>
+
+                                        <div class="qty-box">
+                                            <div class="input-group">
+                                                <span class="input-group-prepend">
+                                                    <button type="button" class="btn quantity-left-minus"
+                                                            data-type="minus" data-field="">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="quantity" class="form-control input-number"
+                                                       value="1">
+                                                <span class="input-group-prepend">
+                                                    <button type="button" class="btn quantity-right-plus"
+                                                            data-type="plus" data-field="">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-buttons">
+                                        <a href="javascript:void(0)"
+                                                {% if request.user.is_authenticated %}
+                                           class="btn btn-solid update-wishlist"
+                                                {% else %}
+                                           class="btn btn-solid update-wishlist disabled"
+                                                {% endif %}
+                                           data-product="{{ object.id }}"
+                                           data-action="add">
+                                            <i class="fa fa-heart"></i>
+                                            <span>Wishlist</span>
+                                        </a>
+                                        <a href="javascript:void(0)" id="cartEffect"
+                                                {% if request.user.is_authenticated %}
+                                           class="btn btn-solid hover-solid btn-animation update-cart"
+                                                {% else %}
+                                           class="btn btn-solid hover-solid btn-animation update-cart disabled"
+                                                {% endif %}
+                                           data-product="{{ object.id }}"
+                                           data-action="add">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <span>Add To Cart</span>
+                                        </a>
+                                        {% if request.user.is_seller %}
+                                            <a href="{% url 'edit product' object.id %}"
+                                               class="btn btn-solid">
+                                                <i class="fa fa-edit"></i>
+                                                <span>Edit</span>
+                                            </a>
+                                        {% endif %}
+
+                                        {% if not request.user.is_authenticated %}
+                                            </div>
+                                            <ul class="product-count">To be able to use the "Add to card" and "Wishlist"
+                                                functionalities you have to <a href="{% url 'register user' %}">create
+                                                    an account</a>. If you already have one,
+                                                please <a href="{% url 'login user' %}">login</a>.
+                                            </ul>
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Section end -->
+
+    <!-- Add To Cart Notification -->
+    <div class="added-notification">
+        <img src="{{ object.image.url }}" class="img-fluid blur-up lazyload"
+             alt="">
+        <h3>added to cart</h3>
+    </div>
+    <!-- Add To Cart Notification -->
+
+    {% block scripts %}
+        <script type="text/javascript" src="{% static '../static/js/addProductToCart.js' %}"></script>
+        <script type="text/javascript" src="{% static '../static/js/wishListActions.js' %}"></script>
+
+    {% endblock %}
+
+{% endblock %}
+
+
