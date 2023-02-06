@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-#18+pgjmowa66tvw(rm&_@h-d-p(9(e&q#=_aed$+g!g#w=!os
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0:' + os.environ.get('PORT', '8080')]
 
 # Application definition
 INSTALLED_APPS = [
@@ -88,6 +88,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+port = os.environ.get('PORT')
+print(port)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
