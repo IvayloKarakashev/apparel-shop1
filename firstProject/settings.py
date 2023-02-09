@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'first_project',
-        'USER': 'postgres',
-        'PASSWORD': '1123QwER',
-        'HOST': '127.0.0.1',
+        'NAME': 'apparel_shop_db',
+        'USER': 'ivokarakashev',
+        'PASSWORD': 'whD81KgHf3CGmuTVt57gjaFTcvOLvzNh',
+        'HOST': 'dpg-cfik08cgqg40klgfe750-a',
         'PORT': '5432',
     }
 }
