@@ -11,22 +11,22 @@ user_model = get_user_model()
 # sellers_group = Group.objects.get(name='Sellers')
 
 
-# class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
-#     page_title = 'Register'
-#     form_class = UserRegistrationForm
-#     template_name = 'front-end/user-register.html'
-#     success_url = reverse_lazy('index')
-#
-#     def form_valid(self, form):
-#         if form.is_valid():
-#             obj = form.save(commit=False)
-#             obj.save()
-#             if obj.is_seller:
-#                 obj.groups.add(sellers_group)
-#                 obj.save()
-#         result = super().form_valid(form)
-#         login(self.request, self.object)
-#         return result
+class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
+    page_title = 'Register'
+    form_class = UserRegistrationForm
+    template_name = 'front-end/user-register.html'
+    success_url = reverse_lazy('index')
+
+    # def form_valid(self, form):
+    #     if form.is_valid():
+    #         obj = form.save(commit=False)
+    #         obj.save()
+    #         if obj.is_seller:
+    #             obj.groups.add(sellers_group)
+    #             obj.save()
+    #     result = super().form_valid(form)
+    #     login(self.request, self.object)
+    #     return result
 
 
 class UserLoginView(PageTitleMixin, auth_views.LoginView):
