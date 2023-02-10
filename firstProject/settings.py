@@ -85,7 +85,7 @@ DATABASES = {
         'USER': 'ivokarakashev',
         'PASSWORD': 'whD81KgHf3CGmuTVt57gjaFTcvOLvzNh',
         'HOST': 'dpg-cfik08cgqg40klgfe750-a',
-        'PORT': '5432',
+        'PORT': 5432,
     }
 }
 
