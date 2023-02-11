@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 import django
 from django.utils.encoding import smart_str
@@ -79,14 +80,7 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'apparel_shop_db',
-        'USER': 'ivokarakashev',
-        'PASSWORD': 'whD81KgHf3CGmuTVt57gjaFTcvOLvzNh',
-        'HOST': 'dpg-cfik08cgqg40klgfe750-a',
-        'PORT': 5432,
-    }
+    'default': dj_database_url.parse('postgres://ivokarakashev:whD81KgHf3CGmuTVt57gjaFTcvOLvzNh@dpg-cfik08cgqg40klgfe750-a.frankfurt-postgres.render.com/apparel_shop_db')
 }
 
 # DATABASES = {
@@ -132,11 +126,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    BASE_DIR / 'templates'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+#     BASE_DIR / 'templates'
+# ]
+
 
 # STATICFILES_FINDERS = [
 #     'django.contrib.staticfiles.finders.FileSystemFinder',
