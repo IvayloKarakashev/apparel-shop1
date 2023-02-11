@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#18+pgjmowa66tvw(rm&_@h-d-p(9(e&q#=_aed$+g!g#w=!os'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -79,20 +79,20 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse('postgres://ivokarakashev:whD81KgHf3CGmuTVt57gjaFTcvOLvzNh@dpg-cfik08cgqg40klgfe750-a.frankfurt-postgres.render.com/apparel_shop_db')
-}
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'first_project',
-#         'USER': 'postgres',
-#         'PASSWORD': '1123QwER',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
+#     'default': dj_database_url.parse('postgres://ivokarakashev:whD81KgHf3CGmuTVt57gjaFTcvOLvzNh@dpg-cfik08cgqg40klgfe750-a.frankfurt-postgres.render.com/apparel_shop_db')
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'first_project',
+        'USER': 'postgres',
+        'PASSWORD': '1123QwER',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
