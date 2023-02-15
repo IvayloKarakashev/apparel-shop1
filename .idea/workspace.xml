@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843/storage_v2/_src_/database/render_db_zrws.jO3AcA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843/storage_v2/_src_/database/render_db_zrws.jO3AcA/schema/public.abK9xQ.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +131,7 @@
       <workItem from="1676133743959" duration="10477000" />
       <workItem from="1676147059595" duration="8921000" />
       <workItem from="1676226083546" duration="5501000" />
-      <workItem from="1676489297382" duration="3546000" />
+      <workItem from="1676489297382" duration="3845000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
