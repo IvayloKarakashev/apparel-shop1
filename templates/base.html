@@ -140,15 +140,15 @@
                                         </li>
                                         <li class="dropdown">
                                             <a href="javascript:void(0)" class="nav-link menu-title">Men fashion</a>
-{#                                            <ul class="nav-submenu menu-content">#}
-{#                                                {% for category in categories %}#}
-{#                                                    {% if category.type == 'M' %}#}
-{#                                                        <li>#}
-{#                                                            <a href="{% url 'products' category.id %}">{{ category.title }}</a>#}
-{#                                                        </li>#}
-{#                                                    {% endif %}#}
-{#                                                {% endfor %}#}
-{#                                            </ul>#}
+                                            <ul class="nav-submenu menu-content">
+                                                {% for category in categories %}
+                                                    {% if category.type == 'M' %}
+                                                        <li>
+                                                            <a href="{% url 'products' category.id %}">{{ category.title }}</a>
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
                                         </li>
                                         <li class="dropdown">
                                             <a href="javascript:void(0)" class="nav-link menu-title">Children
