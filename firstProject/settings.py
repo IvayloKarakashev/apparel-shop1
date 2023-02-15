@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://ivokarakashev:whD81KgHf3CGmuTVt57gjaFTcvOLvzNh@dpg-cfik08cgqg40klgfe750-a.frankfurt-postgres.render.com/apparel_shop_db')
+    'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
 }
 
 # DATABASES = {
