@@ -45,6 +45,7 @@ class SellerProductsView(UserPassesTestMixin, generic_views.ListView):
     template_name = 'front-end/products.html'
 
     def test_func(self):
+        print(f"Is seller:{is_seller(self.request.user)}")
         return is_seller(self.request.user)
 
     def get_queryset(self):

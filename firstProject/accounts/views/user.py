@@ -9,6 +9,7 @@ from firstProject.utilities.mixins import PageTitleMixin
 
 user_model = get_user_model()
 sellers_group = Group.objects.get(name='Sellers')
+print(sellers_group)
 
 
 class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
@@ -22,7 +23,6 @@ class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
             obj = form.save(commit=False)
             obj.save()
             if obj.is_seller:
-                # print(obj.groups)
                 obj.groups.add(sellers_group)
                 obj.save()
         result = super().form_valid(form)
