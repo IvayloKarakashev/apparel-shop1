@@ -12,10 +12,10 @@ class UserRegistrationForm(auth_forms.UserCreationForm):
     FIRST_NAME_MAX_LENGTH = 30
     LAST_NAME_MAX_LENGTH = 30
 
-    # IS_SELLER_CHOICES = (
-    #     (True, 'Seller'),
-    #     (False, 'Customer')
-    # )
+    IS_SELLER_CHOICES = (
+        (True, 'Seller'),
+        (False, 'Customer')
+    )
 
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'name': 'name3', 'id': 'emailname'})
@@ -44,13 +44,13 @@ class UserRegistrationForm(auth_forms.UserCreationForm):
         help_text='Enter the same password as before, for verification.',
     )
 
-    # is_seller = forms.ChoiceField(
-    #     initial=False,
-    #     choices=IS_SELLER_CHOICES,
-    #     widget=forms.Select(
-    #         attrs={'class': 'form-control'}
-    #     )
-    # )
+    is_seller = forms.ChoiceField(
+        initial=False,
+        choices=IS_SELLER_CHOICES,
+        widget=forms.Select(
+            attrs={'class': 'form-control'}
+        )
+    )
 
     class Meta:
         model = user_model
