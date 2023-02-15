@@ -20,7 +20,7 @@ class FirstProjectUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixi
         default=False,
     )
 
-    # is_seller = models.BooleanField()
+    is_seller = models.BooleanField()
 
     USERNAME_FIELD = 'email'
 
