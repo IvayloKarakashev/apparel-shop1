@@ -54,8 +54,8 @@ class UserRegistrationForm(auth_forms.UserCreationForm):
 
     class Meta:
         model = user_model
-        # fields = ('email', 'is_seller')
-        fields = ('email',)
+        fields = ('email', 'is_seller')
+        # fields = ('email',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
