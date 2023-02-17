@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'firstProject.web',
-    'firstProject.accounts'
+    'firstProject.accounts',
+    
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

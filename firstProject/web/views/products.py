@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
 
+from firstProject.api.gcs import upload_blob
 from firstProject.web.forms import ProductAddForm, ProductEditForm
 from firstProject.web.functions.products import is_seller
 from firstProject.web.models import Product, Category
@@ -61,13 +62,18 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
         return is_seller(self.request.user)
 
     def form_valid(self, form):
-        print(self.request.user)
         if form.is_valid():
             obj = form.save(commit=False)
             obj.uploaded_by = self.request.user
+
+            upload_blob('user-uploaded-images_apparelshop1', 'user-uploads/', 'asd')
+
             obj.save()
 
+
             return redirect(reverse_lazy('index'))
+
+
 
 
 class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/functions/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/functions/products.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +60,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\apparel-shop1\firstProject" />
       <recent name="C:\Users\User\PycharmProjects\apparel-shop1\static\front-end" />
       <recent name="C:\Users\User\PycharmProjects\apparel-shop1\firstProject\web\functions" />
     </key>
@@ -133,7 +134,8 @@
       <workItem from="1676133743959" duration="10477000" />
       <workItem from="1676147059595" duration="8921000" />
       <workItem from="1676226083546" duration="5501000" />
-      <workItem from="1676489297382" duration="10431000" />
+      <workItem from="1676489297382" duration="11964000" />
+      <workItem from="1676618462245" duration="5618000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -225,6 +227,11 @@
           <url>file://$PROJECT_DIR$/firstProject/accounts/views/user.py</url>
           <line>21</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firstProject/web/functions/products.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
