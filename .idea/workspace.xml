@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/api/gcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/api/gcs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +133,8 @@
       <workItem from="1676147059595" duration="8921000" />
       <workItem from="1676226083546" duration="5501000" />
       <workItem from="1676489297382" duration="11964000" />
-      <workItem from="1676618462245" duration="5618000" />
+      <workItem from="1676618462245" duration="7556000" />
+      <workItem from="1676716424844" duration="1197000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
