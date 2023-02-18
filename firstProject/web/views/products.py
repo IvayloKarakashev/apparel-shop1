@@ -66,10 +66,16 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
             obj = form.save(commit=False)
             obj.uploaded_by = self.request.user
 
-            upload_blob('user-uploaded-images_apparelshop1', 'user-uploads/', 'asd')
+            # Get the uploaded file from the request
+            uploaded_file = self.request.FILES['image']
+
+            # Construct the destination path for the uploaded file in the bucket
+            destination_blob_name = f'user-uploads/{uploaded_file.name}'
+
+            # Upload the file to the bucket
+            upload_blob('user-uploaded-images_apparelshop1', uploaded_file, destination_blob_name)
 
             obj.save()
-
 
             return redirect(reverse_lazy('index'))
 
