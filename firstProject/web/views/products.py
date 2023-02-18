@@ -1,4 +1,6 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
@@ -66,19 +68,22 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
             obj = form.save(commit=False)
             obj.uploaded_by = self.request.user
 
-            # Get the uploaded file from the request
+            # Get the uploaded file and its content
             uploaded_file = self.request.FILES['image']
+            file_content = uploaded_file.read()
 
-            # Construct the destination path for the uploaded file in the bucket
-            destination_blob_name = f'user-uploads/{uploaded_file.name}'
+            # Save the file to a temporary location
+            file_name = default_storage.save(uploaded_file.name, ContentFile(file_content))
 
-            # Upload the file to the bucket
-            upload_blob('user-uploaded-images_apparelshop1', uploaded_file, destination_blob_name)
+            # Upload the file to Google Cloud Storage
+            upload_blob('user-uploaded-images_apparelshop1', file_name, 'images/' + uploaded_file.name)
+
+            # Delete the temporary file
+            default_storage.delete(file_name)
 
             obj.save()
 
             return redirect(reverse_lazy('index'))
-
 
 
 
