@@ -28,14 +28,8 @@ def authenticate_implicit_with_adc(project_id="apparelshop1"):
     print("Listed all storage buckets.")
 
 
-def upload_blob(bucket_name, source_file_name, destination_blob_name):
+def upload_blob(bucket_name, source_file, destination_blob_name):
     """Uploads a file to the bucket."""
-    # The ID of your GCS bucket
-    # bucket_name = "your-bucket-name"
-    # The path to your file to upload
-    # source_file_name = "local/path/to/file"
-    # The ID of your GCS object
-    # destination_blob_name = "storage-object-name"
 
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
@@ -49,8 +43,9 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
     # generation-match precondition using its generation number.
     generation_match_precondition = 0
 
-    blob.upload_from_filename(source_file_name, if_generation_match=generation_match_precondition)
+    blob.upload_from_file(source_file, if_generation_match=generation_match_precondition)
 
     print(
-        f"File {source_file_name} uploaded to {destination_blob_name}."
+        f"File uploaded to {destination_blob_name}."
     )
+

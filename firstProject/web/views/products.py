@@ -16,10 +16,6 @@ class ProductDetailsView(generic_views.DetailView):
     model = Product
     template_name = 'front-end/product-details.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['url'] = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/example7.jpg'
-
 
 class ProductsView(generic_views.ListView):
     model = Product
@@ -72,14 +68,13 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
             obj = form.save(commit=False)
             obj.uploaded_by = self.request.user
 
-            uploaded_file = self.request.FILES['image']
-            with tempfile.NamedTemporaryFile(delete=False) as f:
-                f.write(uploaded_file.read())
-                file_path = f.name
+            image_file = self.request.FILES['image']
+            image_blob_name = f"user-uploaded-images_apparelshop1/{image_file.name}"
+            upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
 
-            upload_blob('user-uploaded-images_apparelshop1', file_path, uploaded_file.name)
-
+            obj.image.name = image_blob_name
             obj.save()
+
             return redirect(reverse_lazy('index'))
 
 
