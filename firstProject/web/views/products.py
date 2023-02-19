@@ -65,28 +65,20 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
     def test_func(self):
         return is_seller(self.request.user)
 
-    class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
-        model = Product
-        template_name = 'front-end/product-add.html'
-        form_class = ProductAddForm
+    def form_valid(self, form):
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.uploaded_by = self.request.user
 
-        def test_func(self):
-            return is_seller(self.request.user)
+            image_file = self.request.FILES['image']
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            image_blob_name = f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}"
+            upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
 
-        def form_valid(self, form):
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.uploaded_by = self.request.user
+            obj.image.name = image_blob_name
+            obj.save()
 
-                image_file = self.request.FILES['image']
-                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                image_blob_name = f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}"
-                upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
-
-                obj.image.name = image_blob_name
-                obj.save()
-
-                return redirect(reverse_lazy('index'))
+            return redirect(reverse_lazy('index'))
 
 
 class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
