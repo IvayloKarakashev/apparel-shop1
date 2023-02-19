@@ -50,11 +50,27 @@ class SellerProductsView(UserPassesTestMixin, generic_views.ListView):
     template_name = 'front-end/products.html'
 
     def test_func(self):
-        print(f"Is seller:{is_seller(self.request.user)}")
         return is_seller(self.request.user)
 
     def get_queryset(self):
         return Product.objects.filter(uploaded_by=self.request.user.id)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        queryset = self.get_queryset()
+        paginator = Paginator(queryset, self.paginate_by)
+
+        page = self.request.GET.get('page')
+        try:
+            products = paginator.page(page)
+        except PageNotAnInteger:
+            products = paginator.page(1)
+        except EmptyPage:
+            products = paginator.page(paginator.num_pages)
+
+        context['products'] = products
+        context['get_obj'] = queryset
+        return context
 
 
 class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
