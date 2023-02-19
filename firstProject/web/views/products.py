@@ -82,8 +82,23 @@ class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
     model = Product
     template_name = 'front-end/product-edit.html'
     form_class = ProductEditForm
-
     success_url = reverse_lazy('seller products')
 
     def test_func(self):
         return is_seller(self.request.user)
+
+    def form_valid(self, form):
+        if form.is_valid():
+            obj = form.save(commit=False)
+
+            # Check if a new image has been uploaded
+            if 'image' in self.request.FILES:
+                # Upload the new image to Google Cloud Storage
+                image_file = self.request.FILES['image']
+                image_blob_name = f"user-uploaded-images_apparelshop1/{image_file.name}"
+                upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
+                obj.image.name = image_blob_name
+
+            obj.save()
+            return redirect(self.success_url)
+
