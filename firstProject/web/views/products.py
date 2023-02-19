@@ -16,6 +16,10 @@ class ProductDetailsView(generic_views.DetailView):
     model = Product
     template_name = 'front-end/product-details.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['url'] = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/example7.jpg'
+
 
 class ProductsView(generic_views.ListView):
     model = Product
@@ -77,7 +81,6 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
 
             obj.save()
             return redirect(reverse_lazy('index'))
-
 
 
 class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
