@@ -1,5 +1,7 @@
 import tempfile
 
+from datetime import datetime
+
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import redirect, render
@@ -69,7 +71,8 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
             obj.uploaded_by = self.request.user
 
             image_file = self.request.FILES['image']
-            image_blob_name = f"user-uploaded-images_apparelshop1/{image_file.name}"
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            image_blob_name = f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}"
             upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
 
             obj.image.name = image_blob_name
