@@ -98,7 +98,8 @@ class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
             if 'image' in self.request.FILES:
                 # Upload the new image to Google Cloud Storage
                 image_file = self.request.FILES['image']
-                image_blob_name = f"user-uploaded-images_apparelshop1/{image_file.name}"
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                image_blob_name = f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}"
                 upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
                 obj.image.name = image_blob_name
 
