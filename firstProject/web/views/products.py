@@ -4,6 +4,7 @@ from datetime import datetime
 
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.forms import inlineformset_factory
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
@@ -11,7 +12,7 @@ from django.views import generic as generic_views
 from firstProject.api.gcs import upload_blob
 from firstProject.web.forms import ProductAddForm, ProductEditForm
 from firstProject.web.functions.products import is_seller
-from firstProject.web.models import Product, Category
+from firstProject.web.models import Product, Category, ProductSize
 
 
 class ProductDetailsView(generic_views.DetailView):
@@ -74,6 +75,9 @@ class SellerProductsView(UserPassesTestMixin, generic_views.ListView):
         return context
 
 
+ProductSizeFormSet = inlineformset_factory(Product, ProductSize, fields=('size', 'quantity'))
+
+
 class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
     model = Product
     template_name = 'front-end/product-add.html'
@@ -81,6 +85,11 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
 
     def test_func(self):
         return is_seller(self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['size_formset'] = ProductSizeFormSet()
+        return context
 
     def form_valid(self, form):
         if form.is_valid():
@@ -94,6 +103,10 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
 
             obj.image.name = image_blob_name
             obj.save()
+
+            size_formset = ProductSizeFormSet(self.request.POST, instance=obj)
+            if size_formset.is_valid():
+                size_formset.save()
 
             return redirect(reverse_lazy('index'))
 
@@ -122,4 +135,3 @@ class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
 
             obj.save()
             return redirect(self.success_url)
-
