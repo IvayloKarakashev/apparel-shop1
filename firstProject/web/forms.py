@@ -20,7 +20,7 @@ class ShippingAddressForm(forms.ModelForm):
         }
 
 
-ProductSizeFormSet = inlineformset_factory(Product, ProductSize, fields=('size', 'quantity'))
+ProductSizeFormSet = inlineformset_factory(Product, ProductSize)
 
 
 class ProductAddForm(forms.ModelForm):
