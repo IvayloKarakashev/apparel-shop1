@@ -1,7 +1,7 @@
 from django import forms
+from django.forms import inlineformset_factory
 
-from firstProject.web.models import ShippingAddress, Product
-from firstProject.web.views.products import ProductSizeFormSet
+from firstProject.web.models import ShippingAddress, Product, ProductSize
 
 
 class ShippingAddressForm(forms.ModelForm):
@@ -18,6 +18,9 @@ class ShippingAddressForm(forms.ModelForm):
             'label': 'Note: The Label field is optional. Labeling the address '
                      'can help you choose address easily when making future orders. (E.g "Home", "Work")'
         }
+
+
+ProductSizeFormSet = inlineformset_factory(Product, ProductSize, fields=('size', 'quantity'))
 
 
 class ProductAddForm(forms.ModelForm):

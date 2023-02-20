@@ -4,13 +4,12 @@ from datetime import datetime
 
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.forms import inlineformset_factory
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import generic as generic_views
 
 from firstProject.api.gcs import upload_blob
-from firstProject.web.forms import ProductAddForm, ProductEditForm
+from firstProject.web.forms import ProductAddForm, ProductEditForm, ProductSizeFormSet
 from firstProject.web.functions.products import is_seller
 from firstProject.web.models import Product, Category, ProductSize
 
@@ -73,9 +72,6 @@ class SellerProductsView(UserPassesTestMixin, generic_views.ListView):
         context['products'] = products
         context['get_obj'] = queryset
         return context
-
-
-ProductSizeFormSet = inlineformset_factory(Product, ProductSize, fields=('size', 'quantity'))
 
 
 class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
