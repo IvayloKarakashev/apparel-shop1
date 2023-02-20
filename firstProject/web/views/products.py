@@ -48,6 +48,7 @@ class ProductsView(generic_views.ListView):
 class SellerProductsView(UserPassesTestMixin, generic_views.ListView):
     model = Product
     template_name = 'front-end/products.html'
+    paginate_by = 15
 
     def test_func(self):
         return is_seller(self.request.user)
