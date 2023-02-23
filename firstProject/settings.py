@@ -15,6 +15,7 @@ from pathlib import Path
 import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
+from .secrets import SECRET_KEY
 
 django.utils.encoding.smart_text = smart_str
 
@@ -25,12 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#18+pgjmowa66tvw(rm&_@h-d-p(9(e&q#=_aed$+g!g#w=!os'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'apparel-shop1.onrender.com'
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -43,7 +47,7 @@ INSTALLED_APPS = [
 
     'firstProject.web',
     'firstProject.accounts',
-    
+
     'rest_framework',
     'storages',
 ]
@@ -84,9 +88,9 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
+    'default': dj_database_url.parse(
+        'postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
 }
-
 
 # DATABASES = {
 #     'default': {
@@ -107,8 +111,6 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
 GS_PROJECT_ID = 'apparelshop1'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -168,6 +170,3 @@ MEDIA_URL = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/'
 LOGIN_REDIRECT_URL = '/'
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'apparelshop1-c54be055c23b.json'
-
-variable = os.getenv('TEST_VARIABLE')
-print(variable)
