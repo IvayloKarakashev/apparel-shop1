@@ -15,7 +15,7 @@ from pathlib import Path
 import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
-from .secrets import SECRET_KEY
+# from .secrets import SECRET_KEY
 
 django.utils.encoding.smart_text = smart_str
 
@@ -26,7 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = 'django-insecure-#18+pgjmowa66tvw(rm&_@h-d-p(9(e&q#=_aed$+g!g#w=!os'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
