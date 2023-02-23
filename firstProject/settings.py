@@ -168,3 +168,6 @@ MEDIA_URL = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/'
 LOGIN_REDIRECT_URL = '/'
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'apparelshop1-c54be055c23b.json'
+
+variable = os.getenv('TEST_VARIABLE')
+print(variable)
