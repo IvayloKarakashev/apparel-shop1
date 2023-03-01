@@ -108,7 +108,7 @@ DATABASES = {
 
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
-GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
+# GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
 GS_PROJECT_ID = 'apparelshop1'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
 
