@@ -63,7 +63,7 @@
       <recent name="C:\Users\User\PycharmProjects\apparel-shop1\firstProject\web\functions" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.settings">
+  <component name="RunManager" selected="Django Server.apparel-shop1">
     <configuration name="products" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="apparel-shop1 – Копие (2)" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -193,7 +193,7 @@
       <workItem from="1677092851483" duration="16235000" />
       <workItem from="1677614243375" duration="1006000" />
       <workItem from="1677694613456" duration="10298000" />
-      <workItem from="1677784812208" duration="2280000" />
+      <workItem from="1677784812208" duration="5159000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -291,13 +291,18 @@
           <line>1</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firstProject/settings.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/apparel_shop1$main.coverage" NAME="main Coverage Results" MODIFIED="1671212549164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/apparel_shop1$products.coverage" NAME="products Coverage Results" MODIFIED="1677173739491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/firstProject/web/views" />
-    <SUITE FILE_PATH="coverage/apparel_shop1$settings.coverage" NAME="settings Coverage Results" MODIFIED="1677784865894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/firstProject" />
+    <SUITE FILE_PATH="coverage/apparel_shop1$settings.coverage" NAME="settings Coverage Results" MODIFIED="1677788224836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/firstProject" />
     <SUITE FILE_PATH="coverage/apparel_shop1$blq.coverage" NAME="blq Coverage Results" MODIFIED="1666630454914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/firstProject/accounts" />
   </component>
 </project>
