@@ -14,7 +14,10 @@ import dj_database_url
 from pathlib import Path
 import django
 from django.utils.encoding import smart_str
+from dotenv import load_dotenv
 from google.oauth2 import service_account
+
+load_dotenv()
 
 django.utils.encoding.smart_text = smart_str
 
@@ -59,9 +62,6 @@ MIDDLEWARE = [
 ]
 
 
-variable = os.getenv("TEST_VAR")
-print(variable)
-
 ROOT_URLCONF = 'firstProject.urls'
 
 TEMPLATES = [
@@ -87,9 +87,12 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
-}
+DATABASES = os.environ.get('DATABASES')
+
+#
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
+# }
 
 
 # DATABASES = {
@@ -108,7 +111,7 @@ DATABASES = {
 
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
-# GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
+GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
 GS_PROJECT_ID = 'apparelshop1'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
 
@@ -172,3 +175,4 @@ MEDIA_URL = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/'
 LOGIN_REDIRECT_URL = '/'
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'apparelshop1-c54be055c23b.json'
+
