@@ -14,10 +14,10 @@ import dj_database_url
 from pathlib import Path
 import django
 from django.utils.encoding import smart_str
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from google.oauth2 import service_account
 
-# load_dotenv()
+load_dotenv()
 
 django.utils.encoding.smart_text = smart_str
 
