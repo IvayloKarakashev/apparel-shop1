@@ -106,6 +106,13 @@ DATABASES = {
     }
 }
 
+print(os.environ.get('NAME'))
+print(os.environ.get('USER'))
+print(os.environ.get('PASSWORD'))
+print(os.environ.get('HOST'))
+print(os.environ.get('PORT'))
+print(os.environ.get('ENGINE'))
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
