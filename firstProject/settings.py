@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # }
 
 DATABASES = {
-    'default': 'postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a/render_db_zrws'
+    'default': 'postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws'
 }
 
 
