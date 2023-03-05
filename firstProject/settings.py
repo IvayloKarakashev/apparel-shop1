@@ -189,7 +189,7 @@ AUTH_USER_MODEL = 'accounts.FirstProjectUser'
 MEDIA_URL = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/'
 
 #
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
 LOGIN_REDIRECT_URL = '/'
 
