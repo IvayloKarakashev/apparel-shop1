@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'postgresql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('NAME'),
         'USER': os.environ.get('USER'),
         'PASSWORD': os.environ.get('PASSWORD'),
