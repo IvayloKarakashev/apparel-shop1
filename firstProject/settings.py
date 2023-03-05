@@ -91,16 +91,16 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 
 
 # DATABASES = {
-#     'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
+#     'default': dj_database_url.parse(postgres://render_db2_user:bONWXg7EfCqolGZiQLIkIpeAxWvkjuA2@dpg-cg2fbk64dada1e15tasg-a/render_db2')
 # }
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'render_db_zrws',
-        'USER': 'render_db_zrws_user',
-        'PASSWORD': 'KTbKd8jx92OGh4DTBEOqsX3lvRrc488q',
-        'HOST': 'dpg-cfkibnhmbjsn9ecjuigg-a',
+        'NAME': 'render_db2',
+        'USER': 'render_db2_user',
+        'PASSWORD': 'bONWXg7EfCqolGZiQLIkIpeAxWvkjuA2',
+        'HOST': 'dpg-cg2fbk64dada1e15tasg-a',
         'PORT': 5432,
     }
 }
