@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': default
+    'default': os.environ.get('default')
 }
 
 
