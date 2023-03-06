@@ -99,7 +99,7 @@ DATABASES = {
         'NAME': 'render_db2',
         'USER': 'render_db2_user',
         'PASSWORD': 'bONWXg7EfCqolGZiQLIkIpeAxWvkjuA2',
-        'HOST': 'dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com',
+        'HOST': 'dpg-cg2fbk64dada1e15tasg-a.frankfurt-postgres.render.com',
         'PORT': 5432,
     }
 }
