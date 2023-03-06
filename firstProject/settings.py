@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-#18+pgjmowa66tvw(rm&_@h-d-p(9(e&q#=_aed$+g!g#w=!os'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 
 ROOT_URLCONF = 'firstProject.urls'
 
@@ -100,12 +99,21 @@ DATABASES = {
         'NAME': 'render_db2',
         'USER': 'render_db2_user',
         'PASSWORD': 'bONWXg7EfCqolGZiQLIkIpeAxWvkjuA2',
-        'HOST': 'dpg-cg2fbk64dada1e15tasg-a',
+        'HOST': 'dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com',
         'PORT': 5432,
     }
 }
 
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'first_project',
+#         'USER': 'postgres',
+#         'PASSWORD': '1123QwER',
+#         'HOST': '127.0.0.1',
+#         'PORT': 5432,
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -118,12 +126,12 @@ DATABASES = {
 #     }
 # }
 
-print(os.environ.get('NAME'))
-print(os.environ.get('USER'))
-print(os.environ.get('PASSWORD'))
-print(os.environ.get('HOST'))
-print(os.environ.get('PORT'))
-print(os.environ.get('ENGINE'))
+# print(os.environ.get('NAME'))
+# print(os.environ.get('USER'))
+# print(os.environ.get('PASSWORD'))
+# print(os.environ.get('HOST'))
+# print(os.environ.get('PORT'))
+# print(os.environ.get('ENGINE'))
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -133,8 +141,6 @@ DEFAULT_FILE_STORAGE = os.environ.get('DEFAULT_FILE_STORAGE')
 GS_BUCKET_NAME = os.environ.get('GS_BUCKET_NAME')
 GS_PROJECT_ID = os.environ.get('GS_PROJECT_ID')
 GS_CREDENTIALS = os.environ.get('GS_CREDENTIALS')
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -194,4 +200,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 LOGIN_REDIRECT_URL = '/'
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'apparelshop1-c54be055c23b.json'
-
