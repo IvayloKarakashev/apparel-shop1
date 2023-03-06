@@ -16,8 +16,6 @@ import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
 
-from firstProject.configuration_settings import default
-
 django.utils.encoding.smart_text = smart_str
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,9 +84,8 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': os.environ.get('default')
+    'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
 }
-
 
 
 # DATABASES = {
