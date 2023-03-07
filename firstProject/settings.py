@@ -18,6 +18,9 @@ import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
 
+from dotenv import load_dotenv
+load_dotenv()
+
 django.utils.encoding.smart_text = smart_str
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,16 +31,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-LOCAL = True
-
-if LOCAL:
-    from dotenv import load_dotenv
-    load_dotenv()
+DEBUG = os.environ.get('DEBUG')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -154,13 +152,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-#     BASE_DIR / 'templates'
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    BASE_DIR / 'templates'
+]
 
 
 # STATICFILES_FINDERS = [
@@ -175,10 +173,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.FirstProjectUser'
 
-MEDIA_URL = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/'
+# MEDIA_URL = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/'
+MEDIA_URL = '/images/'
 
-#
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
 LOGIN_REDIRECT_URL = '/'
 
