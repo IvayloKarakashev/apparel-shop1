@@ -18,8 +18,8 @@ import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
 
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 django.utils.encoding.smart_text = smart_str
 
