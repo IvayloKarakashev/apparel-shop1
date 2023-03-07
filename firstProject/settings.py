@@ -16,9 +16,7 @@ import dj_database_url
 from pathlib import Path
 import django
 from django.utils.encoding import smart_str
-from dotenv import load_dotenv
 from google.oauth2 import service_account
-
 
 django.utils.encoding.smart_text = smart_str
 
@@ -33,6 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 LOCAL = True
 
 if LOCAL:
+    from dotenv import load_dotenv
     load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -40,10 +39,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG')
 
-
 ALLOWED_HOSTS = [
-                '127.0.0.1',
-                'apparel-shop1.onrender.com',
+    '127.0.0.1',
+    'apparel-shop1.onrender.com',
 ]
 
 # Application definition
@@ -57,7 +55,7 @@ INSTALLED_APPS = [
 
     'firstProject.web',
     'firstProject.accounts',
-    
+
     'rest_framework',
     'storages',
 ]
@@ -117,7 +115,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -126,7 +123,6 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
 GS_PROJECT_ID = 'apparelshop1'
 # GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
