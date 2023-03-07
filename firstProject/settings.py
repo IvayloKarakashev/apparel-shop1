@@ -18,8 +18,8 @@ import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
 
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 django.utils.encoding.smart_text = smart_str
 
@@ -173,8 +173,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.FirstProjectUser'
 
-# MEDIA_URL = 'https://storage.googleapis.com/user-uploaded-images_apparelshop1/'
-MEDIA_URL = '/images/'
+MEDIA_URL = os.environ.get('MEDIA_URL')
+# MEDIA_URL = '/images/'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
