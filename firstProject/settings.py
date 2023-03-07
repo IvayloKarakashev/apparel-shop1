@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#18+pgjmowa66tvw(rm&_@h-d-p(9(e&q#=_aed$+g!g#w=!os'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
+# }
+
 DATABASES = {
-    'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
+    'default': dj_database_url.parse(f'postgres://render_db_zrws_user:{os.environ.get("DB_PASSWORD")}@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
 }
 
 
