@@ -18,8 +18,8 @@ import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
 
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 django.utils.encoding.smart_text = smart_str
 
@@ -97,21 +97,21 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 #     'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
 # }
 
-# DATABASES = {
-#     'default': dj_database_url.parse(f'postgres://render_db_zrws_user:{os.environ.get("DB_PASSWORD")}@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
-# }
-
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'first_project',
-        'USER': 'postgres',
-        'PASSWORD': '1123QwER',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse(f'postgres://render_db_zrws_user:{os.environ.get("DB_PASSWORD")}@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'first_project',
+#         'USER': 'postgres',
+#         'PASSWORD': '1123QwER',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
