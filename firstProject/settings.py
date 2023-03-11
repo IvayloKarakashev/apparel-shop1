@@ -182,6 +182,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.FirstProjectUser'
 
 MEDIA_URL = os.environ.get('MEDIA_URL')
+print('MEDIA_URL:', MEDIA_URL)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
 
