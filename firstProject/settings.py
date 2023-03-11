@@ -181,4 +181,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
 LOGIN_REDIRECT_URL = '/'
 
+GOOGLE_APPLICATION_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 # os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'apparelshop1-c54be055c23b.json'

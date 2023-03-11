@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +170,8 @@
       <workItem from="1677092851483" duration="1381000" />
       <workItem from="1678191183458" duration="7800000" />
       <workItem from="1678212821790" duration="6229000" />
-      <workItem from="1678392775458" duration="479000" />
+      <workItem from="1678392775458" duration="6167000" />
+      <workItem from="1678532751531" duration="384000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
