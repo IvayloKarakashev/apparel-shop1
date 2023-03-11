@@ -18,8 +18,6 @@ import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
 
-# from dotenv import load_dotenv
-# load_dotenv()
 
 django.utils.encoding.smart_text = smart_str
 
@@ -32,6 +30,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
+
+PRODUCTION = os.getenv('PRODUCTION', False)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -181,11 +181,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
 LOGIN_REDIRECT_URL = '/'
 
-# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'apparelshop1-c54be055c23b.json'
-
-# Load credentials from key file
-# credentials = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
-
-# Set environment variable for the Google Cloud SDK
-# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
-# os.environ['GS_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
+if PRODUCTION:
+    from dotenv import load_dotenv
+    load_dotenv()
+    print('PRODUCTION')
