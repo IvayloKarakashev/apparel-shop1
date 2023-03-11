@@ -187,5 +187,5 @@ LOGIN_REDIRECT_URL = '/'
 # credentials = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
 
 # Set environment variable for the Google Cloud SDK
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
-os.environ['GS_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
+# os.environ['GS_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
