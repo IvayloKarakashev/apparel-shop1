@@ -188,6 +188,4 @@ credentials = service_account.Credentials.from_service_account_file('/etc/secret
 
 # Set environment variable for the Google Cloud SDK
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
-
-# Set the credentials for the Google Cloud Storage client
-GS_CREDENTIALS = credentials
+os.environ['GS_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
