@@ -181,5 +181,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
 LOGIN_REDIRECT_URL = '/'
 
-GOOGLE_APPLICATION_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 # os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'apparelshop1-c54be055c23b.json'
+
+# Load credentials from key file
+credentials = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
+
+# Set environment variable for the Google Cloud SDK
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/etc/secrets/apparelshop1-c54be055c23b.json'
+
+# Set the credentials for the Google Cloud Storage client
+GS_CREDENTIALS = credentials
