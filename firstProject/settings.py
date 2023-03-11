@@ -18,6 +18,16 @@ import django
 from django.utils.encoding import smart_str
 from google.oauth2 import service_account
 
+PRODUCTION = os.getenv('PRODUCTION', False)
+print(PRODUCTION)
+
+if PRODUCTION:
+    pass
+
+else:
+    from dotenv import load_dotenv
+    load_dotenv()
+
 
 django.utils.encoding.smart_text = smart_str
 
@@ -31,7 +41,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-PRODUCTION = os.getenv('PRODUCTION', False)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -93,33 +102,32 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': dj_database_url.parse('postgres://render_db_zrws_user:KTbKd8jx92OGh4DTBEOqsX3lvRrc488q@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
-# }
 
-DATABASES = {
-    'default': dj_database_url.parse(f'postgres://render_db_zrws_user:{os.environ.get("DB_PASSWORD")}@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
-}
+if PRODUCTION:
+    DATABASES = {
+        'default': dj_database_url.parse(f'postgres://render_db_zrws_user:{os.environ.get("DB_PASSWORD")}@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
+    }
 
+else:
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'first_project',
-#         'USER': 'postgres',
-#         'PASSWORD': '1123QwER',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'first_project',
+            'USER': 'postgres',
+            'PASSWORD': '1123QwER',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-
-GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
-GS_PROJECT_ID = 'apparelshop1'
+# Google cloud configuration
+# DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+# GS_BUCKET_NAME = 'user-uploaded-images_apparelshop1'
+# GS_PROJECT_ID = 'apparelshop1'
 # GS_CREDENTIALS = service_account.Credentials.from_service_account_file('/etc/secrets/apparelshop1-c54be055c23b.json')
 
 
@@ -174,16 +182,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.FirstProjectUser'
 
 MEDIA_URL = os.environ.get('MEDIA_URL')
-# MEDIA_URL = '/images/'
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
 
 LOGIN_REDIRECT_URL = '/'
-
-if PRODUCTION:
-    print('PRODUCTION')
-
-else:
-    from dotenv import load_dotenv
-    load_dotenv()

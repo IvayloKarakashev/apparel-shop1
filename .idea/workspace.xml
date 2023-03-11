@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example1_qxtaMbG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example3_1YkvWCc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example4_OBGuf1e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example5_aSTZgB0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example6_fRTNmWt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/example7_30xtMH9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/product-images/toupload.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +188,9 @@
       <workItem from="1678191183458" duration="7800000" />
       <workItem from="1678212821790" duration="6229000" />
       <workItem from="1678392775458" duration="6167000" />
-      <workItem from="1678532751531" duration="3687000" />
+      <workItem from="1678532751531" duration="7807000" />
+      <workItem from="1678540890187" duration="1258000" />
+      <workItem from="1678553597523" duration="3281000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -265,9 +284,9 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/firstProject/web/functions/products.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/firstProject/web/views/products.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
