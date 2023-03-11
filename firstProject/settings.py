@@ -182,6 +182,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 LOGIN_REDIRECT_URL = '/'
 
 if PRODUCTION:
+    print('PRODUCTION')
+
+else:
     from dotenv import load_dotenv
     load_dotenv()
-    print('PRODUCTION')
