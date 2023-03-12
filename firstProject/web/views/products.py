@@ -80,13 +80,17 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
     model = Product
     template_name = 'front-end/product-add.html'
     form_class = ProductAddForm
+    success_url = reverse_lazy('index')
 
     def test_func(self):
         return is_seller(self.request.user)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['size_formset'] = ProductSizeFormSet()
+        if self.request.POST:
+            context['size_formset'] = ProductSizeFormSet(self.request.POST)
+        else:
+            context['size_formset'] = ProductSizeFormSet()
         return context
 
     def form_valid(self, form):
@@ -107,7 +111,8 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
             if size_formset.is_valid():
                 size_formset.save()
 
-            return redirect(reverse_lazy('index'))
+            return super().form_valid(form)
+        return super().form_invalid(form)
 
 
 class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):

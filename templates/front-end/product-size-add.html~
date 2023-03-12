@@ -35,12 +35,10 @@
                 </div>
 
                 <div>
-                    <label class="form-label font-light">Sizes</label>
-                    <br>
+                    <label class="formset font-light">Sizes</label>
                     {% for size in size_formset %}
-                        {{ size.name }}
+                    {{ size.name }}
                     {% endfor %}
-                    {{ size_formset.management_form }}
                 </div>
             </div>
             <div class="modal-footer pt-0">

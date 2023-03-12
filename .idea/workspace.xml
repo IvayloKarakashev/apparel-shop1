@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/functions/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/functions/products.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-end/product-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +55,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/front-end" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/front-end" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\apparel-shop1\templates\front-end" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\PycharmProjects\apparel-shop1\firstProject" />
       <recent name="C:\Users\User\PycharmProjects\apparel-shop1\static\front-end" />
@@ -172,7 +181,8 @@
       <workItem from="1678392775458" duration="6167000" />
       <workItem from="1678532751531" duration="7807000" />
       <workItem from="1678540890187" duration="1258000" />
-      <workItem from="1678553597523" duration="4331000" />
+      <workItem from="1678553597523" duration="9182000" />
+      <workItem from="1678623002213" duration="3955000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -262,12 +272,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/accounts/views/user.py</url>
-          <line>21</line>
+          <line>20</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/web/views/products.py</url>
-          <line>92</line>
+          <line>96</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>

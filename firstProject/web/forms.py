@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import inlineformset_factory
+from django.forms import inlineformset_factory, TextInput
 
 from firstProject.web.models import ShippingAddress, Product, ProductSize
 
@@ -20,7 +20,16 @@ class ShippingAddressForm(forms.ModelForm):
         }
 
 
-ProductSizeFormSet = inlineformset_factory(Product, ProductSize, fields=('name',), can_delete=False)
+ProductSizeFormSet = inlineformset_factory(
+    Product,
+    ProductSize,
+    fields=('name',),
+    can_delete=False,
+    extra=5,
+    widgets={
+        'name': TextInput(attrs={'class': 'form-control-sm', 'style': 'width: 50px'})
+    }
+)
 
 
 class ProductAddForm(forms.ModelForm):

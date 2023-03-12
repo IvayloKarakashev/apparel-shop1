@@ -16,15 +16,10 @@ import dj_database_url
 from pathlib import Path
 import django
 from django.utils.encoding import smart_str
-from google.oauth2 import service_account
 
 PRODUCTION = os.getenv('PRODUCTION', False)
-print(PRODUCTION)
 
-if PRODUCTION:
-    pass
-
-else:
+if not PRODUCTION:
     from dotenv import load_dotenv
     load_dotenv()
 
@@ -182,7 +177,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.FirstProjectUser'
 
 MEDIA_URL = os.environ.get('MEDIA_URL')
-print('MEDIA_URL:', MEDIA_URL)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
 

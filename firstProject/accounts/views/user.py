@@ -9,7 +9,6 @@ from firstProject.utilities.mixins import PageTitleMixin
 
 user_model = get_user_model()
 sellers_group = Group.objects.get(name='Sellers')
-print(sellers_group)
 
 
 class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
