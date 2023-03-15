@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/functions/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/functions/products.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/product-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/front-end/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/front-end/assets/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/terms.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/terms.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-end/product-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-edit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +181,13 @@
       <workItem from="1678532751531" duration="7807000" />
       <workItem from="1678540890187" duration="1258000" />
       <workItem from="1678553597523" duration="9182000" />
-      <workItem from="1678623002213" duration="3955000" />
+      <workItem from="1678623002213" duration="8488000" />
+      <workItem from="1678643568701" duration="8268000" />
+      <workItem from="1678733911739" duration="1104000" />
+      <workItem from="1678814904804" duration="2078000" />
+      <workItem from="1678817022973" duration="9589000" />
+      <workItem from="1678904121172" duration="376000" />
+      <workItem from="1678904522831" duration="1243000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
@@ -277,8 +282,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/firstProject/web/views/products.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="19" />
+          <line>81</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firstProject/web/views/products.py</url>
+          <line>115</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

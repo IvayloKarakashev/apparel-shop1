@@ -24,7 +24,7 @@ ProductSizeFormSet = inlineformset_factory(
     Product,
     ProductSize,
     fields=('name',),
-    can_delete=False,
+    # can_delete=True,
     extra=5,
     widgets={
         'name': TextInput(attrs={'class': 'form-control-sm', 'style': 'width: 50px'})

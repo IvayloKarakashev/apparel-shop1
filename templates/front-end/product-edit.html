@@ -33,6 +33,16 @@
                     <label class="form-label font-light">Category</label>
                     {{ form.category }}
                 </div>
+
+                <div>
+                    <label class="form-label font-light">Sizes</label>
+                    <br>
+                    {{ size_formset }}
+{#                    {% for size in size_formset %}#}
+{#                        {{ size.name }}#}
+{#                    {% endfor %}#}
+                    {{ size_formset.management_form }}
+                </div>
             </div>
             <div class="modal-footer pt-0">
                 <button class="btn bg-secondary rounded-1 modal-close-button"
