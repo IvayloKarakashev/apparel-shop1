@@ -26,6 +26,9 @@ class FirstProjectUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixi
 
     objects = FirstProjectUserManager()
 
+    class Meta:
+        verbose_name = 'User'
+
 
 class Profile(models.Model):
     FIRST_NAME_MAX_LENGTH = 30

@@ -23,6 +23,7 @@ class UserRegistrationView(PageTitleMixin, generic_views.CreateView):
             obj.save()
             if obj.is_seller:
                 obj.groups.add(sellers_group)
+                obj.is_staff = True
                 obj.save()
         result = super().form_valid(form)
         login(self.request, self.object)

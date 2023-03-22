@@ -36,6 +36,9 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
 
 class Product(models.Model):
     TITLE_MAX_LENGTH = 25
@@ -161,6 +164,9 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
+
+    class Meta:
+        verbose_name_plural = 'Shipping addresses'
 
 
 class Order(models.Model):
