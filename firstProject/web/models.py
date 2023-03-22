@@ -67,7 +67,7 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         if self.image:
-            filename = slugify(self.image.name)
+            filename = slugify(self.image.name.replace('%20', '_'))
             self.image.name = filename
 
         super(Product, self).save(*args, **kwargs)
