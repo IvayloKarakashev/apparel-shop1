@@ -6,6 +6,7 @@ from datetime import datetime
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.urls import reverse_lazy
+from django.utils.text import slugify
 from django.views import generic as generic_views
 
 from firstProject.api.gcs import upload_blob
@@ -75,7 +76,7 @@ class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
         if PRODUCTION:
             image_file = self.request.FILES['image']
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            image_blob_name = f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}".replace(' ', '_')
+            image_blob_name = slugify(f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}")
             upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
             obj.image.name = image_blob_name
 
