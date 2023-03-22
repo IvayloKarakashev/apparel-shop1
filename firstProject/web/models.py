@@ -4,6 +4,7 @@ import uuid
 from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
+from django.utils.text import slugify
 
 from firstProject.accounts.models import Profile
 
@@ -63,6 +64,13 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     uploaded_by = models.ForeignKey(user_model, on_delete=models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            filename = slugify(self.image.name)
+            self.image.name = filename
+
+        super(Product, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title

@@ -6,30 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0002_alter_profile_gender.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0003_alter_profile_gender.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0004_alter_profile_gender.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0005_profile_phone_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0006_newsletter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0007_rename_newsletter_subscribers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0008_subscribers_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0009_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0010_alter_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0011_alter_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0012_alter_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0013_alter_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0014_remove_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0015_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0016_remove_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0017_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0018_alter_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0019_alter_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0020_remove_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/migrations/0021_firstprojectuser_is_seller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/accounts/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/accounts/views/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +183,7 @@
       <workItem from="1678817022973" duration="9589000" />
       <workItem from="1678904121172" duration="376000" />
       <workItem from="1678904522831" duration="2094000" />
-      <workItem from="1679490809821" duration="4402000" />
+      <workItem from="1679490809821" duration="6702000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
