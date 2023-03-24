@@ -110,7 +110,7 @@ class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
             # Upload the new image to Google Cloud Storage
             image_file = self.request.FILES['image']
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            image_blob_name = f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}"
+            image_blob_name = slugify(f"user-uploaded-images_apparelshop1/{timestamp}_{image_file.name}")
             upload_blob('user-uploaded-images_apparelshop1', image_file, image_blob_name)
             obj.image.name = image_blob_name
 
@@ -120,3 +120,9 @@ class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
         size_formset.save()
 
         return super().form_valid(form)
+
+
+class ProductDeleteView(generic_views.DeleteView):
+    model = Product
+    template_name = 'front-end/product-delete.html'
+    success_url = reverse_lazy('seller products')

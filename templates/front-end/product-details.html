@@ -16,8 +16,7 @@
                                         <div>
                                             <div class="product-image-tag">
                                                 <img src="{{ object.image.url }}"
-                                                     class="w-75 image_zoom_cls-0" alt="">
-
+                                                     class="w-50 image_zoom_cls-0" alt="">
                                                 <div class="label-tag">
                                                     <h6><i class="fas fa-star"></i> 4.8 <span
                                                             class="font-light">120</span></h6>
@@ -41,6 +40,8 @@
                                     </div>
 
                                     <h3 class="price-detail">{{ object.price|floatformat:2 }} BGN</h3>
+                                    <br>
+                                    <h6 class="product-title">Color: {{ object.color }}</h6>
 
                                     <div id="selectSize" class="addeffect-section product-description border-product">
 
