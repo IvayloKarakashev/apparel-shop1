@@ -115,9 +115,9 @@ class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
             obj.image.name = image_blob_name
 
         size_formset = ProductSizeFormSet(self.request.POST, instance=obj)
-        # if size_formset.is_valid():
-        obj.save()
-        size_formset.save()
+        if size_formset.is_valid():
+            obj.save()
+            size_formset.save()
 
         return super().form_valid(form)
 
