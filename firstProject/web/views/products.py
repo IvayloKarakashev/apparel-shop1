@@ -11,6 +11,7 @@ from django.views import generic as generic_views
 
 from firstProject.api.gcs import upload_blob
 from firstProject.settings import PRODUCTION
+from firstProject.utilities.mixins import PageTitleMixin
 from firstProject.web.forms import ProductAddForm, ProductEditForm, ProductSizeFormSet
 from firstProject.web.functions.products import is_seller
 from firstProject.web.models import Product
@@ -21,10 +22,11 @@ class ProductDetailsView(generic_views.DetailView):
     template_name = 'front-end/product-details.html'
 
 
-class ProductsView(generic_views.ListView):
+class ProductsView(generic_views.ListView, PageTitleMixin):
     model = Product
     template_name = 'front-end/products.html'
     paginate_by = 15
+    page_title = 'Products'
 
     def get_queryset(self):
         return Product.objects.filter(category=self.kwargs['pk']).order_by('-id')
@@ -55,11 +57,12 @@ class SellerProductsView(UserPassesTestMixin, ProductsView):
         return Product.objects.filter(uploaded_by=self.request.user.id).order_by('-id')
 
 
-class ProductAddView(UserPassesTestMixin, generic_views.CreateView):
+class ProductAddView(UserPassesTestMixin, PageTitleMixin, generic_views.CreateView):
     model = Product
     template_name = 'front-end/product-add.html'
     form_class = ProductAddForm
     success_url = reverse_lazy('seller products')
+    page_title = 'Add product'
 
     def test_func(self):
         return is_seller(self.request.user)
