@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/web/views/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/web/views/products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/product-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/product-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/product-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-end/terms.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-end/terms.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +187,7 @@
       <workItem from="1679506260009" duration="5692000" />
       <workItem from="1679595545206" duration="1617000" />
       <workItem from="1679598186775" duration="5094000" />
-      <workItem from="1679680333802" duration="1065000" />
+      <workItem from="1679680333802" duration="2307000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>

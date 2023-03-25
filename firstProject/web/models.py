@@ -77,7 +77,7 @@ class Product(models.Model):
 
 
 class ProductSize(models.Model):
-    SIZE_NAME_MAX_LENGTH = 5
+    SIZE_NAME_MAX_LENGTH = 10
 
     product = models.ForeignKey(
         Product,
