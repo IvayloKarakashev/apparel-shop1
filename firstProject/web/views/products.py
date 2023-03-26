@@ -17,16 +17,17 @@ from firstProject.web.functions.products import is_seller
 from firstProject.web.models import Product
 
 
-class ProductDetailsView(generic_views.DetailView):
+class ProductDetailsView(PageTitleMixin, generic_views.DetailView):
     model = Product
     template_name = 'front-end/product-details.html'
+    page_title = 'Product Details'
 
 
-class ProductsView(generic_views.ListView, PageTitleMixin):
+class ProductsView(PageTitleMixin, generic_views.ListView):
     model = Product
     template_name = 'front-end/products.html'
     paginate_by = 15
-    page_title = 'Products'
+    page_title = Product.objects.first().category
 
     def get_queryset(self):
         return Product.objects.filter(category=self.kwargs['pk']).order_by('-id')
@@ -50,6 +51,8 @@ class ProductsView(generic_views.ListView, PageTitleMixin):
 
 
 class SellerProductsView(UserPassesTestMixin, ProductsView):
+    page_title = 'My products'
+
     def test_func(self):
         return is_seller(self.request.user)
 
@@ -91,11 +94,12 @@ class ProductAddView(UserPassesTestMixin, PageTitleMixin, generic_views.CreateVi
         return super().form_valid(form)
 
 
-class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
+class ProductEditView(PageTitleMixin, UserPassesTestMixin, generic_views.UpdateView):
     model = Product
     template_name = 'front-end/product-edit.html'
     form_class = ProductEditForm
     success_url = reverse_lazy('seller products')
+    page_title = 'Edit product'
 
     def test_func(self):
         return is_seller(self.request.user)

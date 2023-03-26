@@ -16,5 +16,5 @@ class TermsAndConditionsView(PageTitleMixin, generic_views.TemplateView):
 
 
 class AboutView(PageTitleMixin, generic_views.TemplateView):
-    template_name = 'front-end/about-us.html'
     page_title = 'About us'
+    template_name = 'front-end/about-us.html'
