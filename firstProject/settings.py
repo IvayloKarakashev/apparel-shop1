@@ -181,5 +181,3 @@ MEDIA_URL = os.environ.get('MEDIA_URL')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
 
 LOGIN_REDIRECT_URL = '/'
-
-print(DEBUG)
