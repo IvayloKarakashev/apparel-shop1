@@ -27,7 +27,7 @@ class ProductsView(PageTitleMixin, generic_views.ListView):
     model = Product
     template_name = 'front-end/products.html'
     paginate_by = 15
-    page_title = Product.objects.first().category
+    page_title = 'Products'
 
     def get_queryset(self):
         return Product.objects.filter(category=self.kwargs['pk']).order_by('-id')
