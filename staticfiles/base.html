@@ -326,15 +326,12 @@
                         </div>
                         <div class="footer-content">
                             <ul>
-                                <li>
-                                    <a href="{% url 'products' 1 %}" class="font-dark">Shirts</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'products' 5 %}" class="font-dark">Dresses</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'products' 3 %}" class="font-dark">Jackets</a>
-                                </li>
+                                {% for category in new_categories %}
+                                    <li>
+                                        <a href="{% url 'products' category.id %}"
+                                           class="font-dark">{{ category.title }}</a>
+                                    </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ from firstProject.web.views.generic import home_view
 from firstProject.web.views.order import cart_view, checkout_view, OrderSuccessView, OrderTrackingView, finalize_order, \
     clear_items
 from firstProject.web.views.products import ProductsView, ProductDetailsView, ProductAddView, \
-    ProductEditView, SellerProductsView, ProductDeleteView
+    ProductEditView, SellerProductsView
 from firstProject.web.views.static import FAQView, TermsAndConditionsView, AboutView
 from firstProject.web.views.wishlist import WishListView
 
@@ -18,7 +18,6 @@ urlpatterns = (
     path('products/details/<int:pk>/', ProductDetailsView.as_view(), name='product details'),
     path('products/add/', ProductAddView.as_view(), name='add product'),
     path('products/edit/<int:pk>/', ProductEditView.as_view(), name='edit product'),
-    path('products/delete/<int:pk>/', ProductDeleteView.as_view(), name='delete product'),
     path('wishlist/', WishListView.as_view(), name='wishlist'),
     path('cart/', cart_view, name='cart'),
     path('select-address/', select_address, name='select address'),

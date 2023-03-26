@@ -123,9 +123,3 @@ class ProductEditView(UserPassesTestMixin, generic_views.UpdateView):
             size_formset.save()
 
         return super().form_valid(form)
-
-
-class ProductDeleteView(generic_views.DeleteView):
-    model = Product
-    template_name = 'front-end/product-delete.html'
-    success_url = reverse_lazy('seller products')
