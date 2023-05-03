@@ -18,7 +18,7 @@
                         {{ form.email }}
                         <span class="spin"></span>
                         {% if form.errors.email %}
-                            <p>{{ form.errors.email }}</p>
+                            <p class="error">{{ form.errors.email }}</p>
                         {% endif %}
                     </div>
 
@@ -27,7 +27,7 @@
                         {{ form.first_name }}
                         <span class="spin"></span>
                         {% if form.errors.first_name %}
-                            <p>{{ form.errors.first_name }}</p>
+                            <p class="error">{{ form.errors.first_name }}</p>
                         {% endif %}
                     </div>
 
@@ -36,7 +36,7 @@
                         {{ form.last_name }}
                         <span class="spin"></span>
                         {% if form.errors.last_name %}
-                            <p>{{ form.errors.last_name }}</p>
+                            <p class="error">{{ form.errors.last_name }}</p>
                         {% endif %}
                     </div>
 
@@ -45,7 +45,7 @@
                         {{ form.password1 }}
                         <span class="spin"></span>
                         {% if form.errors.password1 %}
-                            <p>{{ form.errors.password1 }}</p>
+                            <p class="error">{{ form.errors.password1 }}</p>
                         {% endif %}
                     </div>
 
@@ -53,6 +53,9 @@
                         <label for="compass">Confirm Password</label>
                         {{ form.password2 }}
                         <span class="spin"></span>
+                        {% if form.errors.password2 %}
+                            <p class="error">{{ form.errors.password2 }}</p>
+                        {% endif %}
                     </div>
                     &nbsp
                     <p>Choose an account option between Seller and Customer</p>
@@ -66,9 +69,7 @@
                             <i class="fa fa-check"></i>
                         </button>
                     </div>
-                    {% if form.errors.password2 %}
-                        <p>{{ form.errors.password2 }}</p>
-                    {% endif %}
+
                 </form>
 
             </div>
