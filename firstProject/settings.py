@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'firstProject.wsgi.application'
 
 if PRODUCTION:
     DATABASES = {
-        'default': dj_database_url.parse(f'postgres://render_db2_n1vs_user:{os.environ.get("DB_PASSWORD")}@dpg-chgehubhp8u065u0m5a0-a.frankfurt-postgres.render.com/render_db2_n1vs')
+        'default': dj_database_url.parse(f'postgres://render_db_zrws_user:{os.environ.get("DB_PASSWORD")}@dpg-cfkibnhmbjsn9ecjuigg-a.frankfurt-postgres.render.com/render_db_zrws')
     }
 
 else:

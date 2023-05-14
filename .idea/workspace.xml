@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6910da71-56b9-4650-8fc5-4eda9d44f895" name="Changes" comment="Implemented pagination to products.html page">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843/storage_v2/_src_/database/render_db_zrws.jO3AcA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843/storage_v2/_src_/database/render_db_zrws.jO3AcA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843/storage_v2/_src_/database/render_db_zrws.jO3AcA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f39ce266-c83d-4664-89e1-c603cdb5a843/storage_v2/_src_/database/render_db_zrws.jO3AcA/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstProject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +222,7 @@
       <workItem from="1679848407510" duration="4548000" />
       <workItem from="1682165709788" duration="1361000" />
       <workItem from="1683137911254" duration="1473000" />
-      <workItem from="1684072375068" duration="813000" />
+      <workItem from="1684072375068" duration="1768000" />
     </task>
     <task id="LOCAL-00004" summary="Reformatted some more code and added Profile instance to User register">
       <created>1671546316798</created>
